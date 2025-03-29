@@ -10,6 +10,7 @@
         function toggleTheme() {
             const body = document.body;
             const toggle = document.querySelector('.toggle-switch');
+
             if (body.classList.contains('light-mode')) {
                 body.classList.remove('light-mode');
                 toggle.classList.remove('active');
@@ -31,113 +32,24 @@
     </script>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="resources.html">Resources</a>
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="resources.html">Resources</a>
+        </div>
+        <div class="nav-buttons">
+            <div class="toggle-switch" onclick="toggleTheme()">
+                <div class="switch-thumb"></div>
             </div>
-            <div class="nav-buttons">
-                <div class="toggle-switch" onclick="toggleTheme()">
-                    <div class="switch-thumb"></div>
-                </div>
-                <a href="mailto:cb@reqs.tech" class="email-button">Contact Me</a>
-            </div>
+            <a href="mailto:cb@reqs.tech" class="email-button">Contact Me</a>
         </div>
     </nav>
+
     <main>
         <h1>Welcome to reqs.tech</h1>
         <p>This will be your main landing page. Start building your vision here!</p>
     </main>
 </body>
 </html>
-
-<!-- css/style.css (Main Stylesheet) -->
-body {
-    font-family: Roboto, sans-serif;
-    background-color: #181818;
-    color: #E0E0E0;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-body.light-mode {
-    background-color: #E0E0E0;
-    color: #181818;
-}
-
-nav {
-    background-color: #333;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    border-bottom: 2px solid #64B6AC;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-}
-
-.nav-links a, .email-button {
-    color: #E0E0E0;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover, .email-button:hover {
-    color: #B33A3A;
-}
-
-.toggle-switch {
-    width: 50px;
-    height: 24px;
-    background-color: #888;
-    border-radius: 12px;
-    position: relative;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-right: 10px;
-}
-
-.toggle-switch.active {
-    background-color: #64B6AC;
-}
-
-.switch-thumb {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: left 0.3s;
-}
-
-.toggle-switch.active .switch-thumb {
-    left: 28px;
-}
-
-.content-section {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
-
-h1 {
-    color: #64B6AC;
-    text-align: center;
-}
-
-p {
-    line-height: 1.6;
-    text-align: center;
-}
-
