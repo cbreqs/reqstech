@@ -1,10 +1,10 @@
-<!-- index.html (Modern Landing Page) -->
+<!-- index.html (Modern Stylish Landing Page) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reqs.tech</title>
+    <title>Building Solutions | Technically Creative</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script>
         function toggleTheme() {
@@ -33,25 +33,29 @@
 </head>
 <body>
     <nav class="nav-container">
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="resources.html">Resources</a>
-    </div>
-    <div class="nav-buttons">
-        <div class="toggle-container">
-            <div class="toggle-switch" onclick="toggleTheme()">
-                <div class="switch-thumb"></div>
-            </div>
-            <span>Dark Mode</span>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="resources.html">Resources</a>
         </div>
-        <a href="mailto:cb@reqs.tech" class="email-button">Contact Me</a>
-    </div>
-</nav>
+        <div class="nav-buttons">
+            <div class="toggle-container">
+                <div class="toggle-switch" onclick="toggleTheme()">
+                    <div class="switch-thumb"></div>
+                </div>
+                <span>Dark Mode</span>
+            </div>
+            <a href="mailto:cb@reqs.tech" class="email-button">Contact Me</a>
+        </div>
+    </nav>
+
     <main>
-        <h1>reqs.tech</h1>
-        <p>a workaround is not a solution</p>
+        <div class="branding">
+            <h1>Building Solutions</h1>
+            <h2>Technically Creative</h2>
+            <p>a workaround is not a solution</p>
+        </div>
     </main>
 
     <style>
@@ -73,22 +77,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 15px 30px;
             background-color: #333;
             border-bottom: 2px solid #64B6AC;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
         }
 
         .nav-links a {
             color: #E0E0E0;
             text-decoration: none;
-            margin-right: 15px;
+            margin-right: 20px;
             transition: color 0.3s, transform 0.3s;
         }
 
         .nav-links a:hover {
-            color: #64B6AC;
+            color: #B33A3A;
             transform: scale(1.1);
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .toggle-switch {
@@ -98,7 +108,12 @@
             border-radius: 12px;
             position: relative;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            border: 1px solid #64B6AC;
+        }
+
+        .toggle-switch:hover {
+            box-shadow: 0 0 5px #64B6AC;
         }
 
         .toggle-switch.active {
@@ -111,8 +126,8 @@
             background-color: white;
             border-radius: 50%;
             position: absolute;
-            top: 2px;
-            left: 2px;
+            top: 1px;
+            left: 1px;
             transition: left 0.3s;
         }
 
@@ -120,22 +135,46 @@
             left: 28px;
         }
 
+        .email-button {
+            background-color: #B33A3A;
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-left: 20px;
+        }
+
+        .email-button:hover {
+            background-color: #64B6AC;
+            transform: scale(1.05);
+        }
+
         main {
-            padding: 60px;
+            padding: 80px;
             text-align: center;
             animation: fadeIn 0.8s;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .branding h1 {
+            font-size: 3.5rem;
             color: #64B6AC;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
-        p {
+        .branding h2 {
+            font-size: 1.8rem;
+            color: #B33A3A;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .branding p {
             font-size: 1.2rem;
-            line-height: 1.6;
             color: #A0A0A0;
+            line-height: 1.6;
+            font-style: italic;
         }
 
         @keyframes fadeIn {
