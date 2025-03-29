@@ -1,0 +1,33 @@
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #181818;
+    color: #E0E0E0;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    color: #64B6AC;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #E0E0E0;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+nav a:hover {
+    color: #B33A3A;
+}
+
+main {
+    padding: 20px;
+}
