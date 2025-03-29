@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>reqs.tech | Building Solutions | Technically Creative</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>reqs.tech | Building Solutions</title>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <header>
     <div class="container">
-      <h1>reqs.tech</h1>
-      <p class="motto">a workaround is not a solution</p>
+      <h1 class="small-title">reqs.tech</h1>
+      <p id="tagline" class="large-motto">a workaround is not a solution</p>
     </div>
   </header>
 
@@ -22,6 +22,8 @@
       <h2>Welcome</h2>
       <p>We're building solutions for a technically creative world.</p>
       <a href="#projects" class="cta">View Projects</a>
+      <button id="toggle-mode" class="cta">Toggle Light/Dark Mode</button>
+      <a href="mailto:cb@reqs.tech" class="cta">Email Me</a>
     </section>
 
     <!-- Projects Section -->
@@ -49,6 +51,31 @@
       <p>&copy; 2025 reqs.tech</p>
     </div>
   </footer>
+
+  <script>
+    // Light/Dark Mode Toggle
+    const toggleButton = document.getElementById('toggle-mode');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+
+    // Tab Title Rotator
+    const titles = [
+      "reqs.tech | Technically Creative",
+      "reqs.tech | Creatively Technical",
+      "reqs.tech | Building Solutions",
+      "reqs.tech | Building Ingenuity",
+      "reqs.tech | Technical Ingenuity"
+    ];
+    let titleIndex = 0;
+
+    function rotateTitle() {
+      document.title = titles[titleIndex];
+      titleIndex = (titleIndex + 1) % titles.length;
+    }
+
+    setInterval(rotateTitle, 4000); // Smoother rotation every 4 seconds
+  </script>
 
 </body>
 </html>
