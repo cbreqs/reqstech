@@ -11,3 +11,34 @@
     Refresh Title
 </button>
 <body>
+
+
+
+
+  <script>
+    // Light/Dark Mode Toggle
+    const toggleButton = document.getElementById('toggle-mode');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+
+    // Tab Title Rotator
+    const titles = [
+      "reqs.tech | Technically Creative",
+      "reqs.tech | Creatively Technical",
+      "reqs.tech | Building Solutions",
+      "reqs.tech | Building Ingenuity",
+      "reqs.tech | Technical Ingenuity"
+    ];
+    let titleIndex = 0;
+
+    function rotateTitle() {
+      document.title = titles[titleIndex];
+      titleIndex = (titleIndex + 1) % titles.length;
+    }
+
+    setInterval(rotateTitle, 4000); // Smoother rotation every 4 seconds
+  </script>
+  <script src="js/title-refresh.js" defer></script>
+</body>
+</html>
