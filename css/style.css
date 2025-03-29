@@ -87,6 +87,44 @@ main {
     background-color: var(--icy-teal);
 }
 
+/* Projects Section */
+.projects {
+    margin-top: 40px;
+}
+
+.projects h2 {
+    color: var(--cloudlight-blue);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background-color: var(--urban-purple);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.project h3 {
+    margin-top: 0;
+    color: var(--cloudlight-blue);
+}
+
+.project p {
+    color: var(--cloudlight-blue);
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    background-color: var(--storm-blue-gray);
+}
+
 /* Footer */
 footer {
     background-color: var(--urban-purple);
