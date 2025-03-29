@@ -1,160 +1,111 @@
+/* Color Palette */
+:root {
+    /* Background */
+    --midnight-navy: #1D2233;
+    --urban-purple: #4A4455;
+
+    /* Primary Accent */
+    --storm-blue-gray: #5B6D8D;
+
+    /* Highlight */
+    --cloudlight-blue: #A5C1E1;
+
+    /* Call to Action (CTA) */
+    --coral-ember: #E07A5F;
+
+    /* Optional Pop */
+    --icy-teal: #3F8DA8;
+
+    /* Text Colors */
+    --light-text: #FFFFFF;
+    --dark-text: #000000;
+}
+
+/* General Styles */
 body {
+    background-color: var(--midnight-navy);
+    color: var(--light-text);
     font-family: 'Roboto', sans-serif;
-    background-color: #181818;
-    color: #E0E0E0;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
 }
 
-body.light-mode {
-    background-color: #E0E0E0;
-    color: #181818;
-}
-
-nav {
-    background-color: #333;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #64B6AC;
-}
-
-.nav-links a {
-    color: #E0E0E0;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #B33A3A;
-}
-
-.nav-buttons {
-    display: flex;
-    align-items: center;
-}
-
-.nav-buttons a, .nav-buttons button {
-    margin-left: 10px;
-    background-color: #64B6AC;
-    color: white;
-    border: none;
-    padding: 7px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.nav-buttons a:hover, .nav-buttons button:hover {
-    background-color: #B33A3A;
-}
-
-main {
-    padding: 40px;
-    max-width: 800px;
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
 }
 
-h1 {
-    color: #64B6AC;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-p {
-    line-height: 1.6;
+/* Header */
+header {
+    background-color: var(--urban-purple);
+    padding: 20px 0;
     text-align: center;
 }
 
-/* Button Styling */
-button {
-    font-family: 'Roboto', sans-serif;
+header h1 {
+    font-family: 'Merriweather', serif;
+    color: var(--cloudlight-blue);
+    font-size: 3rem;
+    margin: 0;
+}
+
+header .motto {
+    color: var(--storm-blue-gray);
+    font-style: italic;
+}
+
+/* Main Content */
+main {
+    padding: 40px 0;
+}
+
+/* Intro Section */
+.intro h2 {
+    color: var(--cloudlight-blue);
+    font-size: 2.5rem;
+}
+
+.intro p {
+    margin: 10px 0 20px;
+    color: var(--cloudlight-blue);
+}
+
+.cta {
+    display: inline-block;
+    background-color: var(--coral-ember);
+    color: var(--light-text);
     padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #B33A3A;
-    color: #fff;
+.cta:hover {
+    background-color: var(--icy-teal);
 }
 
-/* Link Styling */
+/* Footer */
+footer {
+    background-color: var(--urban-purple);
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: var(--cloudlight-blue);
+}
+
+/* Links */
 a {
-    color: #64B6AC;
+    color: var(--storm-blue-gray);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #B33A3A;
-}
-
-/* Smooth transitions for interactive elements */
-* {
-    transition: background-color 0.3s, color 0.3s;
-}
-.nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.toggle-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.toggle-switch {
-    width: 50px;
-    height: 24px;
-    background-color: #888;
-    border-radius: 12px;
-    position: relative;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    border: 1px solid #64B6AC;
-}
-
-.toggle-switch:hover {
-    box-shadow: 0 0 5px #64B6AC;
-}
-
-.toggle-switch.active {
-    background-color: #64B6AC;
-}
-
-.switch-thumb {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    transition: left 0.3s;
-}
-
-.toggle-switch.active .switch-thumb {
-    left: 28px;
-}
-
-.email-button {
-    background-color: #B33A3A;
-    padding: 8px 16px;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.email-button:hover {
-    background-color: #64B6AC;
-    transform: scale(1.05);
+    color: var(--cloudlight-blue);
 }
