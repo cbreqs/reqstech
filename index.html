@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +96,7 @@
         .toggle-container {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .toggle-switch {
@@ -107,10 +108,11 @@
             cursor: pointer;
             transition: background-color 0.3s, box-shadow 0.3s;
             border: 1px solid #64B6AC;
+            box-shadow: 0 0 6px #64B6AC;
         }
 
         .toggle-switch:hover {
-            box-shadow: 0 0 5px #64B6AC;
+            box-shadow: 0 0 10px #64B6AC, 0 0 6px #64B6AC;
         }
 
         .toggle-switch.active {
@@ -138,13 +140,16 @@
             border-radius: 8px;
             color: white;
             text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
             margin-left: 20px;
+            border: none;
+            box-shadow: 0 0 6px #B33A3A;
         }
 
         .email-button:hover {
             background-color: #64B6AC;
             transform: scale(1.05);
+            box-shadow: 0 0 10px #64B6AC, 0 0 6px #64B6AC;
         }
 
         main {
@@ -154,7 +159,7 @@
         }
 
         .motto p {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #64B6AC;
             margin-top: 20vh;
             letter-spacing: 0.5px;
@@ -168,8 +173,8 @@
         }
 
         @keyframes glow {
-            0% { text-shadow: 0 0 5px #64B6AC, 0 0 10px #64B6AC, 0 0 15px #64B6AC; }
-            100% { text-shadow: 0 0 20px #64B6AC, 0 0 30px #64B6AC, 0 0 40px #64B6AC; }
+            0% { text-shadow: 0 0 5px #64B6AC, 0 0 10px #64B6AC; }
+            100% { text-shadow: 0 0 20px #64B6AC, 0 0 30px #64B6AC; }
         }
     </style>
 </body>
