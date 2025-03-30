@@ -1,16 +1,16 @@
 // js/title-refresh.js
 
 const titles = [
-    "Ingenious Building",
-    "Technical Ingenuity",
-    "Technical Creativity",
-    "Building Solutions",
-    "Solutions Building",
-    "Technical Solutions",
-    "Creative Solutions",
-    "Technically Creative",
-    "Creatively Technical",
-    "Ingenious Solutions",
+    "reqs.tech | Ingenious Building",
+    "reqs.tech | Technical Ingenuity",
+    "reqs.tech | Technical Creativity",
+    "reqs.tech | Building Solutions",
+    "reqs.tech | Solutions Building",
+    "reqs.tech | Technical Solutions",
+    "reqs.tech | Creative Solutions",
+    "reqs.tech | Technically Creative",
+    "reqs.tech | Creatively Technical",
+    "reqs.tech | Ingenious Solutions",
 ];
 
 function getRandomTitle() {
