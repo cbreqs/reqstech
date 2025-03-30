@@ -1,25 +1,23 @@
+// js/title-refresh.js
+
+const titles = [
+    "Ingenious Building",
+    "Technical Ingenuity",
+    "Technical Creativity",
+    "Building Solutions",
+    "Solutions Building",
+    "Technical Solutions",
+    "Creative Solutions",
+    "Technically Creative",
+    "Creatively Technical"
+    "Ingenious Solutions"
+];
+
+function getRandomTitle() {
+    return titles[Math.floor(Math.random() * titles.length)];
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    const refreshButton = document.getElementById('refreshTitle');
-    if (!refreshButton) return;
-
-    const titles = [
-        "Ingenious Building",
-        "Technically Creative",
-        "Creatively Technical",
-        "Precision Building",
-        "Building Solutions",
-        "Designed Precision",
-        "Innovative Ingenuity",
-    ];
-
-    function getRandomTitle() {
-        return titles[Math.floor(Math.random() * titles.length)];
-    }
-
-    refreshButton.addEventListener('click', () => {
-        const newTitle = getRandomTitle();
-        document.title = newTitle;
-        localStorage.setItem('randomTitle', newTitle);
-    });
+    const newTitle = getRandomTitle();
+    document.title = newTitle;
 });
-
