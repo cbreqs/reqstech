@@ -1,161 +1,288 @@
-/* css/style.css */
+<!DOCTYPE html>
 
-:root {
-    --bg-color: #171823;
-    --bg-light: #b6c6dd;
-    --text-color: #E0E0E0;
-    --text-dark: #171823;
-    --primary: #6c7fa2;
-    --secondary: #3d5476;
-    --accent: #8aa8db;
-    --highlight: #b6c6dd;
-    --nav-bg: #30354a;
-    --link-hover: #8aa8db;
-    --button-bg: #6c7fa2;
-    --button-hover: #8aa8db;
-}
+ 
+<html lang="en">
+ 
+<head>
+ 
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Playfair Display', serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.4s, color 0.4s;
-}
+  <meta charset="UTF-8" />
+ 
 
-body.light-mode {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: var(--nav-bg);
-    border-bottom: 2px solid var(--accent);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-}
+  <title>reqs.tech</title>
+ 
 
-.nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin-right: 20px;
-    transition: color 0.3s, transform 0.3s;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: bold;
-    font-size: 12pt;
-}
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+ 
 
-.nav-links a:hover {
-    color: var(--link-hover);
-    transform: scale(1.1);
-}
+  <script src="js/title-refresh.js" defer></script>
+ 
 
-.nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+    <meta charset="UTF-8">
+ 
 
-.toggle-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Playfair Display', serif;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
 
-.toggle-switch {
-    width: 50px;
-    height: 24px;
-    background-color: #888;
-    border-radius: 12px;
-    position: relative;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    border: 1px solid var(--accent);
-    box-shadow: 0 0 6px var(--accent);
-}
+    <title>reqs.tech</title>
+ 
 
-.toggle-switch.active {
-    background-color: var(--accent);
-}
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+ 
 
-.switch-thumb {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: left 0.3s;
-}
+    <script src="js/title-refresh.js" defer></script>
+ 
 
-.toggle-switch.active .switch-thumb {
-    left: 28px;
-}
+    <script>
+ 
 
-.email-button {
-    background-color: var(--button-bg);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-decoration: none;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: bold;
-    font-size: 12pt;
-}
+        function toggleTheme() {
+ 
 
-.email-button:hover {
-    background-color: var(--button-hover);
-}
+            const body = document.body;
+ 
 
-.hero-section {
-    text-align: center;
-    margin: 80px auto;
-    max-width: 800px;
-    padding: 0 20px;
-}
+            const toggle = document.querySelector('.toggle-switch');
+ 
 
-.hero-section h1 {
-    font-family: 'Red Hat Display', sans-serif;
-    font-size: 32pt;
-    font-weight: bold;
-    color: var(--accent);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
+            if (body.classList.contains('light-mode')) {
+ 
 
-.hero-section p {
-    font-family: 'Playfair Display', serif;
-    font-size: 42pt;
-    color: var(--highlight);
-    margin-bottom: 30px;
-}
+                body.classList.remove('light-mode');
+ 
 
-body.light-mode .hero-section p {
-    color: var(--text-dark);
-}
+                toggle.classList.remove('active');
+ 
 
-.intro p {
-    font-family: 'Playfair Display', serif;
-    font-size: 16pt;
-    color: var(--text-color);
-    line-height: 1.6;
-}
+                localStorage.setItem('theme', 'dark');
+ 
 
-@media (max-width: 600px) {
-    .hero-section h1 {
-        font-size: 2.2rem;
+            } else {
+ 
+
+                body.classList.add('light-mode');
+ 
+
+                toggle.classList.add('active');
+ 
+
+                localStorage.setItem('theme', 'light');
+ 
+
+            }
+ 
+
+        }
+ 
+
+
+ 
+
+        window.onload = function () {
+ 
+
+            const toggle = document.querySelector('.toggle-switch');
+ 
+
+            if (localStorage.getItem('theme') === 'light') {
+ 
+
+                document.body.classList.add('light-mode');
+ 
+
+                toggle.classList.add('active');
+ 
+
+            }
+ 
+
+        }
+ 
+
+    </script>
+ 
+</head>
+ 
+<body>
+ 
+
+  <nav class="nav-container">
+ 
+
+    <div class="nav-links">
+ 
+
+      <a href="index.html">Home</a>
+ 
+
+      <a href="about.html">About</a>
+ 
+
+      <a href="portfolio.html">Portfolio</a>
+ 
+
+      <a href="resources.html">Resources</a>
+ 
+
+    </div>
+ 
+
+    <div class="nav-buttons">
+ 
+
+      <div class="toggle-container">
+ 
+
+        <div class="toggle-switch" onclick="toggleTheme()">
+ 
+
+          <div class="switch-thumb"></div>
+ 
+
+    <nav class="nav-container">
+ 
+
+        <div class="nav-links">
+ 
+
+            <a href="index.html">Home</a>
+ 
+
+            <a href="about.html">About</a>
+ 
+
+            <a href="portfolio.html">Portfolio</a>
+ 
+
+            <a href="resources.html">Resources</a>
+ 
+        </div>
+ 
+
+        <span>Dark Mode</span>
+ 
+
+      </div>
+ 
+
+      <a href="mailto:cb@reqs.tech" class="email-button">Contact Me</a>
+ 
+
+    </div>
+ 
+
+  </nav>
+ 
+
+
+ 
+
+  <main>
+ 
+
+    <div class="hero-section">
+ 
+
+      <h1>reqs.tech</h1>
+ 
+
+      <p>a workaround is not a solution</p>
+ 
+
+    </div>
+ 
+
+  </main>
+ 
+
+        <div class="nav-buttons">
+ 
+
+            <div class="toggle-container">
+ 
+
+                <div class="toggle-switch" onclick="toggleTheme()">
+ 
+
+                    <div class="switch-thumb"></div>
+ 
+
+                </div>
+ 
+
+                <span>Dark Mode</span>
+ 
+
+            </div>
+ 
+
+            <a href="mailto:cb@reqs.tech" class="email-button">Contact Me</a>
+ 
+
+        </div>
+ 
+
+    </nav>
+ 
+
+ 
+
+  <script>
+ 
+
+    // Basic dark mode toggle (we'll refine this with CSS next)
+ 
+
+    function toggleTheme() {
+ 
+
+      const body = document.body;
+ 
+
+      const toggle = document.querySelector('.toggle-switch');
+ 
+
+      body.classList.toggle('light-mode');
+ 
+
+      toggle.classList.toggle('active');
+ 
+
     }
-    .hero-section p,
-    .intro p {
-        font-size: 1rem;
-    }
-}
+ 
+
+  </script>
+ 
+
+    <main>
+ 
+
+        <div class="hero-section">
+ 
+
+            <h1>reqs.tech</h1>
+ 
+
+            <p>a workaround is not a solution</p>
+ 
+
+            <div class="intro">
+ 
+
+                <p>reqs.tech blends creative ingenuity with technical precision. Explore projects, ideas, and resources built for boundary-breaking problem solving.</p>
+ 
+
+            </div>
+ 
+
+        </div>
+ 
+
+    </main>
+ 
+</body>
+ 
+</html>
