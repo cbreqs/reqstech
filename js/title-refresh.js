@@ -9,8 +9,8 @@ const titles = [
     "Technical Solutions",
     "Creative Solutions",
     "Technically Creative",
-    "Creatively Technical"
-    "Ingenious Solutions"
+    "Creatively Technical",
+    "Ingenious Solutions",
 ];
 
 function getRandomTitle() {
