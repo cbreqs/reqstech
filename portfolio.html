@@ -1,45 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>reqs.tech | Building Solutions</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | reqs.tech</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="js/title-refresh.js" defer></script>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const toggle = document.querySelector('.toggle-switch');
+            const active = 'active';
+            const light = 'light-mode';
+
+            if (body.classList.contains(light)) {
+                body.classList.remove(light);
+                toggle.classList.remove(active);
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.add(light);
+                toggle.classList.add(active);
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = () => {
+            const toggle = document.querySelector('.toggle-switch');
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+                toggle.classList.add('active');
+            }
+        };
+    </script>
 </head>
-  <button id="refreshTitle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; background-color: #B33A3A; color: white; border: none; border-radius: 5px; cursor: pointer;">
-    Refresh Title
-</button>
 <body>
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="resources.html">Resources</a>
+        </div>
+        <div class="nav-buttons">
+            <div class="toggle-container">
+                <div class="toggle-switch" onclick="toggleTheme()">
+                    <div class="switch-thumb"></div>
+                </div>
+                <span>Dark Mode</span>
+            </div>
+            <a href="mailto:cb@reqs.tech" class="email-button">Contact Me</a>
+        </div>
+    </nav>
 
+    <main>
+        <div class="hero-section">
+            <h1>Portfolio</h1>
+            <p>A curated collection of my creative and technical projects.</p>
+        </div>
 
+        <section class="intro">
+            <p>Each project is built with precision, passion, and a healthy dose of nerdy joy. Whether it's a workaround that evolved into a full solution, or a technical challenge that demanded a creative angle, this is where they live.</p>
+        </section>
 
-
-
-  <script>
-    // Light/Dark Mode Toggle
-    const toggleButton = document.getElementById('toggle-mode');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-    });
-
-    // Tab Title Rotator
-    const titles = [
-      "reqs.tech | Technically Creative",
-      "reqs.tech | Creatively Technical",
-      "reqs.tech | Building Solutions",
-      "reqs.tech | Building Ingenuity",
-      "reqs.tech | Technical Ingenuity"
-    ];
-    let titleIndex = 0;
-
-    function rotateTitle() {
-      document.title = titles[titleIndex];
-      titleIndex = (titleIndex + 1) % titles.length;
-    }
-
-    setInterval(rotateTitle, 4000); // Smoother rotation every 4 seconds
-  </script>
-  <script src="js/title-refresh.js" defer></script>
+        <!-- Portfolio project previews could go here in the future -->
+        <!-- For example:
+        <section class="project-gallery">
+            <div class="project-card">
+                <h2>Structural Revit Add-in</h2>
+                <p>A custom Dynamo + Python solution for repetitive detailing tasks.</p>
+            </div>
+            ...
+        </section>
+        -->
+    </main>
 </body>
 </html>
