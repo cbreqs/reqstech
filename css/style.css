@@ -54,6 +54,14 @@ nav {
     transform: scale(1.1);
 }
 
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
 .toggle-container {
     display: flex;
     align-items: center;
