@@ -141,6 +141,19 @@ nav {
     margin-bottom: 30px;
 }
 
+.main-motto {
+    font-family: 'Playfair Display', serif;
+    font-size: 48pt;
+    font-weight: bold;
+    color: var(--highlight);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+body.light-mode .main-motto {
+    color: var(--text-dark);
+}
+
 .intro p {
     font-family: 'Playfair Display', serif;
     font-size: 16pt;
