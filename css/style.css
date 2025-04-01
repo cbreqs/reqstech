@@ -6,7 +6,7 @@
     --cloudlight-blue: #A5C1E1;
     --coral-ember: #E07A5F;
     --icy-teal: #3F8DA8;
-    --light-text: #F0F0F0;
+    --light-text: #FFFFFF;
     --dark-text: #2E2E2E; /* Updated to charcoal */
     --bg-color: var(--midnight-navy);
     --text-color: var(--light-text);
@@ -31,6 +31,38 @@ body {
     overflow-x: hidden;
     transition: background-color 0.5s, color 0.5s;
     scroll-behavior: smooth;
+}
+
+/* Toggle Switch */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--storm-blue-gray);
+    color: var(--light-text);
+    border: none;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.theme-toggle:hover {
+    background-color: var(--icy-teal);
+    transform: translateY(-2px);
+}
+
+.theme-toggle .icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+body.light-mode .theme-toggle .icon {
+    transform: rotate(180deg);
 }
 
 /* Container */
