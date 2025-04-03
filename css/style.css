@@ -1,32 +1,66 @@
-<script>
-  // Light/Dark Toggle
-  const toggle = document.getElementById('toggle-theme');
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-  });
+/* Clean, minimal styling for reqs.tech landing page */
 
-  // Rotating Tab Title
-  const titles = [
-    "reqs.tech | Technically Creative",
-    "reqs.tech | Creatively Technical",
-    "reqs.tech | Engineering Creativity",
-    "reqs.tech | BIM Solutions",
-    "reqs.tech | Technical Ingenuity",
-    "reqs.tech | Creative BIM",
-    "reqs.tech | BIM Ingenuity",
-    "reqs.tech | Building BIM",
-    "reqs.tech | Building Creativity",
-    "reqs.tech | Creative Building",
-    "reqs.tech | Building BIM",
-  ];
+:root {
+  --bg-dark: #1D2233;
+  --bg-light: #F4F4F4;
+  --text-light: #FFFFFF;
+  --text-dark: #2E2E2E;
+  --accent: #A5C1E1;
+}
 
-  let titleIndex = 0;
-  function rotateTitle() {
-    document.title = titles[titleIndex];
-    titleIndex = (titleIndex + 1) % titles.length;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Red Hat Display', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
 
-  setInterval(rotateTitle, 4000);
-</script>
+body.light-mode {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
 
-<link rel="stylesheet" href="css/style.css" />
+header {
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
+
+main {
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-style: italic;
+  margin: 0;
+}
