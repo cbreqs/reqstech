@@ -3,84 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>reqs.tech | Building Solutions</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+  <title>reqs.tech | a workaround is not a solution</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <div class="container">
-      <h1 class="small-title">reqs.tech</h1>
-      <p id="tagline" class="large-motto">a workaround is not a solution</p>
-    </div>
+    <button class="email-btn" onclick="location.href='mailto:cb@reqs.tech'">email</button>
+    <button id="toggle-theme" class="theme-toggle">light/dark</button>
   </header>
 
-  <main class="container">
-    <!-- Intro Section -->
-    <section class="intro">
-      <h2>Welcome</h2>
-      <p>BIM solutions for a technically creative world.</p>
-      <a href="#projects" class="cta">View Projects</a>
-      <button id="toggle-mode" class="theme-toggle">
-        <span class="icon">🌓</span> Toggle Theme
-      </button>
-      <a href="mailto:cb@reqs.tech" class="cta">Email Me</a>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <h2>Projects</h2>
-      <div class="project-list">
-        <div class="project">
-          <h3>Project One</h3>
-          <p>A description of Project One.</p>
-        </div>
-        <div class="project">
-          <h3>Project Two</h3>
-          <p>A description of Project Two.</p>
-        </div>
-        <div class="project">
-          <h3>Project Three</h3>
-          <p>A description of Project Three.</p>
-        </div>
-      </div>
-    </section>
+  <main>
+    <h1 class="motto">a workaround is not a solution</h1>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 reqs.tech</p>
-    </div>
-  </footer>
-
   <script>
-    // Light/Dark Mode Toggle
-    const toggleButton = document.getElementById('toggle-mode');
-    toggleButton.addEventListener('click', () => {
+    const toggle = document.getElementById('toggle-theme');
+    toggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
     });
-
-    // Tab Title Rotator
-    const titles = [
-      "reqs.tech | Technically Creative",
-      "reqs.tech | Creatively Technical",
-      "reqs.tech | Creative Engineering",
-      "reqs.tech | BIM Solutions",
-      "reqs.tech | Technical Ingenuity",
-      "reqs.tech | Creative BIM",
-      "reqs.tech | BIM Ingenuity",
-      "reqs.tech | Building BIM",
-    ];
-    let titleIndex = 0;
-
-    function rotateTitle() {
-      document.title = titles[titleIndex];
-      titleIndex = (titleIndex + 1) % titles.length;
-    }
-
-    setInterval(rotateTitle, 4000); // Smoother rotation every 4 seconds
   </script>
-
 </body>
 </html>
