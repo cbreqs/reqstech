@@ -29,5 +29,38 @@
       document.body.classList.toggle('light-mode');
     });
   </script>
+  <script>
+  // Light/Dark Toggle
+  const toggle = document.getElementById('toggle-theme');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+  });
+
+  // Rotating Tab Title
+  const titles = [
+    "reqs.tech | Technically Creative",
+    "reqs.tech | Creatively Technical",
+    "reqs.tech | Engineering Creativity",
+    "reqs.tech | BIM Solutions",
+    "reqs.tech | Technical Ingenuity",
+    "reqs.tech | Creative BIM",
+    "reqs.tech | BIM Ingenuity",
+    "reqs.tech | Building BIM",
+    "reqs.tech | Building Creativity",
+    "reqs.tech | Creative Building",
+    "reqs.tech | Building BIM",
+  ];
+
+  let titleIndex = 0;
+  function rotateTitle() {
+    document.title = titles[titleIndex];
+    titleIndex = (titleIndex + 1) % titles.length;
+  }
+
+  setInterval(rotateTitle, 4000);
+</script>
+
+<link rel="stylesheet" href="css/style.css" />
+
 </body>
 </html>
