@@ -1,75 +1,32 @@
-/* Variables */
-:root {
-  --midnight-navy: #1D2233;
-  --urban-purple: #4A4455;
-  --cloudlight-blue: #A5C1E1;
-  --coral-ember: #E07A5F;
+<script>
+  // Light/Dark Toggle
+  const toggle = document.getElementById('toggle-theme');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+  });
 
-  --text-dark: #2E2E2E;
-  --text-light: #FFFFFF;
+  // Rotating Tab Title
+  const titles = [
+    "reqs.tech | Technically Creative",
+    "reqs.tech | Creatively Technical",
+    "reqs.tech | Engineering Creativity",
+    "reqs.tech | BIM Solutions",
+    "reqs.tech | Technical Ingenuity",
+    "reqs.tech | Creative BIM",
+    "reqs.tech | BIM Ingenuity",
+    "reqs.tech | Building BIM",
+    "reqs.tech | Building Creativity",
+    "reqs.tech | Creative Building",
+    "reqs.tech | Building BIM",
+  ];
 
-  --bg-color: var(--midnight-navy);
-  --text-color: var(--cloudlight-blue);
-}
+  let titleIndex = 0;
+  function rotateTitle() {
+    document.title = titles[titleIndex];
+    titleIndex = (titleIndex + 1) % titles.length;
+  }
 
-/* Light mode overrides */
-body.light-mode {
-  --bg-color: #F4F4F4;
-  --text-color: var(--urban-purple);
-}
+  setInterval(rotateTitle, 4000);
+</script>
 
-/* Base Styles */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Red Hat Display', sans-serif;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-/* Header Buttons */
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px;
-}
-
-.email-btn,
-.theme-toggle {
-  background: transparent;
-  color: var(--text-color);
-  border: 1px solid var(--text-color);
-  font-family: 'Red Hat Display', sans-serif;
-  font-size: 0.85rem;
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.email-btn:hover,
-.theme-toggle:hover {
-  background-color: var(--cloudlight-blue);
-  color: var(--midnight-navy);
-  border-color: var(--cloudlight-blue);
-}
-
-/* Main Text */
-main {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.motto {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  font-style: italic;
-  margin: 0;
-  padding: 20px;
-}
+<link rel="stylesheet" href="css/style.css" />
