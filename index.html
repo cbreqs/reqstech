@@ -24,7 +24,7 @@
       document.body.classList.toggle('light-mode');
     });
 
-    // Rotating Tab Title (randomized starting point)
+    // Rotating Tab Title (randomized start)
     const titles = [
       "reqs.tech | Technically Creative",
       "reqs.tech | Creatively Technical",
@@ -36,7 +36,7 @@
       "reqs.tech | Building BIM",
       "reqs.tech | Building Creativity",
       "reqs.tech | Creative Building",
-      "reqs.tech | Building BIM"
+      "reqs.tech | Building BIM",
     ];
 
     let titleIndex = Math.floor(Math.random() * titles.length);
@@ -45,7 +45,7 @@
       titleIndex = (titleIndex + 1) % titles.length;
     }
 
-    rotateTitle(); // show one immediately
+    rotateTitle();
     setInterval(rotateTitle, 4000);
   </script>
 </body>
