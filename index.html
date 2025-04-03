@@ -24,7 +24,7 @@
       document.body.classList.toggle('light-mode');
     });
 
-    // Rotating Tab Title (randomized start)
+    // Rotating Tab Title (fully randomized)
     const titles = [
       "reqs.tech | Technically Creative",
       "reqs.tech | Creatively Technical",
@@ -36,13 +36,12 @@
       "reqs.tech | Building BIM",
       "reqs.tech | Building Creativity",
       "reqs.tech | Creative Building",
-      "reqs.tech | Building BIM",
+      "reqs.tech | Building BIM"
     ];
 
-    let titleIndex = Math.floor(Math.random() * titles.length);
     function rotateTitle() {
-      document.title = titles[titleIndex];
-      titleIndex = (titleIndex + 1) % titles.length;
+      const randomIndex = Math.floor(Math.random() * titles.length);
+      document.title = titles[randomIndex];
     }
 
     rotateTitle();
