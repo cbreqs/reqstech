@@ -8,8 +8,9 @@ document.addEventListener('keydown', (e) => {
       rerollButton.textContent = "civil options";
       rerollButton.className = "civil-btn";
 
+      // Redirect to civil.html when clicked
       rerollButton.addEventListener('click', () => {
-        alert("Civil options clicked!");
+        window.location.href = 'civil.html'; // This will redirect to civil.html
       });
 
       container.appendChild(rerollButton);
