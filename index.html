@@ -13,15 +13,20 @@
     <button onclick="location.href='mailto:cb@reqs.tech'">email</button>
     <button id="toggle-theme">light/dark</button>
   </header>
-
   <main>
     <h1>a workaround is not a solution</h1>
   </main>
-
-  <footer style="position: fixed; bottom: 1rem; left: 1rem; font-family: 'Red Hat Display', sans-serif; font-size: 0.9rem;">
-    <a href="about.html" style="color: var(--text-color, #ccc); text-decoration: none;">about</a>
+  <footer class="page-nav about-nav">
+    <div class="nav-left">
+      <button onclick="location.href='index.html'">Home</button>
+    </div>
+    <div class="nav-center">
+      <button onclick="location.href='civil.html'">?</button>
+    </div>
+    <div class="nav-right">
+      <button onclick="location.href='projects.html'">Projects</button>
+    </div>
   </footer>
-
   <script>
     // Light/Dark Toggle
     const toggle = document.getElementById('toggle-theme');
