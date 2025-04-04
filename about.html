@@ -1,66 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About | reqs.tech</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <script src="js/title-refresh.js" defer></script>
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const toggle = document.querySelector('.toggle-switch');
-            const active = 'active';
-            const light = 'light-mode';
-
-            if (body.classList.contains(light)) {
-                body.classList.remove(light);
-                toggle.classList.remove(active);
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.add(light);
-                toggle.classList.add(active);
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        window.onload = () => {
-            const toggle = document.querySelector('.toggle-switch');
-            if (localStorage.getItem('theme') === 'light') {
-                document.body.classList.add('light-mode');
-                toggle.classList.add('active');
-            }
-        };
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – reqs.tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <nav class="nav-container">
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="resources.html">Resources</a>
-        </div>
-        <div class="nav-buttons">
-            <div class="toggle-container">
-                <div class="toggle-switch" onclick="toggleTheme()">
-                    <div class="switch-thumb"></div>
-                </div>
-                <span>Dark Mode</span>
-            </div>
-            <a href="mailto:cb@reqs.tech" class="email-button">Contact Me</a>
-        </div>
-    </nav>
+  <main>
+    <h1>About REQS(dot)TECH</h1>
+    <p>
+      REQS.tech is the digital workshop of a creatively technical mind.  
+      It’s where ideas get built, broken, tested, versioned, scrapped, and rebuilt better.  
+      This isn’t a portfolio — it’s a proof-of-concept for the brain behind the build.
+    </p>
 
-    <main>
-        <div class="hero-section">
-            <h1>About</h1>
-            <p>Technically creative. Creatively technical. Probably not your soulmate.</p>
-        </div>
+    <p>
+      You’ll find experimental code, mildly unhinged documentation,  
+      weirdly effective workflows, and the occasional beautiful workaround.  
+      Because here, “a workaround is not a solution” — but it might just lead to one.
+    </p>
 
-        <section class="intro">
-            <p>reqs.tech</p>
-        </section>
-    </main>
+    <p>
+      Built with wielded chaos, fierce curiosity, and an ongoing obsession with making things that don’t just work — they resonate.
+    </p>
+  </main>
 </body>
 </html>
