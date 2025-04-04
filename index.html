@@ -40,12 +40,44 @@
     ];
 
     function rotateTitle() {
-      const randomIndex = Math.floor(Math.random() * titles.length);
-      document.title = titles[randomIndex];
-    }
+      // Rotate once on load
+rotateTitle();
 
-    rotateTitle();
-    setInterval(rotateTitle, 4000);
-  </script>
-</body>
-</html>
+// DevMode Toggle: Press Shift+R to show/hide the "new vibe" button
+let rerollButton;
+
+document.addEventListener('keydown', (e) => {
+  if (e.shiftKey && e.key.toLowerCase() === 'r') {
+    if (!rerollButton) {
+      rerollButton = document.createElement('button');
+      rerollButton.textContent = "new vibe";
+
+      Object.assign(rerollButton.style, {
+        position: "fixed",
+        bottom: "1rem",
+        right: "1rem",
+        zIndex: "1000",
+        padding: "0.5rem 1rem",
+        fontFamily: "'Red Hat Display', sans-serif",
+        fontSize: "0.9rem",
+        backgroundColor: "transparent",
+        border: "1px solid var(--text-color, #ccc)",
+        color: "var(--text-color, #ccc)",
+        borderRadius: "0.5rem",
+        cursor: "pointer",
+        opacity: "0.6",
+        transition: "opacity 0.3s ease",
+        backdropFilter: "blur(4px)"
+      });
+
+      rerollButton.addEventListener("mouseover", () => rerollButton.style.opacity = "1");
+      rerollButton.addEventListener("mouseout", () => rerollButton.style.opacity = "0.6");
+
+      rerollButton.addEventListener('click', rotateTitle);
+
+      document.body.appendChild(rerollButton);
+    } else {
+      rerollButton.style.display = rerollButton.style.display === "none" ? "block" : "none";
+    }
+  }
+});
