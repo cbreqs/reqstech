@@ -3,60 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>reqs.tech</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <title>reqs.tech | Building Solutions</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/absolutely-nothing.js" defer></script> <!-- Ensure the JS file is correctly linked -->
 </head>
 <body>
   <header>
     <button onclick="location.href='mailto:cb@reqs.tech'">email</button>
     <button id="toggle-theme">light/dark</button>
   </header>
-
   <main>
-    <h1>a workaround is not a solution</h1>
+    <h1>a workaround is not a solution</h1> <!-- Motto text -->
   </main>
-
-  <footer class="page-nav">
+  <footer>
     <div class="nav-left">
       <button onclick="location.href='about.html'">About</button>
     </div>
     <div class="nav-center">
-      <!-- Blank space where the civil button will appear after Shift+R -->
+      <!-- Civil Button will appear on Shift+R, other buttons will be here -->
     </div>
     <div class="nav-right">
       <button onclick="location.href='projects.html'">Projects</button>
     </div>
   </footer>
-    <script>
-      let rerollButton;
-      let container = document.getElementById("civil-slot");
-      let currentPage = window.location.pathname;
-    
-      document.addEventListener('keydown', (e) => {
-        if (e.shiftKey && e.key.toLowerCase() === 'r') {
-          // Only show the Civil button if we're not on the homepage
-          if (!rerollButton && currentPage !== '/index.html') {
-            rerollButton = document.createElement('button');
-            rerollButton.textContent = "civil options";
-            rerollButton.className = "civil-btn";
-            
-            // When clicked, redirect to civil.html
-            rerollButton.addEventListener('click', () => {
-              window.location.href = 'civil.html'; // Redirect to civil.html
-            });
-    
-            container.appendChild(rerollButton);
-          } else if (currentPage === '/index.html') {
-            rerollButton.style.display = "none"; // Hide the button on the homepage
-          } else {
-            rerollButton.style.display = rerollButton.style.display === "none" ? "block" : "none"; // Toggle button visibility
-      }
-    }
-  });
-</script>
 
-    <script src="js/absolutely-nothing.js" defer></script>
-  </body>
+  <script>
+    let rerollButton;
+    let container = document.getElementById("civil-slot");
+    let currentPage = window.location.pathname;
+
+    document.addEventListener('keydown', (e) => {
+      // Check for Shift+R key combination
+      if (e.shiftKey && e.key.toLowerCase() === 'r') {
+        if (!rerollButton && currentPage !== '/index.html') {
+          rerollButton = document.createElement('button');
+          rerollButton.textContent = "civil options";
+          rerollButton.className = "civil-btn";
+
+          // When clicked, redirect to civil.html
+          rerollButton.addEventListener('click', () => {
+            window.location.href = 'civil.html'; // Redirect to civil.html
+          });
+
+          container.appendChild(rerollButton);
+        } else if (rerollButton) {
+          rerollButton.style.display = rerollButton.style.display === "none" ? "block" : "none"; // Toggle visibility
+        }
+      }
+
+      // Hide button on homepage
+      if (currentPage === '/index.html') {
+        if (rerollButton) {
+          rerollButton.style.display = "none"; // Hide button on homepage
+        }
+      }
+    });
+  </script>
+</body>
 </html>
