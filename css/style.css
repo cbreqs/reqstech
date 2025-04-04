@@ -1,1 +1,144 @@
+:root {
+  --bg-dark: #1D2233;
+  --bg-light: #F4F4F4;
+  --text-light: #BFD9C8;
+  --text-dark: #2E2E2E;
+  --accent: #A5C1E1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Red Hat Display', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.light-mode {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+header {
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
+
+main {
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-style: italic;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+h1 span {
+  display: inline-block;
+  margin: 0 0.15rem;
+}
+
+h1 span:nth-child(2), /* REQS */
+h1 span:nth-child(4)  /* TECH */ {
+  font-weight: 700;
+}
+
+h1 span:nth-child(3) /* (dot) */ {
+  font-weight: 400;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+.content-frame {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding: 2rem;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.light-mode .content-frame {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.page-nav {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.page-nav button {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-nav button:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
+
+.civil-btn {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.civil-btn:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
 
