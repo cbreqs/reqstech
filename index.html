@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>reqs.tech | Building Solutions</title>
+  <title>reqs.tech</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -14,14 +16,12 @@
 
   <main>
     <h1>a workaround is not a solution</h1>
-    <div class="content-frame">
-      <h2>Project Management Options</h2>
-      <p>Here's an example text to explain the content of the page. The content should be inside this framed box.</p>
-    </div>
   </main>
 
   <footer class="page-nav">
-    <div class="nav-left" id="civil-slot"></div>
+    <div class="nav-left">
+      <button onclick="location.href='about.html'">About</button>
+    </div>
     <div class="nav-center">
       <button onclick="location.href='index.html'">Home</button>
     </div>
@@ -29,31 +29,28 @@
       <button onclick="location.href='projects.html'">Projects</button>
     </div>
   </footer>
-    <script>
-      let rerollButton;
-      let container = document.getElementById("civil-slot");
-      let currentPage = window.location.pathname;
-    
-      document.addEventListener('keydown', (e) => {
-        if (e.shiftKey && e.key.toLowerCase() === 'r') {
-          if (!rerollButton && currentPage !== '/index.html') { // Only show if NOT on homepage
-            rerollButton = document.createElement('button');
-            rerollButton.textContent = "civil options";
-            rerollButton.className = "civil-btn";
-    
-            // Redirect to civil.html when clicked
-            rerollButton.addEventListener('click', () => {
-              window.location.href = 'civil.html'; // Redirect to civil.html
-            });
-              container.appendChild(rerollButton);
-            } else if (currentPage === '/index.html') {
-              rerollButton.style.display = "none"; // Hide the button on homepage
-            } else {
-              rerollButton.style.display = rerollButton.style.display === "none" ? "block" : "none";
-            }
-          }
-       });
-    </script> 
-  <script src="js/absolutely-nothing.js" defer></script> 
+
+  <script src="js/absolutely-nothing.js" defer></script>
+  <script>
+    let rerollButton;
+    let container = document.getElementById("easter-egg-slot");
+    let currentPage = window.location.pathname;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.shiftKey && e.key.toLowerCase() === 'r') {
+        if (!rerollButton && currentPage !== '/index.html') {
+          rerollButton = document.createElement('button');
+          rerollButton.textContent = "civil options";
+          rerollButton.className = "civil-btn";
+          rerollButton.addEventListener('click', () => {
+            window.location.href = 'civil.html'; // Redirect to civil.html
+          });
+          container.appendChild(rerollButton);
+        } else {
+          rerollButton.style.display = rerollButton.style.display === "none" ? "block" : "none";
+        }
+      }
+    });
+  </script>
 </body>
 </html>
