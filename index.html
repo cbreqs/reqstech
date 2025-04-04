@@ -29,28 +29,34 @@
       <button onclick="location.href='projects.html'">Projects</button>
     </div>
   </footer>
-
-  <script src="js/absolutely-nothing.js" defer></script>
-  <script>
-    let rerollButton;
-    let container = document.getElementById("civil-slot");
-    let currentPage = window.location.pathname;
-
-    document.addEventListener('keydown', (e) => {
-      if (e.shiftKey && e.key.toLowerCase() === 'r') {
-        if (!rerollButton && currentPage !== '/index.html') {
-          rerollButton = document.createElement('button');
-          rerollButton.textContent = "civil options";
-          rerollButton.className = "civil-btn";
-          rerollButton.addEventListener('click', () => {
-            window.location.href = 'civil.html'; // Redirect to civil.html
-          });
-          container.appendChild(rerollButton);
-        } else {
-          rerollButton.style.display = rerollButton.style.display === "none" ? "block" : "none";
-        }
+    <script>
+      let rerollButton;
+      let container = document.getElementById("civil-slot");
+      let currentPage = window.location.pathname;
+    
+      document.addEventListener('keydown', (e) => {
+        if (e.shiftKey && e.key.toLowerCase() === 'r') {
+          // Only show the Civil button if we're not on the homepage
+          if (!rerollButton && currentPage !== '/index.html') {
+            rerollButton = document.createElement('button');
+            rerollButton.textContent = "civil options";
+            rerollButton.className = "civil-btn";
+            
+            // When clicked, redirect to civil.html
+            rerollButton.addEventListener('click', () => {
+              window.location.href = 'civil.html'; // Redirect to civil.html
+            });
+    
+            container.appendChild(rerollButton);
+          } else if (currentPage === '/index.html') {
+            rerollButton.style.display = "none"; // Hide the button on the homepage
+          } else {
+            rerollButton.style.display = rerollButton.style.display === "none" ? "block" : "none"; // Toggle button visibility
       }
-    });
-  </script>
-</body>
+    }
+  });
+</script>
+
+    <script src="js/absolutely-nothing.js" defer></script>
+  </body>
 </html>
