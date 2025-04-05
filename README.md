@@ -12,6 +12,6 @@
      (_) (_)
 ```
 
-🥣 Powered by green things, weird energy, and terminal-based rituals.  
+🥣 Powered by cute things, weird energy, and terminal-based rituals.  
 💻 Deployed with flavor by [reqstech](https://github.com/cbreqs/reqstech).  
 💚 Stay saucy.
