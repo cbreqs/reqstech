@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | REQS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-bar">
+    <a href="mailto:courtney.hays@reqs.tech">email</a>
+    <a href="#" onclick="document.body.classList.toggle('light-mode')">light / dark</a>
+  </div>
+
+  <div class="container">
+    <h1>Projects</h1>
+
+    <div class="project">
+      <h2>Business Card Case Study</h2>
+      <p>
+        A minimalist, modular identity system built from color, font, and layout exploration. This case study walks through the iterations of reqs.tech’s business card design and how each element was refined to communicate both technical clarity and creative spark.
+      </p>
+      <p><a href="business-card.html">view case study →</a></p>
+    </div>
+
+    <div class="project">
+      <h2>Microsoft 365 & SharePoint Environment</h2>
+      <p>
+        This evolving project involves building a streamlined, sustainable internal platform using Microsoft 365 tools—including SharePoint, Teams, and Planner—for a more flexible and collaborative work environment.
+      </p>
+      <p><a href="#">view details →</a></p>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <a href="about.html">about</a>
+    <a href="index.html">home</a>
+    <a href="projects.html" style="color: var(--bg-dark); border-color: var(--bg-dark);">projects</a>
+  </div>
+
+  <script>
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (prefersLight) {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+</body>
+</html>
