@@ -122,12 +122,17 @@ a:hover {
   border-color: var(--accent-light);
 }
 
-/* Disappear current page link in light mode */
-.light-mode a[href$="about.html"],
-.light-mode a[href$="projects.html"],
-.light-mode a[href$="index.html"] {
-  color: var(--bg-light);
-  border-color: var(--bg-light);
+/* Disappear current page link in both modes */
+a[href$="about.html"].active,
+a[href$="projects.html"].active,
+a[href$="index.html"].active,
+.light-mode a[href$="about.html"].active,
+.light-mode a[href$="projects.html"].active,
+.light-mode a[href$="index.html"].active {
+  color: inherit;
+  border-color: transparent;
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 @media (max-width: 600px) {
