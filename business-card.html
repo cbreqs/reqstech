@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Card Case Study | REQS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0c0f1a;
+      --text-dark: #a8cbe0;
+      --hover-dark: #ffffff;
+      --bg-light: #f6f4f0;
+      --text-light: #2b3a42;
+      --hover-light: #000000;
+      --container-bg-dark: #1a1e2e;
+      --container-bg-light: #ffffff;
+      --border-dark: #a8cbe0;
+      --border-light: #2b3a42;
+      --accent-light: #a8cbe0;
+      --accent-dark: #2b3a42;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Playfair Display', serif;
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .top-bar, .bottom-bar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .bottom-bar {
+      justify-content: space-between;
+    }
+
+    .bottom-bar a:nth-child(1) {
+      margin-left: 1rem;
+    }
+
+    .bottom-bar a:nth-child(2) {
+      margin: 0 auto;
+    }
+
+    .bottom-bar a:nth-child(3) {
+      margin-right: 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: var(--container-bg-dark);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-dark);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid currentColor;
+      border-radius: 6px;
+      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    a:hover {
+      background-color: var(--accent-light);
+      color: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+
+    .light-mode {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    .light-mode .container {
+      background-color: var(--container-bg-light);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--border-light);
+    }
+
+    .light-mode a:hover {
+      background-color: var(--accent-dark);
+      color: var(--accent-light);
+      border-color: var(--accent-light);
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="mailto:courtney.hays@reqs.tech">email</a>
+    <a href="#" onclick="document.body.classList.toggle('light-mode')">light / dark</a>
+  </div>
+
+  <div class="container">
+    <h1>Business Card Case Study</h1>
+    <p>
+      This case study walks through the creation and refinement of the REQS.TECH business card—beginning with layout experiments, visual hierarchy, and branding goals.
+    </p>
+
+    <h2>Design Intent</h2>
+    <p>
+      The core idea was to balance professional clarity with personality. Typography choices, spacing, and color modes all reflect the brand's values: technical creativity, adaptability, and structured problem-solving.
+    </p>
+
+    <h2>Layout Iterations</h2>
+    <p>
+      Multiple versions were developed and tested for both the front and back, ensuring cohesion with the site's visual identity. The final layout subtly communicates purpose through shape, flow, and restraint.
+    </p>
+  </div>
+
+  <div class="bottom-bar">
+    <a href="about.html">about</a>
+    <a href="index.html">home</a>
+    <a href="projects.html" style="color: var(--bg-dark); border-color: var(--bg-dark);">projects</a>
+  </div>
+
+  <script>
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (prefersLight) {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+</body>
+</html>
