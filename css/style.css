@@ -164,13 +164,6 @@ a[href$="index.html"].active,
     font-size: 0.95rem;
     padding: 0.4rem 0.8rem;
   }
-  }
-  .home-quote {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 2rem;
-    text-align: center;
-  }
     .light-mode .card-image {
     border: 1px solid var(--border-light);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -182,25 +175,23 @@ a[href$="index.html"].active,
     text-align: center;
     margin: 2rem 0;
   }
-  
-  .card-image {
-    max-width: 100%;
+    .card-image {
+    width: 50%;
     height: auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--border-dark);
   }
     .caption {
-      font-style: italic;
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-    }
-     .card-image {
-      width: 50%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }.center-quote {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: var(--text-dark);
+  }  
+    .center-quote {
       display: flex;
       justify-content: center;
       align-items: center;
