@@ -129,10 +129,7 @@ a[href$="index.html"].active,
 .light-mode a[href$="about.html"].active,
 .light-mode a[href$="projects.html"].active,
 .light-mode a[href$="index.html"].active {
-  color: inherit;
-  border-color: transparent;
-  opacity: 0.25;
-  pointer-events: none;
+  display: none;
 }
 
 @media (max-width: 600px) {
