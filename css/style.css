@@ -161,3 +161,9 @@ a[href$="index.html"].active,
     padding: 0.4rem 0.8rem;
   }
 }
+.home-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2rem;
+  text-align: center;
+}
