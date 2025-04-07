@@ -50,7 +50,21 @@ body {
   .bottom-bar a:nth-child(1) { margin-left: 1rem; }
   .bottom-bar a:nth-child(2) { margin: 0 auto; }
   .bottom-bar a:nth-child(3) { margin-right: 1rem; }
-
+}
+  .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg-dark); /* helps prevent overlap look */
+    z-index: 1000;
+}
   .container {
   max-width: 900px;
   margin: 1.5rem auto;
@@ -59,6 +73,11 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--border-dark);
+    .container {
+  /* existing stuff... */
+  padding-bottom: 6rem; /* give the bottom bar some breathing room */
+}
+
 
   /* New additions to fix layout spacing */
   display: flex;
