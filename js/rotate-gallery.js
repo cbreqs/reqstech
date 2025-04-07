@@ -42,3 +42,43 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial image
   showImage(currentIndex);
 });
+  // DASH Variant
+
+const dashImage = document.getElementById("dash-rotate");
+if (dashImage) {
+  const dashVariants = [
+    "assets/dash-pearl.png",
+    "assets/dash-silver.png",
+    "assets/dash-navy.png",
+    "assets/dash-black.png"
+  ];
+
+  let dashIndex = 0;
+  let dashInterval = setInterval(nextDash, 2500);
+
+  function showDash(index) {
+    dashImage.src = dashVariants[index];
+  }
+
+  function nextDash() {
+    dashIndex = (dashIndex + 1) % dashVariants.length;
+    showDash(dashIndex);
+  }
+
+  function prevDash() {
+    dashIndex = (dashIndex - 1 + dashVariants.length) % dashVariants.length;
+    showDash(dashIndex);
+  }
+
+  document.getElementById("next-dash").addEventListener("click", () => {
+    clearInterval(dashInterval);
+    nextDash();
+  });
+
+  document.getElementById("prev-dash").addEventListener("click", () => {
+    clearInterval(dashInterval);
+    prevDash();
+  });
+
+  showDash(dashIndex);
+}
