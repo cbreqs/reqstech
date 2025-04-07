@@ -12,13 +12,13 @@
 <body>
   <div class="top-bar">
     <a href="mailto:courtney.hays@reqs.tech">email</a>
-    <a href="#" onclick="document.body.classList.toggle('light-mode')">light / dark</a>
+    <a href="#" id="toggle-mode">light / dark</a>
   </div>
 
   <div class="container">
     <h1>About reqs.tech</h1>
     <p>
-      The etymology of the word REQS is as mysterious as its creator. Some say it’s short for requirements, others say it hints at requests, requisitions, and all the quirky ways we look for answers. This site is a portfolio and playground for technically creative work—blending structure, personality, and experimentation.
+      The etymology of REQS is as mysterious as its creator. Some say it’s short for requirements, others say it hints at requests, requisitions, and all the quirky ways we look for answers. This site is a portfolio and playground for technically creative work—blending structure, personality, and experimentation.
     </p>
     <p>
       From business card layouts to SharePoint implementations, reqs.tech is where process meets play. It’s where “good enough” becomes “actually, this rules,” and where a workaround is not a solution.
@@ -26,16 +26,12 @@
   </div>
 
   <div class="bottom-bar">
-    <a href="about.html" class="active" style="color: var(--bg-dark); border-color: var(--bg-dark);">about</a>
+    <a href="about.html" class="active">about</a>
     <a href="index.html">home</a>
     <a href="projects.html">projects</a>
   </div>
 
-  <script>
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    if (prefersLight) {
-      document.body.classList.add('light-mode');
-    }
-  </script>
+ <script src="js/light-dark.js"></script>
+
 </body>
 </html>
