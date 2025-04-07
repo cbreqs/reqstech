@@ -73,13 +73,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--border-dark);
-    .container {
-  /* existing stuff... */
-  padding-bottom: 6rem; /* give the bottom bar some breathing room */
+  padding-bottom: 6rem;
 }
-
-
-  /* New additions to fix layout spacing */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
