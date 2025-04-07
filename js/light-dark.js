@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("light-mode");
   }
 
-  const toggleButton = document.querySelector("a[onclick*='toggle']");
+  const toggleButton = document.getElementById("toggle-mode");
   if (toggleButton) {
     toggleButton.addEventListener("click", function (event) {
       event.preventDefault();
