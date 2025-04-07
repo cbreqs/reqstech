@@ -12,7 +12,7 @@
 <body>
   <div class="top-bar">
     <a href="mailto:courtney.hays@reqs.tech">email</a>
-    <a href="#" onclick="document.body.classList.toggle('light-mode')">light / dark</a>
+    <a href="#" id="toggle-mode">light / dark</a>
   </div>
 
   <div class="container" style="text-align: center;">
@@ -27,11 +27,6 @@
     <a href="projects.html">projects</a>
   </div>
 
-  <script>
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    if (prefersLight) {
-      document.body.classList.add('light-mode');
-    }
-  </script>
+  <script src="js/light-dark.js"></script>
 </body>
 </html>
