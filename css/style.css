@@ -223,4 +223,27 @@ a[href$="index.html"].active,
   height: auto;
   display: block;
   margin: 0 auto;
+}.center-quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  text-align: center;
+}
+/* Rename the old .home-quote to something new */
+.homepage-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-light);
+  padding: 1rem;
+}
+
+.center-quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  text-align: center;
 }
