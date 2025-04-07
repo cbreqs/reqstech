@@ -82,3 +82,44 @@ if (dashImage) {
 
   showDash(dashIndex);
 }
+  // QUOTE Variant
+
+const quoteImage = document.getElementById("quote-rotate");
+if (quoteImage) {
+  const quoteVariants = [
+    "assets/quote-pearl.png",
+    "assets/quote-silver.png",
+    "assets/quote-navy.png",
+    "assets/quote-black.png"
+  ];
+
+  let quoteIndex = 0;
+  let quoteInterval = setInterval(nextQuote, 2500);
+
+  function showQuote(index) {
+    quoteImage.src = quoteVariants[index];
+  }
+
+  function nextQuote() {
+    quoteIndex = (quoteIndex + 1) % quoteVariants.length;
+    showQuote(quoteIndex);
+  }
+
+  function prevQuote() {
+    quoteIndex = (quoteIndex - 1 + quoteVariants.length) % quoteVariants.length;
+    showQuote(quoteIndex);
+  }
+
+  document.getElementById("next-quote").addEventListener("click", () => {
+    clearInterval(quoteInterval);
+    nextQuote();
+  });
+
+  document.getElementById("prev-quote").addEventListener("click", () => {
+    clearInterval(quoteInterval);
+    prevQuote();
+  });
+
+  showQuote(quoteIndex);
+}
+
