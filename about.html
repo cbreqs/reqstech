@@ -3,31 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About – reqs.tech</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Red+Hat+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <title>About | REQS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main>
-    <h1>
-      <span style="font-family: 'Playfair Display', serif;">About</span>
-      <span style="font-family: 'Red Hat Display', sans-serif; text-transform: uppercase; font-style: normal;">REQS</span><span style="font-family: 'Red Hat Display', sans-serif; font-style: normal;">(dot)</span><span style="font-family: 'Red Hat Display', sans-serif; text-transform: uppercase; font-style: normal;">TECH</span>
-    </h1>
-    <p>
-      REQS.tech is the digital workshop of a creatively technical mind.  
-      It’s where ideas get built, broken, tested, versioned, scrapped, and rebuilt better.  
-      This isn’t a portfolio — it’s a proof-of-concept for the brain behind the build.
-    </p>
+  <div class="top-bar">
+    <a href="mailto:courtney.hays@reqs.tech">email</a>
+    <a href="#" id="toggle-mode">light / dark</a>
+  </div>
 
+  <div class="container">
+    <h1>About reqs.tech</h1>
     <p>
-      You’ll find experimental code, mildly unhinged documentation,  
-      weirdly effective workflows, and the occasional beautiful workaround.  
-      Because here, “a workaround is not a solution” — but it might just lead to one.
+      The etymology of REQS is as mysterious as its creator. Some say it’s short for requirements, others say it hints at requests, requisitions, and all the quirky ways we look for answers. This site is a portfolio and playground for technically creative work—blending structure, personality, and experimentation.
     </p>
+    <p>
+      From business card layouts to SharePoint implementations, reqs.tech is where process meets play. It’s where “good enough” becomes “actually, this rules,” and where a workaround is not a solution.
+    </p>
+  </div>
 
-    <p>
-      Built with wielded chaos, fierce curiosity, and an ongoing obsession with making things that don’t just work — they resonate.
-    </p>
-  </main>
+  <div class="bottom-bar">
+    <a href="about.html" class="active">about</a>
+    <a href="index.html">home</a>
+    <a href="projects.html">projects</a>
+  </div>
+
+ <script src="js/light-dark.js"></script>
+
 </body>
 </html>
