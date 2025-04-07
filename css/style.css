@@ -188,20 +188,20 @@ a[href$="index.html"].active,
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;  /* replaces min-height */
+    min-height: 60vh;
     text-align: center;
-    padding: 2rem 0; /* optional tweak */
+    padding: 0; /* Optional: adjust if needed */
   }
     .homepage-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-style: italic;
-      font-weight: 400;
-      color: inherit;
-      padding: 1rem;
-    }
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400;
+    color: inherit;
+    margin: 0 auto;
+  }
     .static-page .container {
-      min-height: auto;
+    min-height: auto;
   }
     .home-container {
     display: flex;
