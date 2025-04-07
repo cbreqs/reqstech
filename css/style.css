@@ -195,3 +195,21 @@ a[href$="index.html"].active,
 .light-mode .caption {
   color: var(--text-light);
 }
+  .card-gallery {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border: 1px solid var(--border-dark);
+}
+
+.caption {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
