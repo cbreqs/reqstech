@@ -165,85 +165,76 @@ a[href$="index.html"].active,
     font-size: 0.95rem;
     padding: 0.4rem 0.8rem;
   }
-}
-.home-quote {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 2rem;
-  text-align: center;
-}
-  .card-gallery {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.card-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--border-dark);
-}
-
-.light-mode .card-image {
-  border: 1px solid var(--border-light);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.caption {
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-  color: var(--text-dark);
-}
-
-.light-mode .caption {
-  color: var(--text-light);
-}
-  .card-gallery {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.card-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  border: 1px solid var(--border-dark);
-}
-
-.caption {
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
- .card-image {
-  width: 50%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}.center-quote {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60vh;
-  text-align: center;
-}
-/* Rename the old .home-quote to something new */
-.homepage-quote {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--text-light);
-  padding: 1rem;
-}
-
-.center-quote {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60vh;
-  text-align: center;
-}
+  }
+  .home-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2rem;
+    text-align: center;
+  }
+    .card-gallery {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-dark);
+  }
+  
+  .light-mode .card-image {
+    border: 1px solid var(--border-light);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .caption {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: var(--text-dark);
+  }
+  
+  .light-mode .caption {
+    color: var(--text-light);
+  }
+    .card-gallery {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border: 1px solid var(--border-dark);
+  }
+    .caption {
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+     .card-image {
+      width: 50%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }.center-quote {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60vh;
+      text-align: center;
+    }
+    /* Rename the old .home-quote to something new */
+    .homepage-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 400;
+      color: inherit;
+      padding: 1rem;
+    }
