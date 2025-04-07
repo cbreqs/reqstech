@@ -1,18 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const qrImages = [
+// rotate-gallery.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const qrImage = document.getElementById("qr-rotate");
+
+  const qrVariants = [
     "assets/qr-pearl.png",
     "assets/qr-silver.png",
     "assets/qr-navy.png",
     "assets/qr-black.png"
   ];
 
-  let index = 0;
-  const qrImage = document.getElementById("qr-rotate");
+  let currentIndex = 0;
 
-  if (qrImage) {
-    setInterval(() => {
-      index = (index + 1) % qrImages.length;
-      qrImage.src = qrImages[index];
-    }, 2000); // rotate every 2 seconds
-  }
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % qrVariants.length;
+    qrImage.src = qrVariants[currentIndex];
+  }, 2500); // 2.5 seconds per image
 });
