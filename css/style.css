@@ -204,3 +204,6 @@ a[href$="index.html"].active,
       color: inherit;
       padding: 1rem;
     }
+    .static-page .container {
+      min-height: auto;
+  }
