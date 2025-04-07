@@ -192,13 +192,13 @@ a[href$="index.html"].active,
     color: var(--text-dark);
   }  
     .center-quote {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 60vh;
-      text-align: center;
-    }
-    /* Rename the old .home-quote to something new */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;  /* replaces min-height */
+    text-align: center;
+    padding: 2rem 0; /* optional tweak */
+  }
     .homepage-quote {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
