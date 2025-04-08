@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>REQS | a workaround is not a solution</title>
+  <title id="dynamic-title">reqs.tech</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
@@ -32,6 +32,22 @@
   
     </div> <!-- closes page-wrapper -->
     <script src="js/light-dark.js"></script>
+    <script>
+      const titles = [
+        "reqs.tech | Technically Creative",
+        "reqs.tech | Creatively Technical",
+        "reqs.tech | Engineering Creativity",
+        "reqs.tech | BIM Solutions",
+        "reqs.tech | Technical Ingenuity",
+        "reqs.tech | Creative BIM",
+        "reqs.tech | BIM Ingenuity",
+        "reqs.tech | Building BIM",
+        "reqs.tech | Building Creativity",
+        "reqs.tech | Creative Building",
+      ];
+    
+      const randomIndex = Math.floor(Math.random() * titles.length);
+      document.title = titles[randomIndex];
+    </script>
   </body>
-
 </html>
