@@ -1,3 +1,5 @@
+ok, this is the full style.css
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -228,13 +230,6 @@ a[href$="index.html"].active,
       display: block;
       margin: 0 auto;
     }
-      .center-quote {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 60vh;
-      text-align: center;
-    }
     /* Rename the old .home-quote to something new */
     .homepage-quote {
       font-family: 'Playfair Display', serif;
@@ -249,12 +244,14 @@ a[href$="index.html"].active,
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 100vh;
+      min-height: calc(100vh - 4rem); /* Adjusts for fixed footer height */
     }
      .center-quote {
       display: flex;
       justify-content: center;
       align-items: center;
+      align-items: center;
+      flex: 1;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem  1rem;
     }
