@@ -215,3 +215,9 @@ a[href$="index.html"].active,
   text-align: center;
   padding: 2rem 1rem;
 }
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
