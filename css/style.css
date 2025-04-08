@@ -218,6 +218,7 @@ a[href$="index.html"].active,
 }
 .home-container.container {
   max-width: 600px;
+  margin: auto;
   padding: 1rem 2rem;
   background-color: transparent;
   border: none;
