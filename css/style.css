@@ -224,3 +224,6 @@ a[href$="index.html"].active,
   border: none;
   box-shadow: none;
 }
+.light-mode .bottom-bar {
+  background-color: var(--bg-light);
+}
