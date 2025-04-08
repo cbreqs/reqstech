@@ -221,3 +221,7 @@ a[href$="index.html"].active,
   flex-direction: column;
   justify-content: center;
 }
+.home-container .container {
+  max-width: 600px;
+  width: 100%;
+}
