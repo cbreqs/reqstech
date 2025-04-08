@@ -59,12 +59,7 @@ body {
 .container {
   max-width: 900px;
   margin: 1.5rem auto;
-  background-color: var(--container-bg-dark);
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  border: 1px solid var(--border-dark);
-  padding-bottom: 6rem;
 }
 
 h1 {
