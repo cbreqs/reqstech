@@ -1,5 +1,7 @@
 body {
-  background: linear-gradient(to bottom, #0e1b5d, #0e1b3d, #050f20, #050f20, #0e1b3d, #0f205b);
+  background: 
+    url('assets/bg-img.png') center center / contain no-repeat,
+    linear-gradient(to bottom, #0e1b5d, #0e1b3d, #050f20, #050f20, #0e1b3d, #0f205b);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
