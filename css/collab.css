@@ -1,0 +1,63 @@
+body {
+  background: 
+    url('assets/bg-img.png') center center / contain no-repeat,
+    linear-gradient(to bottom, #0e1b5d, #0e1b3d, #050f20, #050f20, #0e1b3d, #0f205b);
+  background-attachment: fixed;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #e0f0f7;
+  color: #0a3d62;
+  border-bottom: 2px solid #ccc;
+}
+
+.scroll-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.scroll-gallery img {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+}
+#scrollTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  background-color: #0a3d62;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background-color: #1e5c89;
+}
