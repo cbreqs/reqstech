@@ -1,14 +1,15 @@
 body {
-  background: 
-    url('../assets/bg-img.png') center center / contain no-repeat,
-    linear-gradient(to bottom, #1d2233, #1d2233, #1d2233, #252939, #252939, #293049);
-  background-attachment: fixed;
-  background-size: contain, cover;
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, center;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+    background:
+        linear-gradient(to bottom, #1d2233, #1d2233, #1d2233, #252939, #252939, #293049),
+        url('../assets/bg-img.png') center center / contain no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 200%, cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: scrollGradient 30s linear infinite;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
 header {
@@ -60,4 +61,12 @@ footer {
 
 #scrollTopBtn:hover {
   background-color: #1e5c89;
+}
+@keyframes scrollGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
 }
