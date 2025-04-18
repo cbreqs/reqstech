@@ -5,8 +5,9 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    position: relative; /* Needed for ::before layering */
+    position: relative;
     overflow-x: hidden;
+    z-index: 0;
 }
 
 /* ========== Gradient Overlay ========== */
@@ -18,10 +19,15 @@ body::before {
     right: 0;
     bottom: 0;
     z-index: -1;
-    background: linear-gradient(180deg, #1d2233, #252939, #293049);
-    background-size: 100% 200%;
-    animation: scrollGradient 60s linear infinite;
-    pointer-events: none; /* Make sure it doesn't block clicks */
+    background: linear-gradient(
+        180deg,
+        rgba(29, 34, 51, 0.8) 0%,
+        rgba(37, 41, 57, 0.8) 50%,
+        rgba(41, 48, 73, 0.8) 100%
+    );
+    background-size: 100% 300%;
+    animation: scrollGradient 90s linear infinite;
+    pointer-events: none;
 }
 
 /* ========== Keyframes Animation ========== */
@@ -33,11 +39,3 @@ body::before {
         background-position: 0% 100%;
     }
 }
-
-/* ========== Extra (Optional) Cleanup ========== */
-/* You can add here any text styling, link colors, etc. */
-/* Example:
-h1, h2, h3, p {
-    color: #ffffff;
-}
-*/
