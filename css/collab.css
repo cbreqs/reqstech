@@ -1,1 +1,43 @@
+/* ========== Basic Body Setup ========== */
+body {
+    background: url('../assets/bg-img.png') center center / cover no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative; /* Needed for ::before layering */
+    overflow-x: hidden;
+}
 
+/* ========== Gradient Overlay ========== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, #1d2233, #252939, #293049);
+    background-size: 100% 200%;
+    animation: scrollGradient 60s linear infinite;
+    pointer-events: none; /* Make sure it doesn't block clicks */
+}
+
+/* ========== Keyframes Animation ========== */
+@keyframes scrollGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* ========== Extra (Optional) Cleanup ========== */
+/* You can add here any text styling, link colors, etc. */
+/* Example:
+h1, h2, h3, p {
+    color: #ffffff;
+}
+*/
