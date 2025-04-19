@@ -1,6 +1,5 @@
 /* ========== Basic Body Setup ========== */
 body {
-    background: url('../assets/bg-img.png') center center / cover no-repeat;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
@@ -38,4 +37,16 @@ body::before {
     100% {
         background-position: 0% 100%;
     }
+}
+.scaffold-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/bg-img.png') center center / contain no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.8; /* <-- you can fine-tune this */
 }
