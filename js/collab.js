@@ -32,11 +32,9 @@ scrollTopButton.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    scrollTopButton.style.display = 'block';
-  } else {
-    scrollTopButton.style.display = 'none';
-  }
+window.addEventListener('scroll', function() {
+  const scrolled = window.pageYOffset;
+  
+  document.body.style.setProperty('--scroll-offset', scrolled + 'px');
 });
+
