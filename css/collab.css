@@ -30,7 +30,7 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/path/to/your/connection-image.png') no-repeat center center;
+    background: url('/assets/images/bg-img.png') no-repeat center center;
     background-size: contain;
     background-attachment: fixed;
     background-position: center;
