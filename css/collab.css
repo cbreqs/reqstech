@@ -59,3 +59,11 @@ body::after {
     pointer-events: none;
     opacity: 0.8; /* <-- you can fine-tune this */
 }
+  .slide {
+    max-width: 800px;
+    margin: 2rem auto 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
