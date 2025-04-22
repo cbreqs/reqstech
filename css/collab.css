@@ -29,7 +29,7 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/assets/images/bg-img.png') no-repeat center center;
+    background: url('/assets/bg-img.png') no-repeat center center;
     background-size: contain;
     background-position: center;
     opacity: 0.6;
