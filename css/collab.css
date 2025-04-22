@@ -11,22 +11,14 @@ body {
 
 /* ========== Gradient Overlay ========== */
 body::before {
-    content: '';
-    position: fixed;
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    background: linear-gradient(to bottom, #0a1a2f, #112244);
     z-index: -1;
-    background: linear-gradient(
-        180deg,
-        rgba(29, 34, 51, 0.8) 0%,
-        rgba(37, 41, 57, 0.8) 50%,
-        rgba(41, 48, 73, 0.8) 100%
-    );
-    background-size: 100% 300%;
-    animation: scrollGradient 90s linear infinite;
-    pointer-events: none;
 }
 
 /* ========== Keyframes Animation ========== */
