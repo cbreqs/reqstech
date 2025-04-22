@@ -11,39 +11,43 @@ body {
 
 /* ========== Gradient Overlay ========== */
 body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, #0a1a2f, #112244);
-    background-size: cover;
-    background-position: center;
-    z-index: -2;
-  }
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0a1a2f, #112244);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: -2;
+  animation: scrollGradient 60s linear infinite;
+}
 body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('/assets/bg-img.png') no-repeat center center;
-    background-size: contain;
-    background-position: center;
-    opacity: 0.6;
-    z-index: -1;
-  }
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/assets/bg-img.png') no-repeat center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  opacity: 0.6;
+  z-index: -1;
+  animation: scrollImage 40s linear infinite;
+}
 
 /* ========== Keyframes Animation ========== */
 @keyframes scrollGradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 0% 100%;
-    }
+   0% { background-position: center top; }
+  100% { background-position: center bottom; } 
+}
+@keyframes scrollImage {
+  0% { background-position: center top; }
+  100% { background-position: center bottom; }
 }
 
 .slides-wrapper {
