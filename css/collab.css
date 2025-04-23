@@ -1,52 +1,49 @@
-/* ========== Basic Body Setup ========== */
-body {
+/* ========== Reset Any Browser Defaults ========== */
+html, body {
     margin: 0;
     padding: 0;
+}
+
+/* ========== Basic Body Setup ========== */
+body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
     z-index: 0;
-    background-attachment: scroll; /* key fix */
+    background-attachment: scroll;
 }
 
 /* ========== Gradient Overlay ========== */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, #0a1a2f, #112244);
-    background-size: cover;   
+    background-size: cover;
     background-position: center top;
     background-attachment: scroll;
     z-index: -2;
+    pointer-events: none;
 }
 
+/* ========== ROTATED Background Image ========== */
 body::after {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/assets/bg-img.png') no-repeat;
-    background-position: center calc(50% + var(--scroll-offset) * 0.05);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vh;
+    height: 100vw;
+    background: url('/assets/bg-img.png') no-repeat center center;
     background-size: cover;
     opacity: 0.6;
     z-index: -1;
-}
-
-/* ========== Keyframes (Not Needed Yet, Keep if Animating Later) ========== */
-@keyframes scrollGradient {
-    0% { background-position: center top; }
-    100% { background-position: center bottom; } 
-}
-
-@keyframes scrollImage {
-    0% { background-position: center top; }
-    100% { background-position: center bottom; }
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center center;
+    pointer-events: none;
 }
 
 /* ========== Slide Layout ========== */
