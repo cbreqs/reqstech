@@ -39,7 +39,7 @@ body {
   background: url('/assets/bg-img.png') no-repeat center center;
   background-size: cover;
   opacity: 0.5;
-  transform: translate(-50%, -50%) rotate(-90deg);
+  transform: translate(-50%, -50%);
   transform-origin: center center;
   z-index: -1;
   pointer-events: none;
