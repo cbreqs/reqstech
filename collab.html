@@ -63,6 +63,14 @@
   <footer>
     <p>Built on shoulders of many, many giants. ☕</p>
   </footer>
+  
+  <script>
+    // Update a custom CSS variable on scroll
+    window.addEventListener('scroll', () => {
+      const scrollOffset = window.scrollY;
+      document.body.style.setProperty('--scroll-offset', scrollOffset);
+    });
+  </script>
 
 </body>
 </html>
