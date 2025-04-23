@@ -1,79 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Collaboration Scroll | reqs.tech</title>
-  <link rel="stylesheet" href="css/collab.css" />
-  <script defer src="js/collab.js"></script>
-</head>
-<body>
+/* ========== Global Reset ========== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
 
-  <div id="bg-gradient"></div>
-  <div id="bg-wrapper"></div>
+/* ========== Base Body Layer ========== */
+body {
+  position: relative;
+  min-height: 100vh;
+  z-index: 0;
+  background-attachment: scroll;
+  font-family: system-ui, sans-serif;
+}
 
-  <header>
-    <h1>Collaboration Timeline</h1>
-    <p>Endless scroll through ideas, visions, and vibes.</p>
-  </header>
+/* ========== Gradient Background Layer ========== */
+#bg-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #0a1a2f, #112244);
+  background-size: cover;
+  background-position: center top;
+  z-index: -2;
+  pointer-events: none;
+}
 
-  <main class="scroll-gallery">
-    <div class="slides-wrapper">
+/* ========== Rotated Background Image Layer ========== */
+#bg-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 120vh;
+  height: 120vw;
+  background: url('/assets/bg-img.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.5;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+  z-index: -1;
+  pointer-events: none;
+}
 
-      <div class="slide">
-        <img data-src="slides/slide1.PNG" alt="Slide 1" loading="lazy" />
-      </div>
+/* ========== Slide Wrapper Layout ========== */
+.slides-wrapper {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-      <div class="slide">
-        <img data-src="slides/slide2.PNG" alt="Slide 2" loading="lazy" />
-      </div>
+/* ========== Individual Slide Layout ========== */
+.slide {
+  margin: 4rem 0;
+  text-align: center;
+}
 
-      <div class="slide">
-        <img data-src="slides/slide3.PNG" alt="Slide 3" loading="lazy" />
-      </div>
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
-      <div class="slide">
-        <img data-src="slides/slide4.PNG" alt="Slide 4" loading="lazy" />
-      </div>
+/* ========== Header/Footer Styling (Optional Cleanup) ========== */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #f0f0f0;
+}
 
-      <div class="slide">
-        <img data-src="slides/slide5.PNG" alt="Slide 5" loading="lazy" />
-      </div>
-
-      <div class="slide">
-        <img data-src="slides/slide6.PNG" alt="Slide 6" loading="lazy" />
-      </div>
-
-      <div class="slide">
-        <img data-src="slides/slide7.PNG" alt="Slide 7" loading="lazy" />
-      </div>
-
-      <div class="slide">
-        <img data-src="slides/slide8.PNG" alt="Slide 8" loading="lazy" />
-      </div>
-
-      <div class="slide">
-        <img data-src="slides/slide9.PNG" alt="Slide 9" loading="lazy" />
-      </div>
-
-      <div class="slide">
-        <img data-src="slides/slide91.PNG" alt="Slide 10" loading="lazy" />
-      </div>
-
-    </div>
-  </main>
-
-  <footer>
-    <p>Built on shoulders of many, many giants. ☕</p>
-  </footer>
-  
-  <script>
-    // Update a custom CSS variable on scroll
-    window.addEventListener('scroll', () => {
-      const scrollOffset = window.scrollY;
-      document.body.style.setProperty('--scroll-offset', scrollOffset);
-    });
-  </script>
-
-</body>
-</html>
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #aaa;
+  font-size: 0.9rem;
+}
