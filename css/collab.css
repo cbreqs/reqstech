@@ -1,67 +1,69 @@
 /* ========== Basic Body Setup ========== */
 body {
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
     z-index: 0;
+    background-attachment: scroll; /* key fix */
 }
 
 /* ========== Gradient Overlay ========== */
 body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #0a1a2f, #112244);
-  background-size: cover;
-  background-attachment: scroll;
-  background-position: center top;
-  z-index: -2;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0a1a2f, #112244);
+    background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;
+    z-index: -2;
 }
 
 body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/assets/bg-img.png') no-repeat;
-  background-position: center calc(var(--scroll-offset) * 0.5);
-  background-size: contain;
-  opacity: 0.6;
-  z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/bg-img.png') no-repeat;
+    background-position: center top;
+    background-size: cover;
+    opacity: 0.6;
+    z-index: -1;
 }
 
-/* ========== Keyframes Animation ========== */
+/* ========== Keyframes (Not Needed Yet, Keep if Animating Later) ========== */
 @keyframes scrollGradient {
-   0% { background-position: center top; }
-  100% { background-position: center bottom; } 
-}
-@keyframes scrollImage {
-  0% { background-position: center top; }
-  100% { background-position: center bottom; }
+    0% { background-position: center top; }
+    100% { background-position: center bottom; } 
 }
 
+@keyframes scrollImage {
+    0% { background-position: center top; }
+    100% { background-position: center bottom; }
+}
+
+/* ========== Slide Layout ========== */
 .slides-wrapper {
-  width: 80%;
-  max-width: 700px;
-  margin: 0 auto;
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .slide {
-  margin: 4rem 0;
-  text-align: center;
+    margin: 4rem 0;
+    text-align: center;
 }
 
 .slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
