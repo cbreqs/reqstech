@@ -78,3 +78,8 @@ footer {
   color: #aaa;
   font-size: 0.9rem;
 }
+/* ========== Final Pass: Kill All Top Margin ========== */
+body, html, header, h1 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
