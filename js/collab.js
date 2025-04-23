@@ -37,4 +37,11 @@ window.addEventListener('scroll', function() {
   
   document.body.style.setProperty('--scroll-offset', scrolled + 'px');
 });
-
+// Animate gradient background scroll position
+window.addEventListener('scroll', () => {
+  const scrollOffset = window.scrollY;
+  const gradient = document.getElementById('bg-gradient');
+  if (gradient) {
+    gradient.style.backgroundPosition = `center ${scrollOffset * 0.2}px`;
+  }
+});
