@@ -36,12 +36,12 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 120vh;
-  height: 120vw;
+  width: 60vh;
+  height: 60vw;
   background: url('/assets/bg-img.png') no-repeat center center;
   background-size: cover;
-  opacity: 0.05;
-  transform: translate(-15%, -15%);
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
   transform-origin: center center;
   z-index: -1;
   pointer-events: none;
