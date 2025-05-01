@@ -25,18 +25,18 @@
     </div>
 
     <div class="container timeline">
-     <div class="milestone">
+      <div class="milestone">
         <img src="ms1.svg" alt="Tech Level Zero" onclick="openModal('ms1.svg')">
         <div class="milestone-content">
           <p class="caption">Tech Level Zero</p>
           <div class="milestone-desc">
             <p>The beginning. Learning to navigate tools with zero guidance.</p>
-            <p>Early years are a blur (ha!). I remember looking at photos with my grandmother and hearing her gush about how lifelike and realistic the colors were. It wasn't until I was older and spent time looking through her albums that I realized how much the coloring was off in the 70s. (That reminds me of a <a href="assets/calvin-hobbes-color.jpg" target="_blank">Calvin &amp; Hobbes strip</a>...).</p>
+            <p>Early years are a blur (ha!). I remember looking at photos with my grandmother and hearing her gush about how lifelike and realistic the colors were. It wasn't until I was older and spent time looking through her albums that I realized how much the coloring was off in the 70s. (That reminds me of a <a href="assets/calvin-hobbes-color.jpg" target="_blank">Calvin &amp; Hobbes strip</a>...)</p>
             <p>Family photo albums are time capsules of a mostly analog, wired world. Digital meant “boxy” styling like the flashing 12:00 on every VCR and the bleeding edge tech nerds displaying "BOOBS" on their calculators.</p>
           </div>
         </div>
       </div>
-    
+
       <div class="milestone">
         <img src="ms2.svg" alt="Tech Adjacent" onclick="openModal('ms2.svg')">
         <div class="milestone-content">
@@ -44,7 +44,7 @@
           <p class="milestone-desc">Helping others, stumbling forward, fixing what breaks.</p>
         </div>
       </div>
-    
+
       <div class="milestone">
         <img src="ms3.svg" alt="Tech Emerging" onclick="openModal('ms3.svg')">
         <div class="milestone-content">
@@ -52,7 +52,7 @@
           <p class="milestone-desc">Gaining confidence, building skills, seeing patterns.</p>
         </div>
       </div>
-    
+
       <div class="milestone">
         <img src="ms4.svg" alt="Tech Competent" onclick="openModal('ms4.svg')">
         <div class="milestone-content">
@@ -60,7 +60,7 @@
           <p class="milestone-desc">Applying knowledge purposefully and reliably.</p>
         </div>
       </div>
-    
+
       <div class="milestone">
         <img src="ms5.svg" alt="Tech Liaison" onclick="openModal('ms5.svg')">
         <div class="milestone-content">
@@ -69,14 +69,16 @@
         </div>
       </div>
     </div>
-    
-       <div class="modal" id="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-          <img id="modal-image" src="" alt="Expanded Milestone">
-        </div>
-      </div>
-    
+  </div> <!-- closes .page-wrapper ✅ -->
+
+  <!-- 🛠 MODAL: now outside page-wrapper where it belongs -->
+  <div class="modal" id="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modal-image" src="" alt="Expanded Milestone">
+    </div>
+  </div>
+
   <div class="bottom-bar">
     <a href="about.html" class="active">about</a>
     <a href="index.html">home</a>
@@ -91,6 +93,7 @@
       modalImage.src = imageSrc;
       modal.style.display = 'flex';
     }
+
     function closeModal() {
       document.getElementById('modal').style.display = 'none';
     }
