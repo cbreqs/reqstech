@@ -1,0 +1,87 @@
+/* ========== Global Reset ========== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #0a1a2f; /* MATCHES the top of your gradient */
+}
+
+/* ========== Base Body Layer ========== */
+body {
+  position: relative;
+  min-height: 100vh;
+  z-index: 0;
+  background-attachment: scroll;
+  font-family: system-ui, sans-serif;
+  background-color: #0a1a2f;
+}
+
+/* ========== Gradient Background Layer ========== */
+#bg-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #0a1a2f, #112244);
+  background-size: cover;
+  background-position: center top;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* ========== Rotated Background Image Layer ========== */
+#bg-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60vh;
+  height: 60vw;
+  background: url('/assets/bg-img.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ========== Slide Wrapper Layout ========== */
+.slides-wrapper {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ========== Individual Slide Layout ========== */
+.slide {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== Header/Footer Styling (Optional Cleanup) ========== */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #f0f0f0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+/* ========== Final Pass: Kill All Top Margin ========== */
+body, html, header, h1 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
