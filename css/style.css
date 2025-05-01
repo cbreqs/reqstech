@@ -239,13 +239,8 @@ a[href$="index.html"].active,
 .light-mode .caption {
   color: var(--text-light);
 }
-body {
-      margin: 0;
-      font-family: 'Inter', 'Segoe UI', sans-serif;
-      background: #0b0c10;
-      color: #f0f0f0;
-    }
-    .timeline {
+
+.timeline {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -308,6 +303,13 @@ body {
       color: #cccccc;
       line-height: 1.6;
     }
+      .light-mode .caption {
+        color: var(--text-light);
+      }
+      
+      .light-mode .milestone-desc p {
+        color: var(--text-light);
+      }
       .modal {
       display: none;
       position: fixed;
@@ -351,3 +353,9 @@ body {
       color: #30e3ca;
       cursor: pointer;
     }
+.container.timeline {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
