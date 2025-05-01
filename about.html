@@ -1,1 +1,111 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | REQS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-bar">
+    <a href="mailto:singularity@reqs.tech?subject=Let's taco'bout it.">email</a>
+    <a href="#" id="toggle-mode">light / dark</a>
+  </div>
+
+  <div class="page-wrapper">
+    <div class="container">
+      <h1>About reqs.tech</h1>
+      <p>
+        The etymology of REQS is as mysterious as its creator. Some say it’s short for requirements, others say it hints at requests, requisitions, and all the quirky ways we look for answers. This site is a portfolio and playground for technically creative work—blending structure, personality, and experimentation.
+      </p>
+      <p>What follows is a timeline of sorts, a mildly self-indulgent creative writing exercise that gives some insight into why you should pick me to help manage your life, technically speaking.</p>
+    </div>
+
+    <div class="container timeline">
+     <div class="milestone">
+        <img src="ms1.svg" alt="Tech Level Zero" onclick="openModal('ms1.svg')">
+        <div class="milestone-content">
+          <p class="caption">Tech Level Zero</p>
+          <div class="milestone-desc">
+            <p>The beginning. Learning to navigate tools with zero guidance.</p>
+            <p>Early years are a blur (ha!). I remember looking at photos with my grandmother and hearing her gush about how lifelike and realistic the colors were. It wasn't until I was older and spent time looking through her albums that I realized how much the coloring was off in the 70s. (That reminds me of a <a href="assets/calvin-hobbes-color.jpg" target="_blank">Calvin &amp; Hobbes strip</a>...).</p>
+            <p>Family photo albums are time capsules of a mostly analog, wired world. Digital meant “boxy” styling like the flashing 12:00 on every VCR and the bleeding edge tech nerds displaying "BOOBS" on their calculators.</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="milestone">
+        <img src="ms2.svg" alt="Tech Adjacent" onclick="openModal('ms2.svg')">
+        <div class="milestone-content">
+          <p class="caption">Tech Adjacent</p>
+          <p class="milestone-desc">Helping others, stumbling forward, fixing what breaks.</p>
+        </div>
+      </div>
+    
+      <div class="milestone">
+        <img src="ms3.svg" alt="Tech Emerging" onclick="openModal('ms3.svg')">
+        <div class="milestone-content">
+          <p class="caption">Tech Emerging</p>
+          <p class="milestone-desc">Gaining confidence, building skills, seeing patterns.</p>
+        </div>
+      </div>
+    
+      <div class="milestone">
+        <img src="ms4.svg" alt="Tech Competent" onclick="openModal('ms4.svg')">
+        <div class="milestone-content">
+          <p class="caption">Tech Competent</p>
+          <p class="milestone-desc">Applying knowledge purposefully and reliably.</p>
+        </div>
+      </div>
+    
+      <div class="milestone">
+        <img src="ms5.svg" alt="Tech Liaison" onclick="openModal('ms5.svg')">
+        <div class="milestone-content">
+          <p class="caption">Tech Liaison</p>
+          <p class="milestone-desc">Connecting systems, guiding others, feeling woven in, not relegated to the periphery.</p>
+        </div>
+      </div>
+    </div>
+    
+       <div class="modal" id="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+          <img id="modal-image" src="" alt="Expanded Milestone">
+        </div>
+      </div>
+    
+  <div class="bottom-bar">
+    <a href="about.html" class="active">about</a>
+    <a href="index.html">home</a>
+    <a href="projects.html">projects</a>
+  </div>
+
+  <script src="js/light-dark.js"></script>
+  <script>
+    function openModal(imageSrc) {
+      const modal = document.getElementById('modal');
+      const modalImage = document.getElementById('modal-image');
+      modalImage.src = imageSrc;
+      modal.style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.milestone').forEach(milestone => {
+      observer.observe(milestone);
+    });
+  </script>
+</body>
+</html>
