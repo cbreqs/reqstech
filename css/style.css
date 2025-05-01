@@ -239,3 +239,115 @@ a[href$="index.html"].active,
 .light-mode .caption {
   color: var(--text-light);
 }
+body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: #0b0c10;
+      color: #f0f0f0;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 1rem;
+    }
+    .milestone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      margin: 4rem 0;
+      width: 100%;
+      max-width: 1100px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .milestone.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .milestone:nth-of-type(odd) {
+      flex-direction: row;
+    }
+    .milestone:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+    .milestone img {
+      width: 260px;
+      max-width: 40vw;
+      box-shadow: 0 10px 30px rgba(48, 227, 202, 0.25);
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+    .milestone img:hover {
+      transform: scale(1.04);
+    }
+    .milestone-content {
+      flex: 1;
+      line-height: 1.7;
+    }
+    .milestone:nth-of-type(odd) .milestone-content {
+      text-align: left;
+      margin-left: auto;
+    }
+    .milestone:nth-of-type(even) .milestone-content {
+      text-align: right;
+      margin-right: auto;
+    }
+    .caption {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #30e3ca;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+    .milestone-desc p {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      color: #cccccc;
+      line-height: 1.6;
+    }
+      .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .modal-content {
+      background: #0b0c10;
+      border: 2px solid #30e3ca;
+      padding: 1rem;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      box-shadow: 0 0 40px rgba(48, 227, 202, 0.25);
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      border-radius: 6px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #30e3ca;
+      cursor: pointer;
+    }
