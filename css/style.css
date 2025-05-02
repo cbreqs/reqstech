@@ -309,7 +309,7 @@ html.light-mode .caption {
 
 .milestone {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   margin-bottom: 4rem;
 }
@@ -320,7 +320,7 @@ html.light-mode .caption {
 
 .milestone img {
   max-width: 100%;
-  height: auto;
+  max-height: 400px;
   cursor: pointer;
   border-radius: 12px;
   border: 2px solid var(--border-dark);
