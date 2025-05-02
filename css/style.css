@@ -91,6 +91,12 @@ html.light-mode .container {
   color: var(--text-light);
 }
 
+.container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
@@ -251,4 +257,17 @@ html.light-mode .card-image {
 
 html.light-mode .caption {
   color: var(--text-light);
+}
+
+/* Responsive layout fix for stacked content */
+@media (max-width: 1000px) {
+  .milestone {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .milestone-content {
+    margin: 0 !important;
+  }
 }
