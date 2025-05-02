@@ -308,3 +308,23 @@ html.light-mode .caption {
   text-decoration: none;
   border: none;
 }
+.milestone {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.milestone img {
+  max-width: 40%;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.milestone-content {
+  flex: 1;
+}
+
+.milestone:nth-child(even) {
+  flex-direction: row-reverse;
+}
