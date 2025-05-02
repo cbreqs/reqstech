@@ -311,18 +311,19 @@ a[href$="index.html"].active,
         color: var(--text-light);
       }
       .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
+          display: none;
+          position: fixed;
+          z-index: 2000;
+          left: 0;
+          top: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.85);
+          justify-content: center;
+          align-items: center;
+          padding: 2rem;
+          backdrop-filter: blur(3px);
+        }
 
     .modal-content {
       background: #0b0c10;
