@@ -1,5 +1,3 @@
-// light-dark.js
-
 // Apply saved mode on page load
 document.addEventListener("DOMContentLoaded", function () {
   const root = document.documentElement; // <html> element
