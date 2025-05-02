@@ -108,33 +108,33 @@ a:hover {
   border-color: var(--accent-dark);
 }
 
-.light-mode {
+html.light-mode {
   background-color: var(--bg-light);
   color: var(--text-light);
 }
 
-.light-mode .container {
+html.light-mode .container {
   background-color: var(--container-bg-light);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
   border: 1px solid var(--border-light);
 }
 
-.light-mode a:hover {
+html.light-mode a:hover {
   background-color: var(--accent-dark);
   color: var(--accent-light);
   border-color: var(--accent-light);
 }
 
-.light-mode .bottom-bar {
+html.light-mode .bottom-bar {
   background-color: var(--bg-light);
 }
 
 a[href$="about.html"].active,
 a[href$="projects.html"].active,
 a[href$="index.html"].active,
-.light-mode a[href$="about.html"].active,
-.light-mode a[href$="projects.html"].active,
-.light-mode a[href$="index.html"].active {
+html.light-mode a[href$="about.html"].active,
+html.light-mode a[href$="projects.html"].active,
+html.light-mode a[href$="index.html"].active {
   display: none;
 }
 
@@ -223,7 +223,7 @@ a[href$="index.html"].active,
   border: 1px solid var(--border-dark);
 }
 
-.light-mode .card-image {
+html.light-mode .card-image {
   border: 1px solid var(--border-light);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -236,7 +236,7 @@ a[href$="index.html"].active,
   color: var(--text-dark);
 }
 
-.light-mode .caption {
+html.light-mode .caption {
   color: var(--text-light);
 }
 
@@ -303,11 +303,11 @@ a[href$="index.html"].active,
       color: #cccccc;
       line-height: 1.6;
     }
-      .light-mode .caption {
+      html.light-mode .caption {
         color: var(--text-light);
       }
       
-      .light-mode .milestone-desc p {
+      html.light-mode .milestone-desc p {
         color: var(--text-light);
       }
       .modal {
@@ -378,6 +378,6 @@ a[href$="index.html"].active,
 }
 
 /* Light mode container text color */
-.light-mode .container {
+html.light-mode .container {
   color: var(--text-light);
 }
