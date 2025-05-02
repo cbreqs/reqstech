@@ -353,9 +353,21 @@ a[href$="index.html"].active,
       color: #30e3ca;
       cursor: pointer;
     }
-.container.timeline {
-  background: none;
-  box-shadow: none;
-  border: none;
-  padding: 0;
-}
+    .container.timeline {
+      background: none;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+    .inline-link {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      text-decoration: underline;
+    }
+    
+    .inline-link:hover {
+      background: none;
+      color: var(--hover-dark);
+      border: none;
+    }
