@@ -372,12 +372,12 @@ a[href$="index.html"].active,
       color: var(--hover-dark);
       border: none;
     }
-/* Restore proper text color in light mode containers */
-.light-mode .container {
-  color: var(--text-light);
-}
-
-/* Restore proper text color in dark mode containers */
+/* Dark mode container text color */
 .container {
   color: var(--text-dark);
+}
+
+/* Light mode container text color */
+.light-mode .container {
+  color: var(--text-light);
 }
