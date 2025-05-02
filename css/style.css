@@ -314,7 +314,7 @@ html.light-mode .caption {
   margin-bottom: 4rem;
 }
 
-.milestone:nth-child(even) {
+.milestone.reverse {
   flex-direction: row-reverse;
 }
 
