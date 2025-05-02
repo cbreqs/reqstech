@@ -35,6 +35,11 @@ body {
   padding-bottom: 5rem;
 }
 
+html.light-mode body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
 .page-wrapper {
   min-height: 100vh;
   display: flex;
@@ -60,6 +65,10 @@ body {
   z-index: 1000;
 }
 
+html.light-mode .bottom-bar {
+  background-color: var(--bg-light);
+}
+
 .bottom-bar a:nth-child(1) { margin-left: 1rem; }
 .bottom-bar a:nth-child(2) { margin: 0 auto; }
 .bottom-bar a:nth-child(3) { margin-right: 1rem; }
@@ -73,6 +82,13 @@ body {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--border-dark);
   color: var(--text-dark);
+}
+
+html.light-mode .container {
+  background-color: var(--container-bg-light);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border-light);
+  color: var(--text-light);
 }
 
 h1 {
@@ -109,26 +125,10 @@ a:hover {
   border-color: var(--accent-dark);
 }
 
-html.light-mode {
-  background-color: var(--bg-light);
-  color: var(--text-light);
-}
-
-html.light-mode .container {
-  background-color: var(--container-bg-light);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid var(--border-light);
-  color: var(--text-light);
-}
-
 html.light-mode a:hover {
   background-color: var(--accent-dark);
   color: var(--accent-light);
   border-color: var(--accent-light);
-}
-
-html.light-mode .bottom-bar {
-  background-color: var(--bg-light);
 }
 
 a[href$="about.html"].active,
@@ -252,4 +252,3 @@ html.light-mode .card-image {
 html.light-mode .caption {
   color: var(--text-light);
 }
-
