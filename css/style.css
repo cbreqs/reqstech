@@ -303,3 +303,8 @@ html.light-mode .caption {
   cursor: pointer;
   z-index: 1000;
 }
+.inline-link {
+  color: inherit;
+  text-decoration: none;
+  border: none;
+}
