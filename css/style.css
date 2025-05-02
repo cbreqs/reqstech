@@ -381,3 +381,19 @@ html.light-mode .caption {
 html.light-mode .container {
   color: var(--text-light);
 }
+/* Fix light mode on the homepage container */
+html.light-mode .home-container.container {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Fix light mode container text color */
+html.light-mode .container {
+  color: var(--text-light);
+}
+
+/* Fix dark mode container text color */
+.container {
+  color: var(--text-dark);
+}
