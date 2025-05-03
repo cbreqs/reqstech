@@ -354,7 +354,7 @@ html.light-mode .milestone img {
     width: 100%;
   }
 }
-.milestone::before {
+ .milestone {
   content: "";
   position: absolute;
   width: 4px;
