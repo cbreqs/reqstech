@@ -357,3 +357,23 @@ html.light-mode .milestone img {
     width: 100%;
   }
 }
+.milestone::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: var(--accent-light);
+  top: 0;
+  z-index: -1;
+}
+
+.milestone.left::before {
+  left: 42%; /* offset the line slightly left of center */
+}
+
+.milestone.reverse::before {
+  right: 42%; /* offset the line slightly right of center */
+}
+.milestone {
+  position: relative;
+}
