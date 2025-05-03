@@ -323,14 +323,9 @@ html.light-mode .caption {
   flex: 0 1 48%;
   max-width: 100%;
   max-height: 300px;
+  aspect-ratio: 4 / 3;
   object-fit: contain;
-  aspect-ratio: 16 / 9;
   cursor: pointer;
-  border-radius: 12px;
-  border: 2px solid var(--border-dark);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  padding: 0;
-  background-color: transparent;
 }
 
 html.light-mode .milestone img {
