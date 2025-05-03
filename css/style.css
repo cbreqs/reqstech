@@ -374,3 +374,8 @@ html.light-mode .milestone img {
 .milestone {
   position: relative;
 }
+.container.timeline {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
