@@ -276,11 +276,13 @@ html.light-mode .caption {
 }
 
 .modal-content img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 90vw;
+  max-height: 80vh;
+  margin: auto;
   border: 4px solid white;
   border-radius: 12px;
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  display: block;
 }
 
 .close {
