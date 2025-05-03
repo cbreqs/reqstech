@@ -304,6 +304,10 @@ html.light-mode .caption {
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem 1rem;
+
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .milestone {
@@ -353,19 +357,7 @@ html.light-mode .milestone img {
     text-align: left;
     width: 100%;
   }
-  
-  .milestone.left::before {
-    left: 42%; /* offset the line slightly left of center */
-  }
-  
-  .milestone.reverse::before {
-    right: 42%; /* offset the line slightly right of center */
-  }
+
   .milestone {
     position: relative;
-  }
-  .container.timeline {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
   }
