@@ -329,8 +329,8 @@ html.light-mode .caption {
   border-radius: 12px;
   border: 2px solid var(--border-dark);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  padding: 0.5rem;
-  background-color: var(--container-bg-dark);
+  padding: 0;
+  background-color: transparent;
 }
 
 html.light-mode .milestone img {
