@@ -72,6 +72,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--border-dark);
+  scroll-margin-top: 80px;
+
 }
 
 h1 {
@@ -239,6 +241,4 @@ a[href$="index.html"].active,
 .light-mode .caption {
   color: var(--text-light);
 }
-section {
-  scroll-margin-top: 80px; /* adjust if your nav bar is taller or shorter */
-}
+
