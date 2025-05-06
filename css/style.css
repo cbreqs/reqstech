@@ -239,3 +239,6 @@ a[href$="index.html"].active,
 .light-mode .caption {
   color: var(--text-light);
 }
+section {
+  scroll-margin-top: 80px; /* adjust if your nav bar is taller or shorter */
+}
