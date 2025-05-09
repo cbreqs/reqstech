@@ -1,15 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | REQS</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- ... existing head content ... -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Additional styles for navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      z-index: 10;
+      border-bottom: 1px solid var(--text-color);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      padding-bottom: 4px;
+      transition: border-bottom 0.3s;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid var(--accent-color);
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 4rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
+
+<nav>
+  <a href="#bim" id="nav-bim">BIM/VDC</a>
+  <a href="#data" id="nav-data">Data</a>
+  <a href="#tech" id="nav-tech">Tech</a>
+</nav>
+
+<main>
+  <section id="bim">
+    <h2>BIM / VDC Services</h2>
+    <p>Highlight your drafting, modeling, clash detection, and template setup work here. Maybe a few cool screenshots of your Revit/Inventor work?</p>
+  </section>
+
+  <section id="data">
+    <h2>Data Management</h2>
+    <p>Show off your SharePoint integration, Power BI dashboards, and process automation tools here.</p>
+  </section>
+
+  <section id="tech">
+    <h2>Innovative Technologies</h2>
+    <p>Document your experimental AI, Python scripting, and proof-of-concept ideas like reqs.tech itself.</p>
+  </section>
+</main>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = {
+    bim: document.getElementById("nav-bim"),
+    data: document.getElementById("nav-data"),
+    tech: document.getElementById("nav-tech"),
+  };
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.6
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        for (const key in navLinks) {
+          navLinks[key].classList.remove("active");
+        }
+        if (navLinks[id]) {
+          navLinks[id].classList.add("active");
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
   <div class="top-bar">
     <a href="mailto:singularity@reqs.tech?subject=I just think potatoes are neat.">email</a>
     <a href="#" id="toggle-mode">light / dark</a>
@@ -46,3 +135,4 @@
   <script src="js/light-dark.js"></script>
 </body>
 </html>
+
