@@ -1,77 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Automated METRC Download</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automated METRC Download Workflow</title>
+  <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
-    <header>
-        <h1>Automated METRC Download</h1>
-        <p><a href="blog.html">← Back to Blog Index</a></p>
-    </header>
-    <main>
-<pre>
-Client Request (summarized): 
-I have a cannabis blog in the state of Missouri where I track my experiences with different types of products and strains. I like the idea of being able to see over time which varieties are more effective for me. Because the recreational cannabis industry in Missouri is still pretty new, there are a lot of things I haven't heard of or tried and I have had a lot of similar conversations with customers who are looking for specific effects like pain relief or better sleep.
+  <main class="post-container">
+    <a class="back-button" href="./blog.html">&laquo; Back to Blog</a>
+    <h1>Automated METRC Download Workflow</h1>
+    <p><strong>Client Request (summarized):</strong><br>
+    I have a cannabis blog in the state of Missouri where I track my experiences with different types of products and strains. I like the idea of being able to see over time which varieties are more effective for me. Because the recreational cannabis industry in Missouri is still pretty new, there are a lot of things I haven't heard of or tried and I have had a lot of similar conversations with customers who are looking for specific effects like pain relief or better sleep.
+    </p>
 
-Every day I download information from the state's tracking website that I have access to from my job at a dispensary. The information I want is basically the brand, strain, THC/CBD and Terpene data for my blog, but there's a lot more data than I can possibly sample no matter how motivated and dedicated I might be. I want to use the data for a companion site that is basically an informational repository on products that can be found in Missouri. The data in its raw, freshly-downloaded state is pretty gnarly and inconsistent, so I need to clean it and make it usable for a website and end users. 
+    <p>Every day I download information from the state's tracking website that I have access to from my job at a dispensary. The information I want is basically the brand, strain, THC/CBD and Terpene data for my blog, but there's a lot more data than I can possibly sample no matter how motivated and dedicated I might be. I want to use the data for a companion site that is basically an informational repository on products that can be found in Missouri. The data in its raw, freshly-downloaded state is pretty gnarly and inconsistent, so I need to clean it and make it usable for a website and end users.</p>
 
-My Quest: Remove as many of the tedious tasks from her manual workflow as possible, leaving more time to focus on the content and "fun" stuff of the sites instead of devoting so much effort to maintenance and repetitive, minimally-challenging tasks
+    <blockquote><strong>My Quest:</strong> Remove as many of the tedious tasks from her manual workflow as possible, leaving more time to focus on the content and "fun" stuff of the sites instead of devoting so much effort to maintenance and repetitive, minimally-challenging tasks.</blockquote>
 
-Category: Automation / AI in Practice / Python + Power Platform
-Tags: AI Automation, Power Automate, Python, Desktop Flow, METRC, Cannabis, File Handling, Teams Integration
+    <p><strong>Category:</strong> <em>Automation / AI in Practice / Python + Power Platform</em><br>
+    <strong>Tags:</strong> AI Automation, Power Automate, Python, Desktop Flow, METRC, Cannabis, File Handling, Teams Integration</p>
 
-	Client Expectations 
-		1. Download files from inventory website
-			A > Open Chrome and log in to a website using client's credentials
-			B > Once logged in, navigate to the first dataset for download
-			C > Select the correct file type for download and initiate
-			D > Navigate to next dataset for download
-			E > Select and collect the second file, close Chrome
-		2. Rename the files
-			A > Navigate to downloads location
-			B > Select the newly-downloaded files
-			C > Rename them based on client's standardized naming conventions
-		3. Move the files
-			A > Move (or copy, depending on preference) files to 0cloud location - in this instance, a Google Drive folder
-			B > With the correct naming convention, they are listed by date and ready for processing
-		4. Notify client files are ready for processing
-			A > Once the files are detected in the cloud folder, a notification is sent so the client knows the task has been completed
-			B > Files are now ready for data processing step, to be developed next
-			
-	Tools:
-		w Power Automate Desktop (PAD)*
-		w Python (version 3.13)
-		w Power Automate Cloud (PAC)
-		w Microsoft Teams
-		w Windows Task Scheduler
+    <h2>Client Expectations</h2>
+    <ol>
+      <li>Download files from inventory website
+        <ul>
+          <li>A > Open Chrome and log in to a website using client's credentials</li>
+          <li>B > Once logged in, navigate to the first dataset for download</li>
+          <li>C > Select the correct file type for download and initiate</li>
+          <li>D > Navigate to next dataset for download</li>
+          <li>E > Select and collect the second file, close Chrome</li>
+        </ul>
+      </li>
+      <li>Rename the files
+        <ul>
+          <li>A > Navigate to downloads location</li>
+          <li>B > Select the newly-downloaded files</li>
+          <li>C > Rename them based on client's standardized naming conventions</li>
+        </ul>
+      </li>
+      <li>Move the files
+        <ul>
+          <li>A > Move (or copy, depending on preference) files to 0cloud location - in this instance, a Google Drive folder</li>
+          <li>B > With the correct naming convention, they are listed by date and ready for processing</li>
+        </ul>
+      </li>
+      <li>Notify client files are ready for processing
+        <ul>
+          <li>A > Once the files are detected in the cloud folder, a notification is sent so the client knows the task has been completed</li>
+          <li>B > Files are now ready for data processing step, to be developed next</li>
+        </ul>
+      </li>
+    </ol>
 
-The flow itself is pretty straightforward in plain language:
-	At a specific time each day, open Chrome to a website, login, download two files. Then rename the files and move them to a new location, where they are ready for processing.
+    <p><strong>Tools:</strong><br>
+    &bull; Power Automate Desktop (PAD)*<br>
+    &bull; Python (version 3.13)<br>
+    &bull; Power Automate Cloud (PAC)<br>
+    &bull; Microsoft Teams<br>
+    &bull; Windows Task Scheduler</p>
 
-I requested assistance from ChatGPT - I used my custom-made Riftwielder because it has instructions built in that help keep things at the correct pace for my ADHD issues and I've used it to optimize the major software environments that I use in my daily career space - Microsoft and Autodesk. 
+    <p><strong>The flow itself is pretty straightforward in plain language:</strong><br>
+    At a specific time each day, open Chrome to a website, login, download two files. Then rename the files and move them to a new location, where they are ready for processing.</p>
 
-Riftwielder helped me build a python code that uses Selenium to automate the website processes. By using my gpt, the tools in the web browser, and the mix of Python and Selenium, I was able to set up the auto-login > navigation > download workflow in one script. 
+    <p>I requested assistance from ChatGPT - I used my <a href="https://chat.openai.com/g/g-67f160e5e4548191a8ecba98d7f62b4e-riftwielder" target="_blank">custom-made Riftwielder</a> because it has instructions built in that help keep things at the correct pace for my ADHD issues and I've used it to optimize the major software environments that I use in my daily career space - Microsoft and Autodesk.</p>
 
-I decided I wanted the rename + move flow in a second script because that is an individual process that can be reused in many, many practical applications. [This will be useful in the future, as the user interface for Power Automate Desktop has sub-flows for this exact sort of scenario.]
+    <p>Riftwielder helped me build a python code that uses Selenium to automate the website processes. By using my gpt, the tools in the web browser, and the mix of Python and Selenium, I was able to set up the auto-login &gt; navigation &gt; download workflow in one script.</p>
 
-Once the python was built and working correctly, I used Power Automate Desktop to build out the notification piece of the client request. In our conversations, she mentioned she a) prefers to avoid email notifications because they are quickly lost in the shuffle and b) is on Teams for work and she can get notifications wherever she is.
+    <p>I decided I wanted the rename + move flow in a second script because that is an individual process that can be reused in many, many practical applications. [This will be useful in the future, as the user interface for Power Automate Desktop has sub-flows for this exact sort of scenario.]</p>
 
-I learned in building out this workflow in PAD that the Python version I was using on my laptop was problematic because it is *TOO NEW*. According to this page from Microsoft, PAD is limited to Python 2.7 and Python 3.4 - which meant that the script I wrote with my Riftwielder broke because a variable wasn't recognized. 
+    <p>Once the python was built and working correctly, I used Power Automate Desktop to build out the notification piece of the client request. In our conversations, she mentioned she a) prefers to avoid email notifications because they are quickly lost in the shuffle and b) is on Teams for work and she can get notifications wherever she is.</p>
 
-This is where I ended up pivoting to a DOS command instead of a Python script in PAD. Using DOS allowed me to keep the .py file in its location and run it from a command window rather than through a python script in Power Automate. Ultimately, it's not a difference for how it will play out in the end for my client.
+    <p>I learned in building out this workflow in PAD that the Python version I was using on my laptop was problematic because it is <strong>*TOO NEW*</strong>. According to <a href="https://learn.microsoft.com/en-us/power-automate/desktop-flows/actions-reference/scripting#runpythonscript" target="_blank">this page from Microsoft</a>, PAD is limited to Python 2.7 and Python 3.4 - which meant that the script I wrote with my Riftwielder broke because a variable wasn't recognized.</p>
 
-Because of the agreement I have with her, I will be managing and supervising the data download automation while I work on the next task: automating as much of that data cleanup as possible. I'm learning the fine balance between designing for database usability and designing for client usability. This provides me an opportunity to continue learning how to automate in a way that I can turn around and use in my BIM/VDC career and the technical needs of the firm I work for.
+    <p>This is where I ended up pivoting to a DOS command instead of a Python script in PAD. Using DOS allowed me to keep the .py file in its location and run it from a command window rather than through a python script in Power Automate. Ultimately, it's not a difference for how it will play out in the end for my client.</p>
 
-Ultimately, the goal is to turn over a well-designed, sanded-smooth workflow that my client can use to her advantage. Her energy is best used in her expression of experiences and developing her vision. Having to spend so much of it on sorting through data and stepping through rote tasks to get the information she's after dampens her motivation a bit and I'd like to prevent that where I can.
+    <p>Because of the agreement I have with her, I will be managing and supervising the data download automation while I work on the next task: automating as much of that data cleanup as possible. I'm learning the fine balance between designing for database usability and designing for client usability. This provides me an opportunity to continue learning how to automate in a way that I can turn around and use in my BIM/VDC career and the technical needs of the firm I work for.</p>
 
-As I tried to convince my mother when I was growing up: I'm not lazy for wanting to find the simplest way to do things, I'm efficient!
+    <p>Ultimately, the goal is to turn over a well-designed, sanded-smooth workflow that my client can use to her advantage. Her energy is best used in her expression of experiences and developing her vision. Having to spend so much of it on sorting through data and stepping through rote tasks to get the information she's after dampens her motivation a bit and I'd like to prevent that where I can.</p>
 
-</pre>
-    </main>
-    <footer>
-        <p>&copy; 2025 reqs.tech</p>
-    </footer>
+    <p><em>As I tried to convince my mother when I was growing up: I'm not lazy for wanting to find the simplest way to do things, I'm efficient!</em></p>
+  </main>
 </body>
 </html>
