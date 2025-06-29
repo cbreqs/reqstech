@@ -2,63 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Automated METRC Download Workflow</title>
-  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-  <main class="post-container">
-    <a class="back-button" href="./blog.html">&laquo; Back to Blog</a>
+  <div class="container mx-auto px-4 py-8 prose dark:prose-invert">
+    <a href="/blog/blog.html" class="button">↢ Blog Home</a>
+
     <h1>Automated METRC Download Workflow</h1>
     <p><strong>Client Request (summarized):</strong><br>
-    I have a cannabis blog in the state of Missouri where I track my experiences with different types of products and strains. I like the idea of being able to see over time which varieties are more effective for me. Because the recreational cannabis industry in Missouri is still pretty new, there are a lot of things I haven't heard of or tried and I have had a lot of similar conversations with customers who are looking for specific effects like pain relief or better sleep.
-    </p>
+    I have a cannabis blog in the state of Missouri where I track my experiences with different types of products and strains. I like the idea of being able to see over time which varieties are more effective for me. Because the recreational cannabis industry in Missouri is still pretty new, there are a lot of things I haven't heard of or tried and I have had a lot of similar conversations with customers who are looking for specific effects like pain relief or better sleep.</p>
 
     <p>Every day I download information from the state's tracking website that I have access to from my job at a dispensary. The information I want is basically the brand, strain, THC/CBD and Terpene data for my blog, but there's a lot more data than I can possibly sample no matter how motivated and dedicated I might be. I want to use the data for a companion site that is basically an informational repository on products that can be found in Missouri. The data in its raw, freshly-downloaded state is pretty gnarly and inconsistent, so I need to clean it and make it usable for a website and end users.</p>
 
-    <blockquote><strong>My Quest:</strong> Remove as many of the tedious tasks from her manual workflow as possible, leaving more time to focus on the content and "fun" stuff of the sites instead of devoting so much effort to maintenance and repetitive, minimally-challenging tasks.</blockquote>
+    <blockquote><strong>My Quest:</strong> Remove as many of the tedious tasks from her manual workflow as possible, leaving more time to focus on the content and "fun" stuff of the sites instead of devoting so much effort to maintenance and repetitive, minimally-challenging tasks</blockquote>
 
-    <p><strong>Category:</strong> <em>Automation / AI in Practice / Python + Power Platform</em><br>
+    <p><strong>Category:</strong> Automation / AI in Practice / Python + Power Platform<br>
     <strong>Tags:</strong> AI Automation, Power Automate, Python, Desktop Flow, METRC, Cannabis, File Handling, Teams Integration</p>
 
     <h2>Client Expectations</h2>
     <ol>
       <li>Download files from inventory website
         <ul>
-          <li>A > Open Chrome and log in to a website using client's credentials</li>
-          <li>B > Once logged in, navigate to the first dataset for download</li>
-          <li>C > Select the correct file type for download and initiate</li>
-          <li>D > Navigate to next dataset for download</li>
-          <li>E > Select and collect the second file, close Chrome</li>
+          <li>A &gt; Open Chrome and log in to a website using client's credentials</li>
+          <li>B &gt; Once logged in, navigate to the first dataset for download</li>
+          <li>C &gt; Select the correct file type for download and initiate</li>
+          <li>D &gt; Navigate to next dataset for download</li>
+          <li>E &gt; Select and collect the second file, close Chrome</li>
         </ul>
       </li>
       <li>Rename the files
         <ul>
-          <li>A > Navigate to downloads location</li>
-          <li>B > Select the newly-downloaded files</li>
-          <li>C > Rename them based on client's standardized naming conventions</li>
+          <li>A &gt; Navigate to downloads location</li>
+          <li>B &gt; Select the newly-downloaded files</li>
+          <li>C &gt; Rename them based on client's standardized naming conventions</li>
         </ul>
       </li>
       <li>Move the files
         <ul>
-          <li>A > Move (or copy, depending on preference) files to 0cloud location - in this instance, a Google Drive folder</li>
-          <li>B > With the correct naming convention, they are listed by date and ready for processing</li>
+          <li>A &gt; Move (or copy, depending on preference) files to 0cloud location - in this instance, a Google Drive folder</li>
+          <li>B &gt; With the correct naming convention, they are listed by date and ready for processing</li>
         </ul>
       </li>
       <li>Notify client files are ready for processing
         <ul>
-          <li>A > Once the files are detected in the cloud folder, a notification is sent so the client knows the task has been completed</li>
-          <li>B > Files are now ready for data processing step, to be developed next</li>
+          <li>A &gt; Once the files are detected in the cloud folder, a notification is sent so the client knows the task has been completed</li>
+          <li>B &gt; Files are now ready for data processing step, to be developed next</li>
         </ul>
       </li>
     </ol>
 
-    <p><strong>Tools:</strong><br>
-    &bull; Power Automate Desktop (PAD)*<br>
-    &bull; Python (version 3.13)<br>
-    &bull; Power Automate Cloud (PAC)<br>
-    &bull; Microsoft Teams<br>
-    &bull; Windows Task Scheduler</p>
+    <p><strong>Tools:</strong></p>
+    <ul>
+      <li>Power Automate Desktop (PAD)*</li>
+      <li>Python (version 3.13)</li>
+      <li>Power Automate Cloud (PAC)</li>
+      <li>Microsoft Teams</li>
+      <li>Windows Task Scheduler</li>
+    </ul>
 
     <p><strong>The flow itself is pretty straightforward in plain language:</strong><br>
     At a specific time each day, open Chrome to a website, login, download two files. Then rename the files and move them to a new location, where they are ready for processing.</p>
@@ -80,6 +82,6 @@
     <p>Ultimately, the goal is to turn over a well-designed, sanded-smooth workflow that my client can use to her advantage. Her energy is best used in her expression of experiences and developing her vision. Having to spend so much of it on sorting through data and stepping through rote tasks to get the information she's after dampens her motivation a bit and I'd like to prevent that where I can.</p>
 
     <p><em>As I tried to convince my mother when I was growing up: I'm not lazy for wanting to find the simplest way to do things, I'm efficient!</em></p>
-  </main>
+  </div>
 </body>
 </html>
