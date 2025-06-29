@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
+  <url><loc>https://reqs.tech/</loc></url>
+  <url><loc>https://reqs.tech/about.html</loc></url>
+  <url><loc>https://reqs.tech/projects.html</loc></url>
+  <url><loc>https://reqs.tech/resume.html</loc></url>
+
+  <!-- Blog Index + Posts -->
+  <url><loc>https://reqs.tech/blog.html</loc></url>
+  <url><loc>https://reqs.tech/blog/bim-vdc.html</loc></url>
+  <url><loc>https://reqs.tech/blog/automated-download+.html</loc></url>
+</urlset>
