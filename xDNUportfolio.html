@@ -1,37 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | reqs.tech</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <script src="js/title-refresh.js" defer></script>
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const toggle = document.querySelector('.toggle-switch');
-            const active = 'active';
-            const light = 'light-mode';
-
-            if (body.classList.contains(light)) {
-                body.classList.remove(light);
-                toggle.classList.remove(active);
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.add(light);
-                toggle.classList.add(active);
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        window.onload = () => {
-            const toggle = document.querySelector('.toggle-switch');
-            if (localStorage.getItem('theme') === 'light') {
-                document.body.classList.add('light-mode');
-                toggle.classList.add('active');
-            }
-        };
-    </script>
+<html lang="en"> 
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJG2T8PY5"></script>
+ 	<script>
+ 	  window.dataLayer = window.dataLayer || [];
+ 	  function gtag(){dataLayer.push(arguments);}
+ 	  gtag('js', new Date());
+ 	
+ 	  gtag('config', 'G-ZXJG2T8PY5');
+ 	</script>
+  
 </head>
 <body>
     <nav class="nav-container">
