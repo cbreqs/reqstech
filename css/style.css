@@ -343,6 +343,7 @@ html.light-mode .milestone img {
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
+
   .milestone {
     flex-direction: column !important;
     text-align: center;
@@ -362,21 +363,23 @@ html.light-mode .milestone img {
   }
 
 /* === Bottom Bar Button Styles === */
-
 .bottom-bar a {
+  display: inline-block;
+  margin: 0 0.5rem;
   border: 1px solid var(--text-dark);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
   background-color: transparent;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease-in-out;
   font-weight: bold;
   font-family: 'Red Hat Display', sans-serif;
+  color: var(--text-dark);
 }
 
 .bottom-bar a:hover {
-  background-color: var(--text-dark);
-  color: var(--bg-dark);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--hover-dark);
 }
 
 html.light-mode .bottom-bar a {
@@ -385,6 +388,6 @@ html.light-mode .bottom-bar a {
 }
 
 html.light-mode .bottom-bar a:hover {
-  background-color: var(--text-light);
-  color: var(--bg-light);
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--hover-light);
 }
