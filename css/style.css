@@ -361,7 +361,7 @@ html.light-mode .milestone img {
   .milestone {
     position: relative;
   }
-
+}
 /* === Bottom Bar Button Styles === */
 .bottom-bar a {
   display: inline-block;
