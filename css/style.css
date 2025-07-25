@@ -427,13 +427,18 @@ html.light-mode .top-bar a:hover {
   text-align: center;
 }
 blockquote {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.5rem;
   margin: 1.5rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid var(--border-dark);
+  border-left: 4px solid var(--border-dark);
+  border-radius: 6px;
   color: var(--text-dark);
 }
+
 html.light-mode blockquote {
-  border-left: 3px solid var(--border-light);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--border-light);
   color: var(--text-light);
 }
