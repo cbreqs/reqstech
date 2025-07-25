@@ -426,3 +426,14 @@ html.light-mode .top-bar a:hover {
   padding: 2rem 1.5rem;
   text-align: center;
 }
+blockquote {
+  font-style: italic;
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--border-dark);
+  color: var(--text-dark);
+}
+html.light-mode blockquote {
+  border-left: 3px solid var(--border-light);
+  color: var(--text-light);
+}
