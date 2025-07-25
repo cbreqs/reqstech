@@ -420,3 +420,9 @@ html.light-mode .top-bar a:hover {
   background-color: rgba(0, 0, 0, 0.1);
   color: var(--hover-light);
 }
+.centered-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
