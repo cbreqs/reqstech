@@ -390,6 +390,7 @@ html.light-mode .bottom-bar a {
 html.light-mode .bottom-bar a:hover {
   background-color: rgba(0, 0, 0, 0.1);
   color: var(--hover-light);
+}
 
 .top-bar a {
   display: inline-block;
@@ -418,3 +419,4 @@ html.light-mode .top-bar a {
 html.light-mode .top-bar a:hover {
   background-color: rgba(0, 0, 0, 0.1);
   color: var(--hover-light);
+}
