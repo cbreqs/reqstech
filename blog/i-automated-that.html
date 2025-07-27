@@ -137,8 +137,11 @@
       </strong>
       without any user input.
      </p>
+     <p>The first script opens the browser, and then using Selenium, navigates the login screen by entering the username and password. Once through the gate, Selenium navigates to the first page from where data will be downloaded and closes any pop-up announcements or chat agent windows that might have shown since last login. After waiting a few seconds to make sure the page and windows fully load so they won't interrupt the next step, which is clicking the download link and choosing the .xlsx file from the available options. The browser wait another few seconds for everything to complete, then navigates to the second page of data and repeats the steps. After both files are downloaded, the script closes out and the second script runs.</p>
+     <p>The second script is a simple rename and move. It searches the specified downloads folder for any files with the specific file names of the downloaded Excel based on the naming standard of the source file. If they are found, the script will rename them as specified by the end user's standards, and then moved to the folder in a cloud location (this one happens to be OneDrive).</p>
+     <p>Script Third is very simple. When triggered, after the second script completes, this uses a Webhook to send a notification to the end user's specified Teams chat announcing that the automation has completed with a printout of the location and name of each file. 
      <p>
-      The end user gets a notification that the files are in the correct spot and ready for the next injection of human interaction: the
+      Once that notification pings, the user knows the files are ready for the next injection of human interaction: the
       <em>
        fun
       </em>
@@ -148,7 +151,7 @@
       Final Thoughts
      </h2>
      <p>
-      Eventually, the data cleanup will be automated as well, leaving the real need for someone to devote any brain power only to the parts the automation can&rsquo;t do: the
+      I learned in the process that I needed to add print commands after each step so my terminal will let me know if it fails, on which step and (hopefully) why. It will also create a log file every day if further troubleshooting becomes necessary. My next challenge is automating the data cleanup, leaving the real need for someone to devote any brain power only to the parts the automation can&rsquo;t do: the
       <strong>
        humanization.
       </strong>
