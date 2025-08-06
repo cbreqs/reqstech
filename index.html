@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJG2T8PY5"></script>
+ 	<script>
+ 	  window.dataLayer = window.dataLayer || [];
+ 	  function gtag(){dataLayer.push(arguments);}
+ 	  gtag('js', new Date());
+ 	
+ 	  gtag('config', 'G-ZXJG2T8PY5');
+ 	</script>
+   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="dynamic-title">reqs.tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=2">
+</head>
+
+  <body class="static-page">
+    <div class="page-wrapper"> <!-- this is the critical wrapper -->
+  
+      <div class="top-bar">
+        <a href="mailto:singularity@reqs.tech?subject=i've been thinking...">email</a>
+        <a href="#" id="toggle-mode">light / dark</a>
+      </div>
+  
+      <div class="container home-container">
+       <main class="center-quote">
+         <h1 class="homepage-quote">building solutions,<br> not workarounds</h1>
+       </main>
+      </div>
+
+     <div class="bottom-bar">
+       <a href="about.html">about</a>
+       <a href="/blog/blog.html">blog</a>
+       <a href="projects.html">projects</a>
+     </div>
+  
+    </div> <!-- closes page-wrapper -->
+    <script src="js/light-dark.js"></script>
+    <script>
+      const titles = [
+        "reqs.tech | Technically Creative",
+        "reqs.tech | Creatively Technical",
+        "reqs.tech | BIM/VDC Solutions",
+        "reqs.tech | Technical Ingenuity",
+        "reqs.tech | drawing creativity from building chaos",
+        "reqs.tech | Technical Ingenuity",
+        "reqs.tech | BIM Ingenuity",
+        "reqs.tech | Building BIM",
+        "reqs.tech | Building Creativity",
+        "reqs.tech | Creative Building",
+      ]; 
+    
+      const randomIndex = Math.floor(Math.random() * titles.length);
+      document.title = titles[randomIndex];
+    </script>
+
+  </body>
+</html>

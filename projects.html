@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJG2T8PY5"></script>
+ 	<script>
+ 	  window.dataLayer = window.dataLayer || [];
+ 	  function gtag(){dataLayer.push(arguments);}
+ 	  gtag('js', new Date());
+ 	
+ 	  gtag('config', 'G-ZXJG2T8PY5');
+ 	</script>
+   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Additional styles for navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      z-index: 10;
+      border-bottom: 1px solid var(--text-color);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      padding-bottom: 4px;
+      transition: border-bottom 0.3s;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid var(--accent-color);
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 4rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = {
+    bim: document.getElementById("nav-bim"),
+    data: document.getElementById("nav-data"),
+    tech: document.getElementById("nav-tech"),
+  };
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.6
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        for (const key in navLinks) {
+          navLinks[key].classList.remove("active");
+        }
+        if (navLinks[id]) {
+          navLinks[id].classList.add("active");
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
+  <div class="top-bar">
+    <a href="mailto:singularity@reqs.tech?subject=I just think potatoes are neat.">email</a>
+    <a href="#" id="toggle-mode">light / dark</a>
+  </div>
+
+  <div class="container">
+    <h1>Projects</h1>
+
+    <div class="project">
+      <h2>Business Card Case Study</h2>
+      <p>
+        A minimalist, modular identity system built from color, font, and layout exploration. This case study walks through the iterations of reqs.tech’s business card design and how each element was refined to communicate both technical clarity and creative spark.
+      </p>
+      <p><a href="#">coming soon →</a></p>
+    </div>
+    <div class="project">
+      <h2>Microsoft 365 & SharePoint Environment paired with Company Intranet</h2>
+      <p>
+        This evolving project involves building a streamlined, sustainable internal platform that is also accessible remotely using Microsoft 365 tools for a more flexible and collaborative work environment.
+      </p>
+      <p><a href="#">i'll tell ya later →</a></p>
+    <div class="project"> 
+    <h2>riftWielder GPT</h2>
+        <p>
+          A custom-trained GPT designed to slow the pace, guide development, and gently support ADHD-friendly workflows. It helps enforce clarity, sequence, and sanity during creative and technical projects—because chaos can be beautiful, but not always helpful.
+        </p><a href="https://chatgpt.com/g/g-67f160e5e4548191a8ecba98d7f62b4e-riftwielder" class="project-link" target="blank">try it for yourself →</a>
+      </div>
+     </div>
+  <div class="bottom-bar">
+    <a href="about.html">about</a>
+    <a href="index.html">home</a>
+    <a href="#" class="active">projects</a>
+  </div>
+  <script src="js/light-dark.js"></script>
+</body>
+</html>
+

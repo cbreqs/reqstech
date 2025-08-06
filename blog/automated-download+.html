@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJG2T8PY5"></script>
+   	<script>
+   	  window.dataLayer = window.dataLayer || [];
+   	  function gtag(){dataLayer.push(arguments);}
+   	  gtag('js', new Date());
+   	
+   	  gtag('config', 'G-ZXJG2T8PY5');
+   	</script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Automated Metrc Download +</title>
+  <link href="/css/style.css?v=2" rel="stylesheet"/>
+ </head>
+ <body class="static-page">
+  <div class="page-wrapper">
+   <div class="top-bar">
+    <a href="mailto:singularity@reqs.tech?subject=i've been thinking...">
+     email
+    </a>
+    <a href="#" id="toggle-mode">
+     light / dark
+    </a>
+   </div>
+   <div class="container">
+     <a class="button" href="/blog/blog.html">
+     &leftarrowtail; Blog Home
+    </a>
+    <h1>
+     Automated METRC Download Workflow with AI Assistance
+    </h1>
+    <p>
+     <strong>
+      Client Request (summarized):
+     </strong>
+     <br/>
+    </p>
+    <blockquote>
+     <p>
+      I have a cannabis blog in the state of Missouri where I track my experiences with different types of products and strains. I like the idea of being able to see over time which varieties are more effective for me. Because the recreational cannabis industry in Missouri is still pretty new, there are a lot of things I haven't heard of or tried and I have had a lot of similar conversations with customers who are looking for specific effects like pain relief or better sleep.
+     </p>
+     <p>
+      Every day I download information from the state's tracking website that I have access to from my job at a dispensary. The information I want is basically the brand, strain, THC/CBD and Terpene data for my blog, but there's a lot more data than I can possibly sample no matter how motivated and dedicated I might be. I want to use the data for a companion site that is basically an informational repository on products that can be found in Missouri. The data in its raw, freshly-downloaded state is pretty gnarly and inconsistent, so I need to clean it and make it usable for a website and end users.
+     </p>
+    </blockquote>
+    <h4>
+     <strong>
+      My Quest:
+     </strong>
+     Remove as many of the tedious tasks from her manual workflow as possible, leaving more time to focus on the content and "fun" stuff of the sites instead of devoting so much effort to maintenance and repetitive, minimally-challenging tasks
+    </h4>
+    <p>
+     <strong>
+      Category:
+     </strong>
+     Automation / AI in Practice / Python + Power Platform
+     <br/>
+     <strong>
+      Tags:
+     </strong>
+     AI Automation, Power Automate, Python, Desktop Flow, METRC, Cannabis, File Handling, Teams Integration
+    </p>
+    <h2>
+     Client Expectations
+    </h2>
+    <ol>
+     <li>
+      Download files from inventory website
+      <ul>
+       <li>
+        Open Chrome and log in to a website using client's credentials
+       </li>
+       <li>
+        Once logged in, navigate to the first dataset for download
+       </li>
+       <li>
+        Select the correct file type for download and initiate
+       </li>
+       <li>
+        Navigate to next dataset for download
+       </li>
+       <li>
+        Select and collect the second file, close Chrome
+       </li>
+      </ul>
+     </li>
+     <li>
+      Rename the files
+      <ul>
+       <li>
+        Navigate to downloads location
+       </li>
+       <li>
+        Select the newly-downloaded files
+       </li>
+       <li>
+        Rename them based on client's standardized naming conventions
+       </li>
+      </ul>
+     </li>
+     <li>
+      Move the files
+      <ul>
+       <li>
+        Move (or copy, depending on preference) files to 0cloud location - in this instance, a Google Drive folder
+       </li>
+       <li>
+        With the correct naming convention, they are listed by date and ready for processing
+       </li>
+      </ul>
+     </li>
+     <li>
+      Notify client files are ready for processing
+      <ul>
+       <li>
+        Once the files are detected in the cloud folder, a notification is sent so the client knows the task has been completed
+       </li>
+       <li>
+        Files are now ready for data processing step, to be developed next
+       </li>
+      </ul>
+     </li>
+    </ol>
+    <p>
+     <strong>
+      Tools:
+     </strong>
+    </p>
+    <ul>
+     <li>
+      Power Automate Desktop (PAD)*
+     </li>
+     <li>
+      Python (version 3.13)
+     </li>
+     <li>
+      Power Automate Cloud (PAC)
+     </li>
+     <li>
+      Microsoft Teams
+     </li>
+     <li>
+      Windows Task Scheduler
+     </li>
+    </ul>
+    <p>
+     <strong>
+      The flow itself is pretty straightforward in plain language:
+     </strong>
+     <br/>
+     At a specific time each day, open Chrome to a website, login, download two files. Then rename the files and move them to a new location, where they are ready for processing.
+    </p>
+    <p>
+     I requested assistance from ChatGPT - I used my
+     <a href="https://chat.openai.com/g/g-67f160e5e4548191a8ecba98d7f62b4e-riftwielder" target="_blank">
+      custom-made Riftwielder
+     </a>
+     because it has instructions built in that help keep things at the correct pace for my ADHD issues and I've used it to optimize the major software environments that I use in my daily career space - Microsoft and Autodesk.
+    </p>
+    <p>
+     Riftwielder helped me build a python code that uses Selenium to automate the website processes. By using my gpt, the tools in the web browser, and the mix of Python and Selenium, I was able to set up the auto-login &gt; navigation &gt; download workflow in one script.
+    </p>
+    <p>
+     I decided I wanted the rename + move flow in a second script because that is an individual process that can be reused in many, many practical applications. [This will be useful in the future, as the user interface for Power Automate Desktop has sub-flows for this exact sort of scenario.]
+    </p>
+    <p>
+     Once the python was built and working correctly, I used Power Automate Desktop to build out the notification piece of the client request. In our conversations, she mentioned she a) prefers to avoid email notifications because they are quickly lost in the shuffle and b) is on Teams for work and she can get notifications wherever she is.
+    </p>
+    <p>
+     I learned in building out this workflow in PAD that the Python version I was using on my laptop was problematic because it is
+     <strong>
+      *TOO NEW*
+     </strong>
+     . According to
+     <a href="https://learn.microsoft.com/en-us/power-automate/desktop-flows/actions-reference/scripting#runpythonscript" target="_blank">
+      this page from Microsoft
+     </a>
+     , PAD is limited to Python 2.7 and Python 3.4 - which meant that the script I wrote with my Riftwielder broke because a variable wasn't recognized.
+    </p>
+    <p>
+     This is where I ended up pivoting to a DOS command instead of a Python script in PAD. Using DOS allowed me to keep the .py file in its location and run it from a command window rather than through a python script in Power Automate. Ultimately, it's not a difference for how it will play out in the end for my client.
+    </p>
+    <p>
+     Because of the agreement I have with her, I will be managing and supervising the data download automation while I work on the next task: automating as much of that data cleanup as possible. I'm learning the fine balance between designing for database usability and designing for client usability. This provides me an opportunity to continue learning how to automate in a way that I can turn around and use in my BIM/VDC career and the technical needs of the firm I work for.
+    </p>
+    <p>
+     Ultimately, the goal is to turn over a well-designed, sanded-smooth workflow that my client can use to her advantage. Her energy is best used in her expression of experiences and developing her vision. Having to spend so much of it on sorting through data and stepping through rote tasks to get the information she's after dampens her motivation a bit and I'd like to prevent that where I can.
+    </p>
+    <p>
+     <em>
+      As I tried to convince my mother when I was growing up: I'm not lazy for wanting to find the simplest way to do things, I'm efficient!
+     </em>
+    </p>
+   </div>
+   <div class="bottom-bar">
+    <a href="/about.html">
+     about
+    </a>
+    <a href="/blog/blog.html">
+     blog
+    </a>
+    <a href="/projects.html">
+     projects
+    </a>
+   </div>
+  </div>
+  <script src="/js/light-dark.js">
+  </script>
+ </body>
+</html>

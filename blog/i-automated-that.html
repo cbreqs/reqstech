@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <!-- Google tag (gtag.js) -->
+ 	 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJG2T8PY5"></script>
+ 	 <script>
+ 		window.dataLayer = window.dataLayer || [];
+ 		function gtag(){dataLayer.push(arguments);}
+ 		gtag('js', new Date()); 	
+ 		gtag('config', 'G-ZXJG2T8PY5');
+ 	 </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>I Automated That! | Automation with Python</title>
+  <link href="/css/style.css" rel="stylesheet"/>
+ </head>
+ <body class="static-page">
+  <div class="page-wrapper">
+   <div class="top-bar">
+    <a href="mailto:singularity@reqs.tech?subject=i've been thinking...">
+     email
+    </a>
+    <a href="#" id="toggle-mode">
+     light / dark
+    </a>
+   </div>
+   <div class="container">
+    <main class="post">
+     <h1>
+      I Automated That! | Automation with Python and Friends
+     </h1>
+     <p>
+      My previous experiment with Power Automate Desktop (and, incidentally, Power Automate Cloud) ended up needing a lot of troubleshooting. There were some errors, some versioning issues with PAD and Python, and it needed human input to push to the cloud for part of the tasks when the goal was no human input. In order to get that "true" automation, I would need to pay for an additional service, which was a definite No Go. I ended up chatting with my GPT and determining it was simple enough to run through three python scripts (three so they can each be reused as snippets) with a batch file tied to a Windows Task Scheduler event. This is the documentation of that process.
+     </p>
+     <p>
+      One of the most difficult challenges I've come across within the &ldquo;automation&rdquo; buzzword is the inherent ambiguity of it. Automate what, exactly? And, essentially, is this actually going to save me time?
+     </p>
+     <p>
+      As an individual who happens to have a pretty-and-chaotic worldview from inside the ADHD world, I regularly face the challenge of having enough RAM in my brain to manage my tasks. If I start a task that requires several steps, it starts a thing in my brain that is hard to articulate, but feels a lot like opening the refrigerator door and walking away for a second while you step aside to holler down the hallway, 
+      <strong>
+       "WHAT WAS IT YOU WANTED TO DRINK?"
+      </strong>
+     </p>
+     <p>
+      That is: you know that fridge door is open and wasting valuable electricity (which a parent probably pounded into your head when you were a child), and until you get your answer about what the yokel down the hallway asked for to drink, said door will remain open and, therefore, require some modicum of attention until it is closed. Its [need to close] sort of hangs in my head, following me around while I carry out the tasks of getting the cup and filling it and so forth.
+     </p>
+     <p>
+      At some point, I will pass by the fridge again and close the door, but until that happens, I&rsquo;m getting a slight lag in every other task because my floating thought about the open fridge door keeps reminding me it&rsquo;s waiting to be closed.
+     </p>
+     <p>
+      I have a lot of these daily tasks that require attention, but minimal brainpower; they require a person to close a door or open a website or click a download button or actually take the drink to the lips.
+     </p>
+     <p>
+      My goal with
+      <em>
+       automation,
+      </em>
+      in the most generic sense, is to mitigate those low-brainpower, but still-human-effort tasks. By learning the steps required to complete a routine, I can sort out those low-brainpower tasks to automate the required effort by writing a thing that will do the clicking and downloading for you.
+     </p>
+     <h2>
+      THIS is what I mean by automation:
+     </h2>
+      <blockquote>
+        Eliminating the minor tasks that eat up mental RAM while pages load, data downloads, words are typed, characters are backspaced, etc.
+      </blockquote>
+     <p>Instead of spending 10 minutes a day performing these rote, menial tasks that have been done hundreds of times:
+      <ul>
+      <li>
+       Opening a web browser
+      </li>
+      <li>
+       Browsing to the site
+      </li>
+      <li>
+       Logging in
+      </li>
+      <li>
+       Navigating to each of the proper pages
+      </li>
+      <li>
+       Downloading each file
+      </li>
+      <li>
+       Renaming them according to the standardized convention
+      </li>
+      <li>
+       Moving them to the proper folder for the next human-required step of data analysis
+      </li>
+      </ul>
+     </p>
+     <p>
+      they can be
+      <em>
+       outsourced
+      </em>
+      to the chosen flow.
+     </p>
+     <p>
+      There&rsquo;s no need to even interrupt your thought-flow to remind yourself that those downloads need to be done. Now, the first time any brain-power needs to be used for this is when the notification pings that the data is in-place, ready to be processed.
+     </p>
+     <h2>
+      Here&rsquo;s what that looks like:
+     </h2>
+     <figure>
+      <img alt="Automation terminal output screenshot" loading="lazy" src="../assets/automation-batch-print.png"/>
+      <figcaption>
+       <strong>
+        Image Legend:
+       </strong>
+       <br/>
+       Blue: identifying info related to the file name and website
+       <br/>
+       Orange: first page that needs to be navigated to
+       <br/>
+       Red: second page
+       <br/>
+       Pink/Purple: identifying file info per page
+       <br/>
+       Green: MMDD filename format (
+       <code>
+        0717
+       </code>
+       ) as part of the naming convention
+      </figcaption>
+     </figure>
+     <h2>
+      How It Works
+     </h2>
+     <p>
+      Using
+      <strong>
+       Windows Task Scheduler, a batch routine, and three Python scripts,
+      </strong>
+      that 10ish-minute routine now runs daily at a specific time (or after login, in case of a reboot). It completes within about
+      <strong>
+       2 minutes,
+      </strong>
+      without any user input.
+     </p>
+     <p>The first script opens the browser, and then using Selenium, navigates the login screen by entering the username and password. Once through the gate, Selenium navigates to the first page from where data will be downloaded and closes any pop-up announcements or chat agent windows that might have shown since last login. After waiting a few seconds to make sure the page and windows fully load so they won't interrupt the next step, Selenium will click the download link and choose the .xlsx file from the available options. The browser waits another few seconds for everything to complete, then navigates to the second page of data and repeats the steps. After both files are downloaded, the script closes out and the second script runs.</p>
+     <p>The second script is a simple rename and move. It searches the downloads folder for any files with the specific names of the downloaded Excel files. If they are found, the script will rename them as detailed by the end user's standards, and then moved to the folder in a cloud location (this one happens to be OneDrive).</p>
+     <p>Script Third is very simple. When triggered, after the second script completes, this uses a Webhook to send a notification to the end user's desired Teams chat announcing that the automation has completed with a printout of the location and name of each file. 
+     <p>
+      Once that notification pings, the user knows the files are ready for the next injection of human interaction: the
+      <em>
+       fun
+      </em>
+      part&mdash;data cleanup and analysis.
+     </p>
+     <h2>
+      Final Thoughts
+     </h2>
+     <p>
+      I learned in the process that I needed to add print commands after each step so my terminal will let me know if it fails, on which step and (hopefully) why. It will also create a log file every day if further troubleshooting becomes necessary. My next challenge is automating the data cleanup, leaving the real need for someone to devote any brain power only to the parts the automation can&rsquo;t do: the
+      <strong>
+       humanization.
+      </strong>
+     </p>
+     <p>
+      This includes edits to code when the batch file breaks, analyzing how to clean the data for the desired result, and deciding how to channel the data for one purpose or another. No matter what data I can extract or build through &ldquo;automation,&rdquo; there will still need to be human interaction for it to be effective. Troubleshooting is an invaluable skill to have&mdash;especially when developing workflows and understanding how the various apps a person uses each day are integrated and speaking to each other.
+     </p>
+      <strong>
+       Regardless,
+      </strong>
+       I&rsquo;m here to help you build an automated system that blinks you through the parts of the day where you need to be doing
+      <em>
+       anything
+      </em>
+      other than staring at the blue circle on your screen that keeps turning and turning and turning while the computer is processing. Please 
+      <a href="mailto:singularity@reqs.tech?subject=let's automate something">email me</a> and we can discuss your low-brainpower tasks that you would like to blink-rather-than-click your way through!
+     </p>
+    </main>
+   </div>
+   <div class="bottom-bar">
+    <a href="/about.html">
+     about
+    </a>
+    <a href="/blog/blog.html">
+     blog
+    </a>
+    <a href="/projects.html">
+     projects
+    </a>
+   </div>
+  </div>
+  <script src="/js/light-dark.js">
+  </script>
+ </body>
+</html>
