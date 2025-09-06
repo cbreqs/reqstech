@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gelato API — Integration Progress</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#0b0b0b; --fg:#e9e9e9; --muted:#a8a8a8; --accent:#6ee7ff; }
+  body { background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; margin:0; padding:2rem; }
+  .wrap { max-width:900px; margin:0 auto; }
+  h1, h2 { margin:0 0 .5rem; font-weight:700; }
+  h1 { font-size:1.6rem; }
+  h2 { font-size:1.1rem; color:var(--accent); margin-top:1.2rem; }
+  code, pre { background:#151515; color:#e7e7e7; border:1px solid #222; border-radius:8px; }
+  code { padding:.15rem .35rem; }
+  pre { padding:1rem; overflow:auto; }
+  .meta { color:var(--muted); font-size:.9rem; margin-bottom:1rem; }
+  ul { margin:.3rem 0 1rem 1.25rem; }
+  .ok { color:#8ef1b5; }
+  .warn { color:#ffd27a; }
+  .next { background:#111; border:1px solid #333; padding:1rem; border-radius:10px; }
+  .path { color:#b0d8ff; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Gelato API — Integration Progress</h1>
+  <div class="meta">Saved: 2025-09-06 20:48:39</div>
+
+  <h2>Status</h2>
+  <ul>
+    <li class="ok"><strong>Secret loaded:</strong> <code>GELATO_API_KEY</code> in <code>.env</code>.</li>
+    <li class="ok"><strong>Framework:</strong> Next.js (App Router).</li>
+    <li class="ok"><strong>Test page:</strong> <span class="path">/app/gelato/page.tsx</span> — button sends POST to API.</li>
+    <li class="ok"><strong>API routes:</strong> 
+      <ul>
+        <li><span class="path">/app/api/gelato-test/route.js</span> — POST creates order; GET returns alive ping.</li>
+        <li><span class="path">/app/api/gelato-products/route.js</span> — GET lists product UIDs (account catalog).</li>
+      </ul>
+    </li>
+    <li class="ok"><strong>Build config:</strong> <code>output: 'export'</code> disabled for dev so API routes work.</li>
+  </ul>
+
+  <h2>What works</h2>
+  <ul>
+    <li>Client button → server route → Gelato API round-trip confirmed.</li>
+    <li>Product catalog endpoint returns many valid <code>productUid</code> values.</li>
+  </ul>
+
+  <h2>Errors resolved</h2>
+  <ul>
+    <li>Type annotation in JS (<code>catch (err: any)</code>) → fixed to <code>catch (err)</code>.</li>
+    <li>Static export conflict → disabled to enable API routes in dev.</li>
+    <li>Initial <code>BAD_REQUEST</code> from Gelato due to missing fields → payload updated with required fields.</li>
+    <li>Unsupported <code>productUid</code> → catalog route added to discover valid codes.</li>
+  </ul>
+
+  <h2>Endpoints & Paths</h2>
+  <pre>/gelato                              ← UI test page
+/api/gelato-test (GET/POST)          ← API route calling orders endpoint
+/api/gelato-products (GET)           ← Lists product UIDs from Gelato product API</pre>
+
+  <h2>Order payload template</h2>
+  <pre>{
+  "orderReferenceId": "test-order-123",
+  "currency": "USD",
+  "customer": { "firstName": "Courtney", "lastName": "Tester", "email": "test@example.com" },
+  "shippingAddress": {
+    "firstName": "Courtney", "lastName": "Tester",
+    "addressLine1": "123 Main Street", "city": "Springfield", "state": "MO",
+    "postalCode": "65807", "country": "US", "email": "test@example.com"
+  },
+  "items": [
+    {
+      "itemReferenceId": "item-001",
+      "productUid": "<PUT-VALID-UID-HERE>",
+      "quantity": 1,
+      "assets": [{ "assetUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" }]
+    }
+  ]
+}</pre>
+
+  <h2>Next single step</h2>
+  <div class="next">
+    Choose one <code>productUid</code> from <a href="/api/gelato-products">/api/gelato-products</a> and paste it into the order payload in
+    <span class="path">/app/api/gelato-test/route.js</span> → click <em>Run Test Order</em> on <span class="path">/gelato</span>.
+  </div>
+
+  <h2>Optional (store products only)</h2>
+  <p>If you want only your store’s mocked products, switch the products route to <code>https://store.gelatoapis.com/v1/store/products</code> with the same header.</p>
+
+</div>
+</body>
+</html>
