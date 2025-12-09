@@ -1,0 +1,40 @@
+﻿
+{
+
+"name": "reqs-functions",
+
+"private": true,
+
+"engines": { "node": "20" },
+
+"main": "lib/index.js",
+
+"scripts": {
+
+"build": "tsc",
+
+"watch": "tsc -w",
+
+"serve": "firebase emulators:start --only functions,firestore",
+
+"deploy": "firebase deploy --only functions:contact"
+
+},
+
+"dependencies": {
+
+"firebase-admin": "^13.6.0",
+
+"firebase-functions": "^4.7.0"
+
+},
+
+"devDependencies": {
+
+"typescript": "^5.6.3",
+
+"@types/node": "^20.11.30"
+
+}
+
+}
