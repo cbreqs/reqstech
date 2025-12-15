@@ -1,123 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XLELPHJKX5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XLELPHJKX5');
-</script>
-   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    /* Additional styles for navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: var(--bg-color);
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      z-index: 10;
-      border-bottom: 1px solid var(--text-color);
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text-color);
-      padding-bottom: 4px;
-      transition: border-bottom 0.3s;
-    }
-
-    nav a.active {
-      border-bottom: 2px solid var(--accent-color);
-    }
-
-    section {
-      min-height: 100vh;
-      padding: 4rem 1rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-  </style>
-</head>
-<body>
-
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLELPHJKX5"></script>
   <script>
-  const sections = document.querySelectorAll("section");
-  const navLinks = {
-    bim: document.getElementById("nav-bim"),
-    data: document.getElementById("nav-data"),
-    tech: document.getElementById("nav-tech"),
-  };
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.6
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        for (const key in navLinks) {
-          navLinks[key].classList.remove("active");
-        }
-        if (navLinks[id]) {
-          navLinks[id].classList.add("active");
-        }
-      }
-    });
-  }, observerOptions);
-
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-</script>
-
-  <div class="top-bar">
-    <a href="mailto:singularity@reqs.tech?subject=I just think potatoes are neat.">email</a>
-    <a href="#" id="toggle-mode">light / dark</a>
-  </div>
-
-  <div class="container">
-    <h1>Projects</h1>
-
-    <div class="project">
-      <h2>Business Card Case Study</h2>
-      <p>
-        A minimalist, modular identity system built from color, font, and layout exploration. This case study walks through the iterations of reqs.tech’s business card design and how each element was refined to communicate both technical clarity and creative spark.
-      </p>
-      <p><a href="#">coming soon →</a></p>
+    gtag('config', 'G-XLELPHJKX5');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects • reqs.tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=2">
+  <meta name="description" content="Mini job board for live projects and a request-for-service form — liaison, web/app delivery, payments, brand systems, AEC/BIM, AI prototyping.">
+</head>
+<body class="static-page">
+  <div class="page-wrapper">
+    <div class="top-bar">
+      <a href="mailto:singularity@reqs.tech?subject=i've been thinking...">email</a>
+      <a href="#" id="toggle-mode">light / dark</a>
     </div>
-    <div class="project">
-      <h2>Microsoft 365 & SharePoint Environment paired with Company Intranet</h2>
-      <p>
-        This evolving project involves building a streamlined, sustainable internal platform that is also accessible remotely using Microsoft 365 tools for a more flexible and collaborative work environment.
-      </p>
-      <p><a href="#">i'll tell ya later →</a></p>
-    <div class="project"> 
-    <h2>riftWielder GPT</h2>
-        <p>
-          A custom-trained GPT designed to slow the pace, guide development, and gently support ADHD-friendly workflows. It helps enforce clarity, sequence, and sanity during creative and technical projects—because chaos can be beautiful, but not always helpful.
-        </p><a href="https://chatgpt.com/g/g-67f160e5e4548191a8ecba98d7f62b4e-riftwielder" class="project-link" target="blank">try it for yourself →</a>
-      </div>
-     </div>
-  <div class="bottom-bar">
-    <a href="about.html">about</a>
-    <a href="index.html">home</a>
-    <a href="#" class="active">projects</a>
+    <header class="container">
+      <h1>Projects</h1>
+      <p class="helper">Helpers wanted and requests welcome. If you build, ship, or solve, let’s talk.</p>
+    </header>
+    <main class="container split">
+      <!-- Left: mini job board -->
+      <section class="panel" aria-labelledby="roles">
+        <h2 id="roles">Open Roles on Active Projects</h2>
+        <p class="helper">Scoped roles inside live projects. I act as the liaison so teams get what they need without perfect specs.</p>
+        <div id="roles-list" aria-live="polite"></div>
+        <p class="small">Don’t see a fit? Use the form on the right to propose how you can help.</p>
+      </section>
+      <!-- Right: service/consultation request form -->
+      <section class="panel" aria-labelledby="contact">
+        <h2 id="contact">Request Services or Consultation</h2>
+        <p class="helper">I translate between business, product, and engineering to get outcomes shipped.</p>
+        <form id="contact-form" method="post" action="https://YOUR_FUNCTION_DOMAIN/contact">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="reason">Reason</label>
+            <select id="reason" name="reason" required>
+              <option value="">Select…</option>
+              <option>Fractional PM / Liaison</option>
+              <option>Website or App Delivery</option>
+              <option>Payments / Booking Flows</option>
+              <option>Brand System / Slides</option>
+              <option>AEC/BIM Automation</option>
+              <option>AI Prototyping</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">What do you need?</label>
+            <textarea id="message" name="message" rows="6" placeholder="A few sentences about goals, constraints, timeline." required></textarea>
+          </div>
+          <div class="field">
+            <label for="role">If responding to a role (optional)</label>
+            <input id="role" name="role" placeholder="e.g., EAKC — Lead Developer">
+          </div>
+          <div class="field">
+            <label for="link">Relevant link (optional)</label>
+            <input id="link" name="link" type="url" placeholder="https://">
+          </div>
+          <button type="submit">Send request</button>
+          <p id="form-status" class="helper" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <div class="bottom-bar">
+      <a href="about.html">about</a>
+      <a href="/blog/blog.html">blog</a>
+      <a href="projects.html">projects</a>
+    </div>
   </div>
   <script src="js/light-dark.js"></script>
+  <script type="module">
+    // 1) Load roles from repo and render cards
+    const ROLES_JSON = "/data/roles.json";
+    fetch(ROLES_JSON)
+     .then(r => r.ok ? r.json() : [])
+     .then(roles => {
+      const list = document.getElementById('roles-list');
+      if (!Array.isArray(roles) || roles.length === 0) {
+        list.innerHTML = '<p class="helper">No open roles right now.</p>';
+        return;
+      }
+      list.innerHTML = roles.map(r => `
+        <article class="card" data-slug="${r.slug || ''}">
+          <div class="tag">${r.project || ''}</div>
+          <h3>${r.role || ''}</h3>
+          <p>${r.scope || ''}</p>
+          <ul>
+            <li><strong>Commitment:</strong> ${r.commitment || ''}</li>
+            <li><strong>Stack:</strong> ${r.stack || ''}</li>
+          </ul>
+          <p>
+            <a href="#contact" class="btn express" data-role="${(r.project || '') + ' — ' + (r.role || '')}" data-slug="${r.slug || ''}">
+              Express Interest
+            </a>
+          </p>
+        </article>
+      `).join('');
+      // Prefill role on CTA click
+      list.querySelectorAll('.express').forEach(el => {
+        el.addEventListener('click', () => {
+          const input = document.getElementById('role');
+          if (input) input.value = el.getAttribute('data-role') || '';
+        });
+      });
+      // Add inline respond buttons to post to roleResponse without using the main form
+      list.addEventListener('click', async (e) => {
+        const a = e.target.closest('a[data-slug]');
+        if (!a) return;
+        // no submit here; just prefill the right form
+      });
+    }).catch(() => {
+      document.getElementById('roles-list').innerHTML = '<p class="helper">Could not load roles.</p>';
+    });
+    // 2) Service/consultation form → Cloud Function: /contact
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = 'Sending…';
+      try {
+        const body = Object.fromEntries(new FormData(form));
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        if (!res.ok) throw new Error('Request failed');
+        statusEl.textContent = 'Thanks — I’ll be in touch shortly.';
+        form.reset();
+      } catch (err) {
+        statusEl.textContent = 'Something went wrong. Please try again or email singularity@reqs.tech.';
+      }
+    });
+    // 3) Optional: standalone “Express Interest” quick post to /roleResponse
+    const ROLE_RESPONSE_URL = "https://YOUR_FUNCTION_DOMAIN/roleResponse"; // replace after deploy
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('[data-slug][data-role][data-quick]');
+      if (!btn) return;
+      e.preventDefault();
+      // Implement a small modal or inline prompt if you want quick-submit here.
+      // For now we just prefill the right-side form.
+      document.getElementById('role').value = btn.getAttribute('data-role') || '';
+      document.getElementById('message').focus();
+    });
+  </script>
 </body>
 </html>
-
