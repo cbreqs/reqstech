@@ -76,7 +76,15 @@ body.dark-mode {
 }
 
 body.dark-mode #background-container {
-  background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image: url('/assets/klungkung_bali_vert.png');
+  background-position: bottom;
+}
+
+body.dark-mode .top-bar a,
+body.dark-mode .bottom-bar a,
+body.dark-mode .slide {
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
 body.light-mode {
@@ -84,11 +92,14 @@ body.light-mode {
 }
 
 body.light-mode #background-container {
-  background-image: url('/assets/light-mode-bg.jpg');
+  background-image: url('/assets/bondi-beach-nsw.png');
 }
 
-body.light-mode .top-bar a, body.light-mode .bottom-bar a, body.light-mode .slide {
-  color: white;
+body.light-mode .top-bar a, 
+body.light-mode .bottom-bar a, 
+body.light-mode .slide {
+  color: black;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.4);
 }
 
 /* About Page Styles */
