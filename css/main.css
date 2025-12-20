@@ -83,7 +83,7 @@ html {
 
 /* Light & Dark Modes */
 html.dark-mode {
-  background-image: url('../assets/endless-stairs.jpg');
+  background-image: url('../assets/endless-staircase.jpg');
 }
 
 html.dark-mode .top-bar a,
@@ -95,7 +95,7 @@ html.dark-mode .slide {
 
 html.light-mode {
   background-color: #f5f5f5;
-  background-image: url('../assets/phoenix-ocean.png');
+  background-image: url('../assets/phoenix-ocean.jpg');
 }
 
 html.light-mode .top-bar a, 
