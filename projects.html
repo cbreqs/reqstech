@@ -43,7 +43,7 @@
           <section aria-labelledby="contact">
             <h2 id="contact">Request Services or Consultation</h2>
             <p class="helper">I translate between business, product, and engineering to get outcomes shipped.</p>
-            <form id="contact-form" method="post" action="https://YOUR_FUNCTION_DOMAIN/contact">
+            <form id="contact-form">
               <div class="field">
                 <label for="name">Your name</label>
                 <input id="name" name="name" autocomplete="name" required>
@@ -71,7 +71,7 @@
               </div>
               <div class="field">
                 <label for="role">If responding to a role (optional)</label>
-                <input id="role" name="role" placeholder="e.g., EAKC — Lead Developer">
+                <input id="role" name="role" placeholder="e.g., EAKC — Lead Developer" readonly>
               </div>
               <div class="field">
                 <label for="link">Relevant link (optional)</label>
@@ -99,6 +99,26 @@
   <script src="js/main.js?v=6"></script>
   <script src="js/light-dark.js?v=6"></script>
   <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCVWapW_RKG_Iem5r0L9ZK2g8S8NtybqCg",
+      authDomain: "reqs-tech.firebaseapp.com",
+      projectId: "reqs-tech",
+      storageBucket: "reqs-tech.firebasestorage.app",
+      messagingSenderId: "416777413798",
+      appId: "1:416777413798:web:a203767dac443a64af0067",
+      measurementId: "G-GWMXP5G7N9"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    let selectedRole = null;
+
     // 1) Load roles from repo and render cards
     const ROLES_JSON = "roles.json";
     fetch(ROLES_JSON)
@@ -125,52 +145,71 @@
           </p>
         </article>
       `).join('');
+      
       // Prefill role on CTA click
       list.querySelectorAll('.express').forEach(el => {
-        el.addEventListener('click', () => {
-          const input = document.getElementById('role');
-          if (input) input.value = el.getAttribute('data-role') || '';
+        el.addEventListener('click', (e) => {
+          const roleInput = document.getElementById('role');
+          const reasonSelect = document.getElementById('reason');
+          const roleText = el.getAttribute('data-role') || '';
+          const roleSlug = el.getAttribute('data-slug') || '';
+          if (roleInput) {
+            roleInput.value = roleText;
+            selectedRole = { slug: roleSlug, role: roleText };
+            reasonSelect.required = false; // Role is selected, so reason is not required
+          }
         });
-      });
-      // Add inline respond buttons to post to roleResponse without using the main form
-      list.addEventListener('click', async (e) => {
-        const a = e.target.closest('a[data-slug]');
-        if (!a) return;
-        // no submit here; just prefill the right form
       });
     }).catch(() => {
       document.getElementById('roles-list').innerHTML = '<p class="helper">Could not load roles.</p>';
     });
-    // 2) Service/consultation form → Cloud Function: /contact
+
+    // 2) Form submission logic
     const form = document.getElementById('contact-form');
     const statusEl = document.getElementById('form-status');
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
       statusEl.textContent = 'Sending…';
       try {
-        const body = Object.fromEntries(new FormData(form));
-        const res = await fetch(form.action, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body)
-        });
-        if (!res.ok) throw new Error('Request failed');
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        if (selectedRole && data.role) {
+            // Submitting for a specific role
+            await addDoc(collection(db, "roleResponse"), {
+                name: data.name,
+                email: data.email,
+                message: data.message,
+                link: data.link,
+                roleSlug: selectedRole.slug,
+                createdAt: serverTimestamp(),
+                status: "new"
+            });
+        } else {
+            // Submitting a general service request
+            if (!data.reason) {
+                statusEl.textContent = 'Please select a reason for your request.';
+                return;
+            }
+            await addDoc(collection(db, "serviceRequest"), {
+                name: data.name,
+                email: data.email,
+                reason: data.reason,
+                message: data.message,
+                link: data.link,
+                createdAt: serverTimestamp()
+            });
+        }
+        
         statusEl.textContent = 'Thanks — I’ll be in touch shortly.';
         form.reset();
+        selectedRole = null; // Reset selected role
+        document.getElementById('reason').required = true; // Re-enable required for reason
+
       } catch (err) {
+        console.error("Error adding document: ", err);
         statusEl.textContent = 'Something went wrong. Please try again or email singularity@reqs.tech.';
       }
-    });
-    // 3) Optional: standalone “Express Interest” quick post to /roleResponse
-    const ROLE_RESPONSE_URL = "https://YOUR_FUNCTION_DOMAIN/roleResponse"; // replace after deploy
-    document.addEventListener('click', async (e) => {
-      const btn = e.target.closest('[data-slug][data-role][data-quick]');
-      if (!btn) return;
-      e.preventDefault();
-      // Implement a small modal or inline prompt if you want quick-submit here.
-      // For now we just prefill the right-side form.
-      document.getElementById('role').value = btn.getAttribute('data-role') || '';
-      document.getElementById('message').focus();
     });
   </script>
 </body>
