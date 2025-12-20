@@ -28,13 +28,20 @@ html {
   justify-content: center;
   padding: 1rem;
   z-index: 2;
-  flex-direction: row;
   align-items: center;
   gap: 1rem;
 }
 
-.top-bar { top: 0; }
-.bottom-bar { bottom: 0; }
+.top-bar {
+  top: 0;
+  flex-direction: row;
+}
+
+.bottom-bar {
+  bottom: 0;
+  flex-direction: column; /* Changed from row to column */
+  gap: 0.5rem; /* Adjusted gap for stacked items */
+}
 
 .nav-links a {
   margin: 0 1rem;
@@ -83,7 +90,8 @@ html {
 
 /* Light & Dark Modes */
 html.dark-mode {
-  background-image: url('../assets/endless-stairs.jpg');
+  background-color: #000;
+  background-image: url('../assets/endless-stairs.png');
 }
 
 html.dark-mode .top-bar a,
@@ -141,6 +149,29 @@ ul { padding-left: 1.25rem; }
 
 html.light-mode .tag { background: rgba(0, 0, 0, 0.05); }
 
+/* Scroll-to-top Button */
+#scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  display: none; /* Hidden by default, shown by JS */
+  z-index: 100;
+  transition: background-color 0.3s;
+}
+
+#scroll-top:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 @media (max-width: 900px) { 
   .grid-2-col, .grid-3-col { 

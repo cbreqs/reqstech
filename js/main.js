@@ -6,11 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Scroll-to-top button
-  const scrollTopBtn = document.createElement('a');
-  scrollTopBtn.href = '#top';
-  scrollTopBtn.id = 'scroll-top';
-  scrollTopBtn.textContent = '↑';
-  document.body.appendChild(scrollTopBtn);
+  const scrollTopBtn = document.getElementById('scroll-top');
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 400) {
