@@ -1,3 +1,4 @@
+
 /* Basic Styles */
 html, body {
   margin: 0;
@@ -11,6 +12,8 @@ html {
   background-size: cover;
   background-position: center 0;
   transition: background-image 0.5s ease-in-out;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .page-wrapper {
@@ -25,18 +28,13 @@ html {
   justify-content: center;
   padding: 1rem;
   z-index: 2;
-  flex-direction: row; /* Fix for horizontal layout */
+  flex-direction: row;
   align-items: center;
   gap: 1rem;
 }
 
-.top-bar {
-  top: 0;
-}
-
-.bottom-bar {
-  bottom: 0;
-}
+.top-bar { top: 0; }
+.bottom-bar { bottom: 0; }
 
 .nav-links a {
   margin: 0 1rem;
@@ -60,10 +58,6 @@ html {
     text-decoration: underline;
 }
 
-html.light-mode .footer-tagline {
-    color: #555;
-}
-
 .container {
   padding: 5rem 2rem;
   width: 100%;
@@ -80,9 +74,7 @@ html.light-mode .footer-tagline {
   color: white;
 }
 
-.center-quote {
-  text-align: center;
-}
+.center-quote { text-align: center; }
 
 .homepage-quote {
   font-family: 'Droid Serif', serif;
@@ -103,7 +95,7 @@ html.dark-mode .slide {
 
 html.light-mode {
   background-color: #f5f5f5;
-  background-image: url('../assets/geometric-cubes.png');
+  background-image: url('../assets/phoenix-ocean.png');
 }
 
 html.light-mode .top-bar a, 
@@ -111,6 +103,10 @@ html.light-mode .bottom-bar a,
 html.light-mode .slide {
   color: black;
   text-shadow: 1px 1px 3px rgba(255,255,255,0.4);
+}
+
+html.light-mode .footer-tagline {
+    color: #555;
 }
 
 /* Project & About Page Styles */
@@ -133,16 +129,18 @@ html.light-mode .slide {
 
 html.dark-mode .panel { background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); }
 html.dark-mode .card { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); }
+html.dark-mode .pull-quote { border-color: #eee; }
+
 
 html.light-mode .panel { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(0, 0, 0, 0.1); }
 html.light-mode .card { background: rgba(255,255,255,0.8); border: 1px solid rgba(0, 0, 0, 0.1); }
+html.light-mode .pull-quote { border-color: #111; }
 
 .tag { display: inline-block; padding: .25rem .5rem; background: rgba(255, 255, 255, 0.1); border-radius: 999px; font-size: .85rem; }
 ul { padding-left: 1.25rem; }
 
-
 html.light-mode .tag { background: rgba(0, 0, 0, 0.05); }
-html.light-mode .pull-quote { border-color: #111; }
+
 
 @media (max-width: 900px) { 
   .grid-2-col, .grid-3-col { 

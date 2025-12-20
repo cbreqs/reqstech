@@ -13,8 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Default to dark mode
-  applyTheme('dark');
+  // On page load, apply the saved theme
+  // Default to dark mode if no theme is found in localStorage
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  applyTheme(savedTheme);
 
   // Event listener for the theme toggle button
   if (toggleModeBtn) {

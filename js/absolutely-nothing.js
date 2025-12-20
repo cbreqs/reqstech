@@ -1,1 +1,0 @@
-rerollButton.className = "civil-btn";
