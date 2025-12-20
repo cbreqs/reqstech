@@ -1,5 +1,5 @@
 /* Basic Styles */
-body, html {
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
@@ -7,9 +7,9 @@ body, html {
   height: 100%;
 }
 
-body {
-  background-attachment: fixed;
+html {
   background-size: cover;
+  background-position: center 0;
   transition: background-image 0.5s ease-in-out;
 }
 
@@ -25,6 +25,9 @@ body {
   justify-content: center;
   padding: 1rem;
   z-index: 2;
+  flex-direction: row; /* Fix for horizontal layout */
+  align-items: center;
+  gap: 1rem;
 }
 
 .top-bar {
@@ -35,15 +38,37 @@ body {
   bottom: 0;
 }
 
-.top-bar a, .bottom-bar a {
+.nav-links a {
   margin: 0 1rem;
+}
+
+.top-bar a, .bottom-bar a {
   color: white;
   text-decoration: none;
   font-family: 'Red Hat Display', sans-serif;
 }
 
+.footer-tagline {
+    font-family: 'Droid Serif', serif;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-tagline a {
+    text-decoration: underline;
+}
+
+html.light-mode .footer-tagline {
+    color: #555;
+}
+
 .container {
   padding: 5rem 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Slide Sections */
@@ -65,110 +90,62 @@ body {
 }
 
 /* Light & Dark Modes */
-body.dark-mode {
-  background-color: #121212;
-  background-image: url('/assets/klungkung_bali_vert.png');
-  background-position: bottom;
+html.dark-mode {
+  background-image: url('../assets/endless-stairs.jpg');
 }
 
-body.dark-mode .top-bar a,
-body.dark-mode .bottom-bar a,
-body.dark-mode .slide {
+html.dark-mode .top-bar a,
+html.dark-mode .bottom-bar a,
+html.dark-mode .slide {
   color: white;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
-body.light-mode {
+html.light-mode {
   background-color: #f5f5f5;
-  background-image: url('/assets/bondi-beach-nsw.png');
+  background-image: url('../assets/geometric-cubes.png');
 }
 
-body.light-mode .top-bar a, 
-body.light-mode .bottom-bar a, 
-body.light-mode .slide {
+html.light-mode .top-bar a, 
+html.light-mode .bottom-bar a, 
+html.light-mode .slide {
   color: black;
   text-shadow: 1px 1px 3px rgba(255,255,255,0.4);
 }
 
-/* About Page Styles */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
+/* Project & About Page Styles */
+.grid-layout { display: grid; gap: 2rem; align-items: start; }
+.grid-2-col { grid-template-columns: 2fr 1fr; }
+.grid-3-col { grid-template-columns: repeat(3, 1fr); }
 
-.milestone {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.milestone.reverse {
-    flex-direction: row-reverse;
-}
-
-.milestone img {
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-}
-
-.milestone-content .caption {
-    font-family: 'Playfair Display', serif;
+.pull-quote {
+    font-family: 'Droid Serif', serif;
     font-style: italic;
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    border-left: 4px solid;
+    padding-left: 1rem;
+    margin-top: 1rem;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-    align-items: center;
-    justify-content: center;
-}
+.panel { border-radius: 12px; padding: 2rem; }
+.card { border-radius: 10px; padding: 1.5rem; height: 100%;}
 
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
+html.dark-mode .panel { background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); }
+html.dark-mode .card { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); }
 
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
+html.light-mode .panel { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(0, 0, 0, 0.1); }
+html.light-mode .card { background: rgba(255,255,255,0.8); border: 1px solid rgba(0, 0, 0, 0.1); }
 
-/* Project Page Styles */
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-@media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
-.panel { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 1.25rem; }
-.card { border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; padding: 1rem; margin-block: .75rem; }
 .tag { display: inline-block; padding: .25rem .5rem; background: rgba(255, 255, 255, 0.1); border-radius: 999px; font-size: .85rem; }
-.field { margin-block: .75rem; }
-label { display:block; font-weight:600; margin-bottom:.25rem; }
-input, select, textarea { width: 100%; padding: .65rem .75rem; border:1px solid rgba(255, 255, 255, 0.2); border-radius:8px; background-color: rgba(0,0,0,0.2); color: white;}
-button, .btn { appearance:none; border:0; border-radius:9px; padding:.65rem .9rem; background: #eee; color:#111; font-weight:600; cursor:pointer; text-decoration:none; }
-.helper { color: #ccc; font-size: .95rem; }
 ul { padding-left: 1.25rem; }
-.small { font-size: .9rem; color: #ccc; }
 
-body.light-mode .panel { background: rgba(0, 0, 0, 0.05); border-color: rgba(0, 0, 0, 0.1); }
-body.light-mode .card { border-color: rgba(0, 0, 0, 0.1); }
-body.light-mode .tag { background: rgba(0, 0, 0, 0.05); }
-body.light-mode input, body.light-mode select, body.light-mode textarea { border-color: rgba(0, 0, 0, 0.1); background-color: rgba(255,255,255,0.5); color: black;}
-body.light-mode button, body.light-mode .btn { background: #111; color: #f5f5f5;}
-body.light-mode .helper { color: #555; }
-body.light-mode .small { color: #555; }
+
+html.light-mode .tag { background: rgba(0, 0, 0, 0.05); }
+html.light-mode .pull-quote { border-color: #111; }
+
+@media (max-width: 900px) { 
+  .grid-2-col, .grid-3-col { 
+    grid-template-columns: 1fr; 
+  }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,9 +7,161 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
+  <style>
+/* Basic Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+html {
+  background-size: cover;
+  background-position: center 0;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.top-bar, .bottom-bar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 2;
+  flex-direction: row; /* Fix for horizontal layout */
+  align-items: center;
+  gap: 1rem;
+}
+
+.top-bar {
+  top: 0;
+}
+
+.bottom-bar {
+  bottom: 0;
+}
+
+.nav-links a {
+  margin: 0 1rem;
+}
+
+.top-bar a, .bottom-bar a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.footer-tagline {
+    font-family: 'Droid Serif', serif;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-tagline a {
+    text-decoration: underline;
+}
+
+html.light-mode .footer-tagline {
+    color: #555;
+}
+
+.container {
+  padding: 5rem 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Slide Sections */
+.slide {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.center-quote {
+  text-align: center;
+}
+
+.homepage-quote {
+  font-family: 'Droid Serif', serif;
+  font-size: 3rem;
+}
+
+/* Light & Dark Modes */
+html.dark-mode {
+  background-image: url('assets/endless-stairs.jpg');
+}
+
+html.dark-mode .top-bar a,
+html.dark-mode .bottom-bar a,
+html.dark-mode .slide {
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+html.light-mode {
+  background-color: #f5f5f5;
+  background-image: url('assets/geometric-cubes.png');
+}
+
+html.light-mode .top-bar a, 
+html.light-mode .bottom-bar a, 
+html.light-mode .slide {
+  color: black;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.4);
+}
+
+/* Project & About Page Styles */
+.grid-layout { display: grid; gap: 2rem; align-items: start; }
+.grid-2-col { grid-template-columns: 2fr 1fr; }
+.grid-3-col { grid-template-columns: repeat(3, 1fr); }
+
+.pull-quote {
+    font-family: 'Droid Serif', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    border-left: 4px solid;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+.panel { border-radius: 12px; padding: 2rem; }
+.card { border-radius: 10px; padding: 1.5rem; height: 100%;}
+
+html.dark-mode .panel { background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); }
+html.dark-mode .card { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); }
+
+html.light-mode .panel { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(0, 0, 0, 0.1); }
+html.light-mode .card { background: rgba(255,255,255,0.8); border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.tag { display: inline-block; padding: .25rem .5rem; background: rgba(255, 255, 255, 0.1); border-radius: 999px; font-size: .85rem; }
+ul { padding-left: 1.25rem; }
+
+
+html.light-mode .tag { background: rgba(0, 0, 0, 0.05); }
+html.light-mode .pull-quote { border-color: #111; }
+
+@media (max-width: 900px) { 
+  .grid-2-col, .grid-3-col { 
+    grid-template-columns: 1fr; 
+  }
+}
+  </style>
 </head>
-<body class="dark-mode">
+<body>
   <div class="page-wrapper">
     <div class="top-bar">
         <a href="mailto:singularity@reqs.tech?subject=i've been thinking...">email</a>
@@ -24,8 +176,76 @@
     </section>
     <section id="about" class="slide">
         <div class="container">
-            <h1>About</h1>
-            <p>This is a placeholder for the about content.</p>
+          <div class="panel">
+            
+            <div style="text-align: center;">
+              <h2>Think of me as your technical liaison.</h2>
+              <p>If you’re forging a new path in a new industry, or building a service business on manual tools and elbow grease, you still end up with the same pressure point: the work grows, the tools multiply, and the system starts leaking.</p>
+              <p>I’ve worked across enough domains to recognize the pattern early. I listen for what’s actually happening under the surface, then translate it into something you can run without holding your breath.</p>
+            </div>
+
+            <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.2);">
+
+            <div class="grid-layout grid-2-col">
+              <div>
+                <p>I’ll meet your situation where it is, and help turn the options into a path that matches the vision you’re carrying.</p>
+                <p>From a simple landing page that makes you legible online, to BIM/VDC coordination and training, to data flows, automations, and lightweight web apps, so projects run cleanly and decisions stay grounded.</p>
+                <h4>Together we will:</h4>
+                <ul>
+                  <li>map the problem until it stops shifting</li>
+                  <li>choose tools that fit your reality, not someone else’s stack</li>
+                  <li>document what matters so the system survives contact with real life</li>
+                  <li>build an action plan you can actually follow</li>
+                  <li>integrate the new workflow into your world, not around it</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pull-quote">
+                  If it’s not clear and repeatable, it’s not done.
+                </div>
+              </div>
+            </div>
+
+            <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.2);">
+
+            <div class="grid-layout grid-3-col">
+              <div class="card">
+                <h4>Focus areas</h4>
+                <ul>
+                  <li>BIM/VDC coordination and standards that hold up in the field</li>
+                  <li>Autodesk Construction Cloud training and management</li>
+                  <li>Data pipelines, Firebase, and ecosystems like Microsoft, Google, and Autodesk</li>
+                  <li>Pragmatic automation that gives you time and cognitive room back</li>
+                  <li>Systems designed to integrate neurodivergent needs</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>What clients get</h4>
+                <ul>
+                  <li>Working systems</li>
+                  <li>Plain-language documentation</li>
+                  <li>Momentum without chaos</li>
+                  <li>Application seats when it helps build a focused, intentional approach</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>Values</h4>
+                <ul>
+                  <li>Clarity</li>
+                  <li>Speed</li>
+                  <li>Long-term maintainability</li>
+                </ul>
+              </div>
+            </div>
+            
+            <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.2);">
+
+            <div style="text-align: center;">
+                <p>Need a dependable technical generalist who can see the whole board and deliver?</p>
+                <h3>Let’s build something. We’ll make it clear. Then make it real.</h3>
+            </div>
+
+          </div>
         </div>
     </section>
     <section id="personal-projects" class="slide">
@@ -35,10 +255,15 @@
         </div>
     </section>
     <div class="bottom-bar">
+      <div class="nav-links">
         <a href="#home">home</a>
         <a href="#about">about</a>
         <a href="/blog/blog.html">blog</a>
         <a href="projects.html">projects</a>
+      </div>
+      <p class="footer-tagline">
+        <a href="http://reqs.tech/">REQS.TECH</a> builds clear, documented systems across BIM/VDC, data, and web. Fast integration. Zero fluff.
+      </p>
     </div>
   </div>
   <div class="modal" id="modal" onclick="closeModal()">
@@ -47,6 +272,7 @@
       <img id="modal-image" src="" alt="Expanded Milestone">
     </div>
   </div>
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
+  <script src="js/light-dark.js?v=3"></script>
 </body>
 </html>

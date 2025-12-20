@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLELPHJKX5"></script>
@@ -16,10 +16,162 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=2">
   <meta name="description" content="Mini job board for live projects and a request-for-service form — liaison, web/app delivery, payments, brand systems, AEC/BIM, AI prototyping.">
+  <style>
+/* Basic Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+html {
+  background-size: cover;
+  background-position: center 0;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.top-bar, .bottom-bar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 2;
+  flex-direction: row; /* Fix for horizontal layout */
+  align-items: center;
+  gap: 1rem;
+}
+
+.top-bar {
+  top: 0;
+}
+
+.bottom-bar {
+  bottom: 0;
+}
+
+.nav-links a {
+  margin: 0 1rem;
+}
+
+.top-bar a, .bottom-bar a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.footer-tagline {
+    font-family: 'Droid Serif', serif;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-tagline a {
+    text-decoration: underline;
+}
+
+html.light-mode .footer-tagline {
+    color: #555;
+}
+
+.container {
+  padding: 5rem 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Slide Sections */
+.slide {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.center-quote {
+  text-align: center;
+}
+
+.homepage-quote {
+  font-family: 'Droid Serif', serif;
+  font-size: 3rem;
+}
+
+/* Light & Dark Modes */
+html.dark-mode {
+  background-image: url('assets/endless-stairs.jpg');
+}
+
+html.dark-mode .top-bar a,
+html.dark-mode .bottom-bar a,
+html.dark-mode .slide {
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+html.light-mode {
+  background-color: #f5f5f5;
+  background-image: url('assets/geometric-cubes.png');
+}
+
+html.light-mode .top-bar a, 
+html.light-mode .bottom-bar a, 
+html.light-mode .slide {
+  color: black;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.4);
+}
+
+/* Project & About Page Styles */
+.grid-layout { display: grid; gap: 2rem; align-items: start; }
+.grid-2-col { grid-template-columns: 2fr 1fr; }
+.grid-3-col { grid-template-columns: repeat(3, 1fr); }
+
+.pull-quote {
+    font-family: 'Droid Serif', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    border-left: 4px solid;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+.panel { border-radius: 12px; padding: 2rem; }
+.card { border-radius: 10px; padding: 1.5rem; height: 100%;}
+
+html.dark-mode .panel { background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); }
+html.dark-mode .card { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); }
+
+html.light-mode .panel { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(0, 0, 0, 0.1); }
+html.light-mode .card { background: rgba(255,255,255,0.8); border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.tag { display: inline-block; padding: .25rem .5rem; background: rgba(255, 255, 255, 0.1); border-radius: 999px; font-size: .85rem; }
+ul { padding-left: 1.25rem; }
+
+
+html.light-mode .tag { background: rgba(0, 0, 0, 0.05); }
+html.light-mode .pull-quote { border-color: #111; }
+
+@media (max-width: 900px) { 
+  .grid-2-col, .grid-3-col { 
+    grid-template-columns: 1fr; 
+  }
+}
+  </style>
 </head>
-<body class="static-page">
+<body>
   <div class="page-wrapper">
     <div class="top-bar">
       <a href="mailto:singularity@reqs.tech?subject=i've been thinking...">email</a>
@@ -29,67 +181,78 @@
       <h1>Projects</h1>
       <p class="helper">Helpers wanted and requests welcome. If you build, ship, or solve, let’s talk.</p>
     </header>
-    <main class="container split">
-      <!-- Left: mini job board -->
-      <section class="panel" aria-labelledby="roles">
-        <h2 id="roles">Open Roles on Active Projects</h2>
-        <p class="helper">Scoped roles inside live projects. I act as the liaison so teams get what they need without perfect specs.</p>
-        <div id="roles-list" aria-live="polite"></div>
-        <p class="small">Don’t see a fit? Use the form on the right to propose how you can help.</p>
-      </section>
-      <!-- Right: service/consultation request form -->
-      <section class="panel" aria-labelledby="contact">
-        <h2 id="contact">Request Services or Consultation</h2>
-        <p class="helper">I translate between business, product, and engineering to get outcomes shipped.</p>
-        <form id="contact-form" method="post" action="https://YOUR_FUNCTION_DOMAIN/contact">
-          <div class="field">
-            <label for="name">Your name</label>
-            <input id="name" name="name" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="reason">Reason</label>
-            <select id="reason" name="reason" required>
-              <option value="">Select…</option>
-              <option>Fractional PM / Liaison</option>
-              <option>Website or App Delivery</option>
-              <option>Payments / Booking Flows</option>
-              <option>Brand System / Slides</option>
-              <option>AEC/BIM Automation</option>
-              <option>AI Prototyping</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="message">What do you need?</label>
-            <textarea id="message" name="message" rows="6" placeholder="A few sentences about goals, constraints, timeline." required></textarea>
-          </div>
-          <div class="field">
-            <label for="role">If responding to a role (optional)</label>
-            <input id="role" name="role" placeholder="e.g., EAKC — Lead Developer">
-          </div>
-          <div class="field">
-            <label for="link">Relevant link (optional)</label>
-            <input id="link" name="link" type="url" placeholder="https://">
-          </div>
-          <button type="submit">Send request</button>
-          <p id="form-status" class="helper" role="status" aria-live="polite"></p>
-        </form>
-      </section>
+    <main class="container">
+      <div class="panel">
+        <div class="grid-layout grid-2-col">
+          <!-- Left: mini job board -->
+          <section aria-labelledby="roles">
+            <h2 id="roles">Open Roles on Active Projects</h2>
+            <p class="helper">Scoped roles inside live projects. I act as the liaison so teams get what they need without perfect specs.</p>
+            <div id="roles-list" aria-live="polite"></div>
+            <p class="small">Don’t see a fit? Use the form on the right to propose how you can help.</p>
+          </section>
+          <!-- Right: service/consultation request form -->
+          <section aria-labelledby="contact">
+            <h2 id="contact">Request Services or Consultation</h2>
+            <p class="helper">I translate between business, product, and engineering to get outcomes shipped.</p>
+            <form id="contact-form" method="post" action="https://YOUR_FUNCTION_DOMAIN/contact">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="reason">Reason</label>
+                <select id="reason" name="reason" required>
+                  <option value="">Select…</option>
+                  <option>Fractional PM / Liaison</option>
+                  <option>Website or App Delivery</option>
+                  <option>Payments / Booking Flows</option>
+                  <option>Brand System / Slides</option>
+                  <option>AEC/BIM Automation</option>
+                  <option>AI Prototyping</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">What do you need?</label>
+                <textarea id="message" name="message" rows="6" placeholder="A few sentences about goals, constraints, timeline." required></textarea>
+              </div>
+              <div class="field">
+                <label for="role">If responding to a role (optional)</label>
+                <input id="role" name="role" placeholder="e.g., EAKC — Lead Developer">
+              </div>
+              <div class="field">
+                <label for="link">Relevant link (optional)</label>
+                <input id="link" name="link" type="url" placeholder="https://">
+              </div>
+              <button type="submit">Send request</button>
+              <p id="form-status" class="helper" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+        </div>
+      </div>
     </main>
     <div class="bottom-bar">
-      <a href="about.html">about</a>
-      <a href="/blog/blog.html">blog</a>
-      <a href="projects.html">projects</a>
+        <div class="nav-links">
+            <a href="index.html">home</a>
+            <a href="index.html#about">about</a>
+            <a href="/blog/blog.html">blog</a>
+            <a href="projects.html">projects</a>
+        </div>
+        <p class="footer-tagline">
+            <a href="http://reqs.tech/">REQS.TECH</a> builds clear, documented systems across BIM/VDC, data, and web. Fast integration. Zero fluff.
+        </p>
     </div>
   </div>
-  <script src="js/light-dark.js"></script>
+  <script src="js/main.js?v=3"></script>
+  <script src="js/light-dark.js?v=3"></script>
   <script type="module">
     // 1) Load roles from repo and render cards
-    const ROLES_JSON = "/data/roles.json";
+    const ROLES_JSON = "roles.json";
     fetch(ROLES_JSON)
      .then(r => r.ok ? r.json() : [])
      .then(roles => {

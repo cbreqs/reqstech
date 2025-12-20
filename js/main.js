@@ -1,30 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleModeBtn = document.getElementById('toggle-mode');
-  const body = document.body;
+  // Parallax scroll effect
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    document.documentElement.style.backgroundPositionY = `-${scrolled * 0.2}px`;
+  });
 
-  if (toggleModeBtn) {
-    toggleModeBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      body.classList.toggle('light-mode');
-      body.classList.toggle('dark-mode');
+  // Scroll-to-top button
+  const scrollTopBtn = document.createElement('a');
+  scrollTopBtn.href = '#top';
+  scrollTopBtn.id = 'scroll-top';
+  scrollTopBtn.textContent = '↑';
+  document.body.appendChild(scrollTopBtn);
 
-      // Store the user's preference
-      if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  }
-
-  // Apply the stored theme on page load
-  const storedTheme = localStorage.getItem('theme');
-  if (storedTheme === 'dark') {
-    body.classList.add('dark-mode');
-    body.classList.remove('light-mode');
-  } else {
-    // Default to light mode
-    body.classList.add('light-mode');
-    body.classList.remove('dark-mode');
-  }
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.style.display = 'block';
+    } else {
+      scrollTopBtn.style.display = 'none';
+    }
+  });
 });
