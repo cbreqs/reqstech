@@ -153,8 +153,8 @@ html.light-mode .footer-tagline {
     margin-top: 1rem;
 }
 
-.panel { border-radius: 12px; padding: 2rem; }
-.card { border-radius: 10px; padding: 1.5rem; }
+.panel { border-radius: 12px; padding: 1rem 2rem; }
+.card { border-radius: 10px; padding: 0.5rem 1.5rem; }
 
 html.dark-mode .panel { background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); }
 html.dark-mode .card { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); }
