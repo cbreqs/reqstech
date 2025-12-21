@@ -365,6 +365,21 @@ html.light-mode button[type="submit"] {
     cursor: pointer;
 }
 
+html.light-mode .modal-content-wrapper {
+    background-color: #fefefe;
+}
+
+html.light-mode .modal-content-wrapper h3,
+html.light-mode .modal-content-wrapper p {
+    color: #000 !important;
+    text-shadow: none !important;
+}
+
+html.light-mode .close-modal {
+    color: #333;
+}
+
+
 /* Responsive Modal */
 @media (max-width: 768px) {
     .modal-content-wrapper {
