@@ -1,32 +1,32 @@
 [
-  {
-    "title": "Elevated Adventures",
-    "description": "A multi-page site with booking options for event planning",
-    "imageUrl": "https://via.placeholder.com/256",
-    "modalImageUrl": "https://via.placeholder.com/1024"
-  },
-  {
-    "title": "Graphic Design Assets",
-    "description": "Development of various media elements for use in print, web, and social media applications",
-    "imageUrl": "https://via.placeholder.com/256",
-    "modalImageUrl": "https://via.placeholder.com/1024"
-  },
-  {
-    "title": "Firestore Database Development",
-    "description": "Multi-functional database design for specific website needs featuring multiple collections and connections to forms and sheets for data processing",
-    "imageUrl": "https://via.placeholder.com/256",
-    "modalImageUrl": "https://via.placeholder.com/1024"
-  },
-  {
-    "title": "MOGas, MOMoney",
-    "description": "A lightweight mobile app to track receipts for the Missouri Fuel Tax Refund available each July-September",
-    "imageUrl": "https://via.placeholder.com/256",
-    "modalImageUrl": "https://via.placeholder.com/1024"
-  },
-  {
-    "title": "ACC (Autodesk Construction Cloud) Automation & Management",
-    "description": "Development of various automated aspects of Project Coordination for practical VDC applications maintaining drawing lists, view creation, and sheet alignment, providing clean and reliable deliverables",
-    "imageUrl": "https://via.placeholder.com/256",
-    "modalImageUrl": "https://via.placeholder.com/1024"
-  }
-]
+    {
+      "title": "Elevated Adventures",
+      "description": "A multi-page site with booking options for event planning",
+      "imageUrl": "assets/eakc-256.png",
+      "modalImageUrl": "assets/eakc-1024.png"
+    },
+    {
+      "title": "Graphic Design Assets",
+      "description": "Development of various media elements for use in print, web, and social media applications",
+      "imageUrl": "assets/graphic-design-256.png",
+      "modalImageUrl": "assets/graphic-design-1024.png"
+    },
+    {
+      "title": "Firestore Database Development",
+      "description": "Multi-functional database design for specific website needs featuring multiple collections and connections to forms and sheets for data processing",
+      "imageUrl": "assets/firebase-256.png",
+      "modalImageUrl": "assets/firebase-1024.png"
+    },
+    {
+      "title": "MOGas, MOMoney",
+      "description": "A lightweight mobile app to track receipts for the Missouri Fuel Tax Refund available each July-September",
+      "imageUrl": "assets/MOGas-256.png",
+      "modalImageUrl": "assets/MOGas-1024.png"
+    },
+    {
+      "title": "ACC (Autodesk Construction Cloud) Automation & Management",
+      "description": "Development of various automated aspects of Project Coordination for practical VDC applications maintaining drawing lists, view creation, and sheet alignment, providing clean and reliable deliverables",
+      "imageUrl": "assets/autodesk-256.png",
+      "modalImageUrl": "assets/autodesk-1024.png"
+    }
+  ]
