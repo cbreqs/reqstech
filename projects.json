@@ -1,0 +1,23 @@
+
+[
+  {
+    "title": "Project Leo",
+    "description": "A lightweight, modular framework for building and managing personal and professional websites.",
+    "imageUrl": "https://via.placeholder.com/256"
+  },
+  {
+    "title": "Project Archer",
+    "description": "An automated system for deploying and managing applications across multiple cloud environments.",
+    "imageUrl": "https://via.placeholder.com/256"
+  },
+  {
+    "title": "Project Helix",
+    "description": "A data visualization library for creating interactive and dynamic charts and graphs.",
+    "imageUrl": "https://via.placeholder.com/256"
+  },
+  {
+    "title": "Project Nova",
+    "description": "A tool for monitoring and analyzing real-time data streams.",
+    "imageUrl": "https://via.placeholder.com/256"
+  }
+]
