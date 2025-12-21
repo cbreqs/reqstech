@@ -1,9 +1,3 @@
-
-export { contact } from "./contact";
-export { handleServiceRequestCreate, handleRoleResponseCreate } from "./sheets";
-export { exportexistingdata } from "./export";
-
-
 import * as functions from 'firebase-functions';
 import axios from 'axios';
 
@@ -18,7 +12,7 @@ export const syncFirestoreToSheets = functions.firestore
 
     if (targetCollections.includes(collectionId)) {
       // Use the Web App URL from your successful deployment
-      const webAppUrl = 'YOUR_DEPLOYED_WEB_APP_URL';
+      const webAppUrl = 'https://script.google.com/macros/s/AKfycbytVe9uMe8fZ5VzlgnUS4EUMTEts4z4KnQTOJbetCsmc8BjFUSLlAHA7g5kCzsf2WqM/exec';
 
       try {
         await axios.post(webAppUrl, {
