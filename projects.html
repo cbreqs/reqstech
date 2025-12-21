@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
   <meta name="description" content="Mini job board for live projects and a request-for-service form — liaison, web/app delivery, payments, brand systems, AEC/BIM, AI prototyping.">
-  <link rel="stylesheet" href="css/main.css?v=11">
+  <link rel="stylesheet" href="css/main.css?v=15">
 </head>
 <body>
   <div class="page-wrapper">
@@ -25,74 +25,73 @@
       <a href="mailto:singularity@reqs.tech?subject=i've been thinking...">email</a>
       <a href="#" id="toggle-mode">light / dark</a>
     </div>
-    <header class="container">
-      <h1>Projects</h1>
-      <p class="helper">Helpers wanted and requests welcome. If you build, ship, or solve, let’s talk.</p>
-    </header>
     <main class="container">
-      <div class="panel">
-        <div class="grid-layout grid-2-col">
-          <!-- Left: mini job board -->
-          <section aria-labelledby="roles">
-            <h2 id="roles">Open Roles on Active Projects</h2>
-            <p class="helper">Scoped roles inside live projects. I act as the liaison so teams get what they need without perfect specs.</p>
-            <div id="roles-list" aria-live="polite"></div>
-            <p class="small">Don’t see a fit? Use the form on the right to propose how you can help.</p>
-          </section>
-          <!-- Right: service/consultation request form -->
-          <section aria-labelledby="contact">
-            <h2 id="contact">Request Services or Consultation</h2>
-            <p class="helper">I translate between business, product, and engineering to get outcomes shipped.</p>
-            <form id="contact-form">
-              <div class="field">
-                <label for="name">Your name</label>
-                <input id="name" name="name" autocomplete="name" required>
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required>
-              </div>
-              <div class="field">
-                <label for="reason">Reason</label>
-                <select id="reason" name="reason" required>
-                  <option value="">Select…</option>
-                  <option>Fractional PM / Liaison</option>
-                  <option>Website or App Delivery</option>
-                  <option>Payments / Booking Flows</option>
-                  <option>Brand System / Slides</option>
-                  <option>AEC/BIM Automation</option>
-                  <option>AI Prototyping</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="message">What do you need?</label>
-                <textarea id="message" name="message" rows="6" placeholder="A few sentences about goals, constraints, timeline." required></textarea>
-              </div>
-              <div class="field">
-                <label for="role">If responding to a role (optional)</label>
-                <input id="role" name="role" placeholder="e.g., EAKC — Lead Developer" readonly>
-              </div>
-              <div class="field">
-                <label for="link">Relevant link (optional)</label>
-                <input id="link" name="link" type="url" placeholder="https://">
-              </div>
-              <button type="submit">Send request</button>
-              <p id="form-status" class="helper" role="status" aria-live="polite"></p>
-            </form>
-          </section>
+        <div class="panel">
+            <h1>Projects</h1>
+            <p class="helper">Helpers wanted and requests welcome. If you build, ship, or solve, let’s talk.</p>
+            <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.2);">
+            <div class="grid-layout grid-2-col">
+              <!-- Left: mini job board -->
+              <section aria-labelledby="roles">
+                <h2 id="roles">Open Roles on Active Projects</h2>
+                <p class="helper">Scoped roles inside live projects. I act as the liaison so teams get what they need without perfect specs.</p>
+                <div id="roles-list" aria-live="polite"></div>
+                <p class="small">Don’t see a fit? Use the form on the right to propose how you can help.</p>
+              </section>
+              <!-- Right: service/consultation request form -->
+              <section aria-labelledby="contact">
+                <h2 id="contact">Request Services or Consultation</h2>
+                <p class="helper">I translate between business, product, and engineering to get outcomes shipped.</p>
+                <form id="contact-form">
+                  <div class="field">
+                    <label for="name">Your name</label>
+                    <input id="name" name="name" autocomplete="name" required>
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                  </div>
+                  <div class="field">
+                    <label for="reason">Reason</label>
+                    <select id="reason" name="reason" required>
+                      <option value="">Select…</option>
+                      <option>Fractional PM / Liaison</option>
+                      <option>Website or App Delivery</option>
+                      <option>Payments / Booking Flows</option>
+                      <option>Brand System / Slides</option>
+                      <option>AEC/BIM Automation</option>
+                      <option>AI Prototyping</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="message">What do you need?</label>
+                    <textarea id="message" name="message" rows="6" placeholder="A few sentences about goals, constraints, timeline." required></textarea>
+                  </div>
+                  <div class="field">
+                    <label for="role">If responding to a role (optional)</label>
+                    <input id="role" name="role" placeholder="e.g., EAKC — Lead Developer" readonly>
+                  </div>
+                  <div class="field">
+                    <label for="link">Relevant link (optional)</label>
+                    <input id="link" name="link" type="url" placeholder="https://">
+                  </div>
+                  <button type="submit">Send request</button>
+                  <p id="form-status" class="helper" role="status" aria-live="polite"></p>
+                </form>
+              </section>
+            </div>
         </div>
-      </div>
     </main>
     <div class="bottom-bar">
         <div class="nav-links">
             <a href="index.html">home</a>
             <a href="index.html#about">about</a>
             <a href="/blog/blog.html">blog</a>
-            <a href="index.html#ansible">ansible</a>
+            <a href="index.html#personal-projects">ansible</a>
         </div>
         <p class="footer-tagline">
-            <a href="http://reqs.tech/">REQS.TECH</a> builds clear, documented systems across BIM/VDC, data, and web. Fast integration. Zero fluff.
+            REQS.TECH | Technically Creative. Practically Obsessed.
         </p>
     </div>
   </div>

@@ -1,11 +1,11 @@
 function initializeGallery() {
     const modal = document.getElementById('gallery-modal');
     const modalImg = document.getElementById('modal-image');
-    const modalCaption = document.getElementById('modal-caption');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
     const closeModal = document.querySelector('.close-modal');
-    
+
     const galleryContainer = document.querySelector('.gallery-container');
-    const galleryScrollContainer = document.querySelector('.gallery-scroll-container');
     const galleryWrapper = document.querySelector('.gallery-wrapper');
     
     const prevArrow = document.querySelector('.gallery-arrow.prev');
@@ -102,22 +102,21 @@ function initializeGallery() {
     galleryContainer.addEventListener('mouseenter', stopAutoScroll);
     galleryContainer.addEventListener('mouseleave', startAutoScroll);
 
-    // --- Modal Handling ---
+    // --- New Modal Handling ---
     const allCards = galleryWrapper.querySelectorAll('.gallery-card');
     allCards.forEach(card => {
         card.addEventListener('click', (e) => {
             stopAutoScroll();
-            modal.style.display = 'block';
-            const img = e.currentTarget.querySelector('img');
-            const h3 = e.currentTarget.querySelector('h3');
-            const p = e.currentTarget.querySelector('p');
-            modalImg.src = img ? img.src : '';
-            modalCaption.innerHTML = (h3 ? h3.innerHTML : '') + '<br>' + (p ? p.innerHTML : '');
+            const cardData = e.currentTarget.dataset;
+            modalImg.src = cardData.modalImageUrl;
+            modalTitle.textContent = cardData.title;
+            modalDescription.textContent = cardData.description;
+            modal.classList.add('show');
         });
     });
 
     const closeModalAction = () => {
-        modal.style.display = 'none';
+        modal.classList.remove('show');
         startAutoScroll();
     };
 

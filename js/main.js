@@ -8,11 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Scroll-to-top button
   const scrollTopBtn = document.getElementById('scroll-top');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      scrollTopBtn.style.display = 'block';
-    } else {
-      scrollTopBtn.style.display = 'none';
-    }
-  });
+  // Only add the event listener if the button exists on the page
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.style.display = 'block';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+  }
 });

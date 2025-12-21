@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css?v=12">
+  <link rel="stylesheet" href="css/main.css?v=15">
 </head>
 <body>
   <a href="#home" id="scroll-top" style="display: none;">↑</a>
@@ -121,10 +121,18 @@
     </section>
 
   <div id="gallery-modal" class="modal">
-      <span class="close-modal">&times;</span>
-      <img class="modal-content" id="modal-image">
-      <div id="modal-caption"></div>
+    <div class="modal-content-wrapper">
+        <div class="modal-image-container">
+            <img id="modal-image" src="" alt="Project Image">
+        </div>
+        <div class="modal-text-container">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    <span class="close-modal">&times;</span>
   </div>
+
     <div class="bottom-bar">
       <div class="nav-links">
         <a href="#home">home</a>
@@ -139,7 +147,7 @@
   </div>
   <script src="js/main.js?v=9"></script>
   <script src="js/light-dark.js?v=9"></script>
-  <script src="js/gallery.js?v=10"></script> 
+  <script src="js/gallery.js?v=11"></script> 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
         const galleryWrapper = document.querySelector('.gallery-wrapper');
@@ -155,6 +163,11 @@
                     projects.forEach(project => {
                         const card = document.createElement('div');
                         card.className = 'gallery-card card';
+                        // Add data attributes for the modal
+                        card.dataset.title = project.title;
+                        card.dataset.description = project.description;
+                        card.dataset.modalImageUrl = project.modalImageUrl;
+
                         card.innerHTML = `
                             <img src="${project.imageUrl}" alt="${project.title}">
                             <h3>${project.title}</h3>
