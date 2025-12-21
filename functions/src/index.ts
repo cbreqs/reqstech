@@ -10,7 +10,7 @@ export const syncFirestoreToSheetsV2 = onDocumentCreated("{collectionId}/{docId}
     const targetCollections = ['roleResponse', 'serviceRequest'];
 
     if (targetCollections.includes(collectionId)) {
-        const webAppUrl = 'https://script.google.com/macros/s/AKfcybytVe9uMe8fZ5VzlgnUS4EUMTets4z4KnQTOJbetCsmc8BjFUSLIAHA7g5kCzsf2WqM/exec';
+        const webAppUrl = 'https://script.google.com/macros/s/AKfycbytVe9uMe8fZ5VzlgnUS4EUMTets4z4KnQTOJbetCsmc8BjFUSLlAHA7g5kCzsf2WqM/exec';
 
         try {
             await axios.post(webAppUrl, {
