@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+# build output
+/dist
+/lib
+
+# logs
+*.log
+
+# runtime config
+.runtimeconfig.json
+
+# test coverage
+/coverage
