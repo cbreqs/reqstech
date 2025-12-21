@@ -1,26 +1,10 @@
 [
-	{
-		"project": "Elevated Adventures KC",
-		"role": "Lead Web/App Developer",
-		"scope": "Booking, payments, tour scheduling",
-		"commitment": "10–20 hrs/week",
-		"stack": "JS/TS, Stripe or Square, Eventbrite, CMS",
-		"slug": "eakc-lead-dev"
-	},
-	{
-		"project": "Typical Lounge",
-		"role": "Deck/Collateral Designer",
-		"scope": "Investor deck polish, one‑pager, tokens alignment",
-		"commitment": "Project‑based",
-		"stack": "Slides/PowerPoint, Figma",
-		"slug": "typical-lounge-designer"
-	},
-	{
-		"project": "Strain Image Generator",
-		"role": "Firebase/Flutter Engineer",
-		"scope": "Text→image Cloud Function, Storage, auth, admin UI",
-		"commitment": "5–10 hrs/week for MVP",
-		"stack": "Firebase, Flutter/Dart, Google AI APIs",
-		"slug": "sig-flutter-firebase"
-	}
+    {
+        "project": "Elevated Adventures | A Cannabis Experience",
+        "role": "Lead Web/App Developer",
+        "scope": "Booking, payments, tour scheduling",
+        "commitment": "20-40 hrs/month",
+        "stack": "JS/TS, Stripe or Square, Eventbrite, CMS, GitHub",
+        "slug": "eakc-lead-dev"
+    }
 ]

@@ -1,25 +1,31 @@
 [
   {
-    "title": "Project Leo",
-    "description": "A lightweight, modular framework for building and managing personal and professional websites.",
+    "title": "Elevated Adventures",
+    "description": "A multi-page site with booking options for event planning",
     "imageUrl": "https://via.placeholder.com/256",
     "modalImageUrl": "https://via.placeholder.com/1024"
   },
   {
-    "title": "Project Archer",
-    "description": "An automated system for deploying and managing applications across multiple cloud environments.",
+    "title": "Graphic Design Assets",
+    "description": "Development of various media elements for use in print, web, and social media applications",
     "imageUrl": "https://via.placeholder.com/256",
     "modalImageUrl": "https://via.placeholder.com/1024"
   },
   {
-    "title": "Project Helix",
-    "description": "A data visualization library for creating interactive and dynamic charts and graphs.",
+    "title": "Firestore Database Development",
+    "description": "Multi-functional database design for specific website needs featuring multiple collections and connections to forms and sheets for data processing",
     "imageUrl": "https://via.placeholder.com/256",
     "modalImageUrl": "https://via.placeholder.com/1024"
   },
   {
-    "title": "Project Nova",
-    "description": "A tool for monitoring and analyzing real-time data streams.",
+    "title": "MOGas, MOMoney",
+    "description": "A lightweight mobile app to track receipts for the Missouri Fuel Tax Refund available each July-September",
+    "imageUrl": "https://via.placeholder.com/256",
+    "modalImageUrl": "https://via.placeholder.com/1024"
+  },
+  {
+    "title": "ACC (Autodesk Construction Cloud) Automation & Management",
+    "description": "Development of various automated aspects of Project Coordination for practical VDC applications maintaining drawing lists, view creation, and sheet alignment, providing clean and reliable deliverables",
     "imageUrl": "https://via.placeholder.com/256",
     "modalImageUrl": "https://via.placeholder.com/1024"
   }
