@@ -1,194 +1,199 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-mode">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="dynamic-title">REQS.TECH | Technically Creative. Practically Obsessed.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Red+Hat+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css?v=16">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="REQS.TECH — Technical generalist and systems thinker. BIM/VDC, workflow automation, data pipelines, AI enablement, and more.">
+<title>REQS.TECH | Technically Creative. Practically Obsessed.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  (function() {
+    var saved = localStorage.getItem('reqs-theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
 </head>
 <body>
-  <a href="#home" id="scroll-top" style="display: none;">↑</a>
-  <div class="page-wrapper">
-    <div class="top-bar">
-        <a href="mailto:singularity@reqs.tech?subject=i've been thinking...">email</a>
-        <a href="#" id="toggle-mode">light / dark</a>
-    </div>
-    <section id="home" class="slide">
-        <div class="container home-container">
-            <main class="center-quote">
-                <h1 class="homepage-quote">building solutions,<br> not workarounds</h1>
-            </main>
-        </div>
-    </section>
-    <section id="about" class="slide">
-        <div class="container">
-          <div class="panel">
-            
-            <div class="grid-layout grid-3-col-1-2-1">
-              <div></div>
-              <div style="text-align: center;">
-                <h2>Think of me as your technical liaison.</h2>
-                <p>If you’re forging a new path in a new industry, or building a service business on manual tools and elbow grease, you still end up with the same pressure point: the work grows, the tools multiply, and the system starts leaking.</p>
-                <p>I’ve worked across enough domains to recognize the pattern early. I listen for what’s actually happening under the surface, then translate it into something you can run without holding your breath.</p>
-              </div>
-              <div></div>
-            </div>
 
-            <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.2);">
+<nav>
+  <a href="#home" class="nav-logo">
+    <img src="assets/logo.png" alt="REQS.TECH" onerror="this.style.display='none'; document.querySelector('.nav-logo-fallback').style.display='block';">
+    <span class="nav-logo-fallback">REQS.TECH</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">&#9728; Light</button>
+  </div>
+</nav>
 
-            <div class="grid-layout grid-2-col-2-1">
-              <div>
-                <p>I’ll meet your situation where it is, and help turn the options into a path that matches the vision you’re carrying.</p>
-                <p>I'll help your projects run cleanly and decisions stay grounded.</p>
-                <h4>Together we will:</h4>
-                <ul class="staggered-list">
-                  <li>map the problem until it stops shifting</li>
-                  <li>choose tools that fit your reality, not someone else’s stack</li>
-                  <li>document what matters so the system survives contact with real life</li>
-                  <li>build an action plan you can actually follow</li>
-                  <li>integrate the new workflow into your world, not around it</li>
-                </ul>
-              </div>
-              <div>
-                <div class="pull-quote">
-                  If it’s not clear and repeatable, it’s not done.
-                </div>
-              </div>
-            </div>
+<section class="hero" id="home">
+  <div class="hero-cube-bg" aria-hidden="true"></div>
+  <p class="hero-eyebrow">Technical generalist &middot; Systems thinker</p>
+  <h1>Building solutions,<br><em>not workarounds.</em></h1>
+  <p class="hero-sub">
+    Think of me as your technical liaison &mdash; someone who sees the whole board,
+    listens for what's actually happening under the surface, and translates it
+    into something you can run without holding your breath.
+  </p>
+  <a href="mailto:singularity@reqs.tech?subject=i've been thinking..." class="hero-cta">
+    Let's talk <span class="arrow">&rarr;</span>
+  </a>
+</section>
 
-            <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.2);">
+<div class="divider"><hr></div>
 
-            <div class="grid-layout grid-2-col-1-2">
-              <div class="card">
-                <h4>Focus areas</h4>
-                <ul>
-                  <li>BIM/VDC coordination and standards that hold up in the field</li>
-                  <li>Autodesk Construction Cloud training and management</li>
-                  <li>Data pipelines, Firebase, and ecosystems like Microsoft, Google, and Autodesk</li>
-                  <li>Pragmatic automation that gives you time and cognitive room back</li>
-                  <li>Systems designed to integrate neurodivergent needs</li>
-                </ul>
-              </div>
-              <div>
-                <div class="card" style="margin-bottom: 2rem;">
-                  <h4>What clients get</h4>
-                  <ul>
-                    <li>Working systems</li>
-                    <li>Plain-language documentation</li>
-                    <li>Momentum without chaos</li>
-                    <li>Application seats when it helps build a focused, intentional approach</li>
-                    <li>Support and training on <em>their</em> level</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <h4>Values</h4>
-                  <ul>
-                    <li>Strategic | keep the objective in focus</li>
-                    <li>Authentic | work <em>with</em> your defaults, not against them</li>
-                    <li>Empathic | build for humans, not hypotheticals</li>
-                    <li>Kinetic | potential becomes motion</li>
-                    <li>Dynamic | adapt as necessary, change on purpose</li>                                 
-                  </ul>
-                </div>
-              </div>
-            </div>
-            
-            <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.2);">
+<section class="about" id="about">
+  <p class="about-label">The approach</p>
+  <div class="about-body">
+    <p>I've worked across enough domains to recognize the pattern early:
+    <strong>the work grows, the tools multiply, and the system starts leaking.</strong></p>
+    <p>I'll meet your situation where it is &mdash; map the problem until it stops shifting,
+    choose tools that fit your reality, and build something you can actually follow.
+    If it's not clear and repeatable, it's not done.</p>
+  </div>
+</section>
 
-            <div style="text-align: center;">
-                <p>Need a dependable technical generalist who can see the whole board and deliver?</p>
-                <h3>Let’s build something. We’ll make it clear, then make it real.</h3>
-            </div>
+<div class="focus-strip">
+  <div class="focus-inner">
+    <span class="focus-label">Focus</span>
+    <span class="focus-tag">BIM / VDC coordination</span>
+    <span class="focus-tag">Autodesk Construction Cloud</span>
+    <span class="focus-tag">Data pipelines + Firebase</span>
+    <span class="focus-tag">Workflow automation</span>
+    <span class="focus-tag">AI enablement</span>
+    <span class="focus-tag">Microsoft + Google ecosystems</span>
+    <span class="focus-tag">Neurodivergent-informed design</span>
+  </div>
+</div>
 
-          </div>
-        </div>
-    </section>
-    <section id="personal-projects" class="slide">
-        <div class="container">
-            <h1>Ansible</h1>
-            <p>What I've built. What I'm building.</p>
-            <div class="gallery-container">
-                <button class="gallery-arrow prev">&#10094;</button>
-                <div class="gallery-scroll-container">
-                    <div class="gallery-wrapper"></div>
-                </div>
-                <button class="gallery-arrow next">&#10095;</button>
-            </div>
-        </div>
-    </section>
-
-  <div id="gallery-modal" class="modal">
-    <div class="modal-content-wrapper">
-        <div class="modal-image-container">
-            <img id="modal-image" src="" alt="Project Image">
-        </div>
-        <div class="modal-text-container">
-            <h3 id="modal-title"></h3>
-            <p id="modal-description"></p>
-        </div>
-    </div>
-    <span class="close-modal">&times;</span>
+<section class="services" id="services">
+  <div class="section-header">
+    <h2 class="section-title">Services</h2>
+    <p class="section-note">Starting-at pricing &mdash; scope confirmed on your first call</p>
   </div>
 
-    <div class="bottom-bar">
-      <div class="nav-links">
-        <a href="#home">home</a>
-        <a href="#about">about</a>
-        <a href="/blog/blog.html">blog</a>
-        <a href="projects.html">projects</a>
+  <div class="services-grid">
+    <div class="service-card">
+      <p class="service-num">01</p>
+      <h3 class="service-name">Discovery + Roadmap Call</h3>
+      <p class="service-for">"I know I need help but I'm not sure what the right solution is."</p>
+      <p class="service-delivers">90 min &middot; goals + constraints &middot; current-state map &middot; prioritized action plan &middot; recommended stack &middot; written roadmap within 24 hours</p>
+      <p class="service-price">$350 flat</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">02</p>
+      <h3 class="service-name">Systems / Data Audit</h3>
+      <p class="service-for">"Messy spreadsheets, duplicated tools &mdash; where is the truth?"</p>
+      <p class="service-delivers">1&ndash;2 weeks &middot; current-state map &middot; risk + fragmentation report &middot; quick wins &middot; recommended data model + governance plan</p>
+      <p class="service-price">Starting at $1,500</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">03</p>
+      <h3 class="service-name">Workflow Automation Build</h3>
+      <p class="service-for">"We keep doing the same thing in four places."</p>
+      <p class="service-delivers">Make &middot; Zapier &middot; M365 &middot; Google &middot; Firebase &middot; ACC &middot; up to 3 automated workflows &middot; error handling &middot; documentation + handoff</p>
+      <p class="service-price">Starting at $2,500</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">04</p>
+      <h3 class="service-name">Landing Page + Analytics</h3>
+      <p class="service-for">"I need a page that explains what we do and converts."</p>
+      <p class="service-delivers">1 landing page &middot; copy structure &middot; CTA wiring &middot; basic SEO hygiene &middot; analytics + conversion tracking</p>
+      <p class="service-price">Starting at $1,250</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">05</p>
+      <h3 class="service-name">BIM / VDC Data Enablement</h3>
+      <p class="service-for">"Revit standards, ACC coordination, model hygiene &mdash; repeatable delivery."</p>
+      <p class="service-delivers">Audit + plan &middot; standards + templates &middot; training &middot; optional automation + tooling</p>
+      <p class="service-price">Starting at $3,500</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">06</p>
+      <h3 class="service-name">AI Enablement for Small Teams</h3>
+      <p class="service-for">"We want AI to help &mdash; but we don't want chaos."</p>
+      <p class="service-delivers">Knowledge structure &middot; workflows &middot; prompt patterns &middot; guardrails &middot; team training</p>
+      <p class="service-price">Starting at $2,000</p>
+    </div>
+  </div>
+
+  <div class="retainers">
+    <div class="retainer-head">
+      <h3 class="retainer-title">Monthly retainers</h3>
+      <span class="retainer-sub">Ongoing ops + automation support</span>
+    </div>
+    <div class="retainer-tiers">
+      <div class="retainer-tier">
+        <span class="retainer-price">$1,500</span>
+        <span class="retainer-mo">/ month</span>
       </div>
-      <p class="footer-tagline">
-        REQS.TECH | Technically Creative. Practically Obsessed.
-      </p>
+      <div class="retainer-tier">
+        <span class="retainer-price">$3,000</span>
+        <span class="retainer-mo">/ month</span>
+      </div>
+      <div class="retainer-tier">
+        <span class="retainer-price">$5,000</span>
+        <span class="retainer-mo">/ month</span>
+      </div>
+    </div>
+    <p class="retainer-note">Scope depends on tier. Includes ongoing improvements, maintenance, and a predictable response window.</p>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="values-inner">
+    <h2 class="section-title">How I work</h2>
+    <div class="values-grid">
+      <div><span class="value-word">Strategic</span><span class="value-desc">Keep the objective in focus, always.</span></div>
+      <div><span class="value-word">Authentic</span><span class="value-desc">Work with your defaults, not against them.</span></div>
+      <div><span class="value-word">Empathic</span><span class="value-desc">Build for humans, not hypotheticals.</span></div>
+      <div><span class="value-word">Kinetic</span><span class="value-desc">Potential becomes motion.</span></div>
+      <div><span class="value-word">Dynamic</span><span class="value-desc">Adapt as necessary, change on purpose.</span></div>
     </div>
   </div>
-  <script src="js/main.js?v=9"></script>
-  <script src="js/light-dark.js?v=9"></script>
-  <script src="js/gallery.js?v=11"></script> 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const galleryWrapper = document.querySelector('.gallery-wrapper');
-        if (galleryWrapper) {
-            fetch('projects.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(projects => {
-                    projects.forEach(project => {
-                        const card = document.createElement('div');
-                        card.className = 'gallery-card card';
-                        // Add data attributes for the modal
-                        card.dataset.title = project.title;
-                        card.dataset.description = project.description;
-                        card.dataset.modalImageUrl = project.modalImageUrl;
+</section>
 
-                        let imageHTML = '';
-                        if (project.imageUrl && !project.imageUrl.includes('placeholder')) {
-                          imageHTML = `<img src="${project.imageUrl}" alt="${project.title}">`;
-                        }
+<section class="closing" id="contact">
+  <h2>Let's build something.<br>We'll make it clear, then make it real.</h2>
+  <p>Need a dependable technical generalist who can see the whole board and deliver? I'd love to hear what you're working on.</p>
+  <a href="mailto:singularity@reqs.tech?subject=i've been thinking..." class="closing-email">singularity@reqs.tech</a>
+</section>
 
-                        card.innerHTML = `
-                            ${imageHTML}
-                            <h3>${project.title}</h3>
-                            <p>${project.description}</p>
-                        `;
-                        galleryWrapper.appendChild(card);
-                    });
-                    // NOW that the cards are loaded, initialize the gallery.
-                    initializeGallery();
-                })
-                .catch(error => {
-                    console.error('Error fetching or initializing projects:', error);
-                    galleryWrapper.innerHTML = '<p>Could not load projects. Check console for details.</p>';
-                });
-        }
-    });
-  </script>
+<footer>
+  <span class="footer-text">&copy; 2026 REQS.TECH &middot; Technically Creative. Practically Obsessed.</span>
+  <a href="#home"><img src="assets/logo.png" alt="REQS.TECH" class="footer-logo"></a>
+</footer>
+
+<script>
+  function toggleTheme() {
+    var html = document.documentElement;
+    var btn = document.getElementById('themeBtn');
+    if (html.getAttribute('data-theme') === 'dark') {
+      html.setAttribute('data-theme', 'light');
+      btn.textContent = '\u263E Dark';
+      localStorage.setItem('reqs-theme', 'light');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      btn.textContent = '\u2600 Light';
+      localStorage.setItem('reqs-theme', 'dark');
+    }
+  }
+  (function() {
+    if (localStorage.getItem('reqs-theme') === 'light') {
+      document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('themeBtn');
+        if (btn) btn.textContent = '\u263E Dark';
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>
