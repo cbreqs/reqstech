@@ -31,15 +31,15 @@ button { font-family: inherit; cursor: pointer; }
   --accent2:     #E07055;
   --tag-bg:      rgba(74,173,170,0.09);
   --tag-border:  rgba(74,173,170,0.22);
-  --hero-cube-opacity: 0.12;
+  --hero-cube-opacity: 0.7;
 }
 
 /* ─── LIGHT THEME ─────────────────────────────────────────────────────────── */
 [data-theme="light"] {
-  --bg:          #FAF8F4;
-  --bg2:         #F2EEE6;
-  --bg3:         #EDE8DC;
-  --surface:     #FFFFFF;
+  --bg:          #EEEAE0;
+  --bg2:         #E8E3D8;
+  --bg3:         #E0DAD0;
+  --surface:     #F4F0E8;
   --border:      rgba(26,37,53,0.09);
   --border-mid:  rgba(26,37,53,0.15);
   --text:        #1A2535;
@@ -49,7 +49,7 @@ button { font-family: inherit; cursor: pointer; }
   --accent2:     #C4533A;
   --tag-bg:      rgba(46,125,122,0.07);
   --tag-border:  rgba(46,125,122,0.2);
-  --hero-cube-opacity: 0.07;
+  --hero-cube-opacity: 0.12;
 }
 
 /* ─── BASE ───────────────────────────────────────────────────────────────── */
@@ -73,7 +73,7 @@ nav {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   padding: 0 2rem;
-  height: 58px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,21 +86,23 @@ nav {
   gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
+  outline: none;
 }
+
+.nav-logo:focus { outline: none; }
 
 .nav-logo img {
-  height: 30px;
+  height: 46px;
   width: auto;
-  transition: filter 0.3s;
-}
-
-[data-theme="dark"] .nav-logo img {
-  filter: brightness(1.2) drop-shadow(0 0 8px rgba(74,173,170,0.25));
+  transition: opacity 0.2s;
+  content: url('../assets/logo.png');
 }
 
 [data-theme="light"] .nav-logo img {
-  filter: none;
+  content: url('../assets/logo_dark.png');
 }
+
+.nav-logo img:hover { opacity: 0.75; }
 
 .nav-logo-fallback {
   display: none;
@@ -160,18 +162,23 @@ nav {
 
 .hero-cube-bg {
   position: absolute;
-  top: -20px;
-  right: -80px;
-  width: 420px;
-  height: 420px;
+  top: -40px;
+  right: -40px;
+  width: 500px;
+  height: 500px;
   background-image: url('../assets/hexacube_in_space.png');
   background-size: cover;
   background-position: center;
   opacity: var(--hero-cube-opacity);
-  border-radius: 50%;
   pointer-events: none;
-  filter: saturate(0.5);
   transition: opacity 0.3s;
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 40%, black 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 80% at 60% 40%, black 30%, transparent 75%);
+}
+
+[data-theme="light"] .hero-cube-bg {
+  mix-blend-mode: multiply;
 }
 
 .hero-eyebrow {
@@ -560,6 +567,21 @@ footer {
   transition: opacity 0.2s;
 }
 .footer-logo:hover { opacity: 0.6; }
+
+/* ─── FIVE-LINE MOTIF ─────────────────────────────────────────────────────── */
+.five-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 1.5rem;
+}
+.five-lines span {
+  display: block;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.3;
+  width: 100%;
+}
 
 /* ─── ANIMATIONS ─────────────────────────────────────────────────────────── */
 @keyframes fadeUp {
