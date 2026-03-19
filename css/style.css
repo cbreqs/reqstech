@@ -563,10 +563,17 @@ footer {
 .footer-logo {
   height: 22px;
   width: auto;
-  opacity: 0.35;
+  opacity: 0.4;
   transition: opacity 0.2s;
+  content: url('../assets/logo.png');
 }
-.footer-logo:hover { opacity: 0.6; }
+
+[data-theme="light"] .footer-logo {
+  content: url('../assets/logo_dark.png');
+  opacity: 0.35;
+}
+
+.footer-logo:hover { opacity: 0.65; }
 
 /* ─── FIVE-LINE MOTIF ─────────────────────────────────────────────────────── */
 .five-lines {
