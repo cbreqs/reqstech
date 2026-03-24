@@ -15,7 +15,7 @@ FlexAgenda is a sophisticated, multi-tenant scheduling solution built with Next.
 - **UI/Styling**: Tailwind CSS, Shadcn UI, Lucide Icons
 
 ## 🤖 AI Collaboration
-If you are using an AI assistant to help develop this project, please point it to `docs/AI_HANDOFF.md`. That file contains specific instructions on the coding patterns and data architecture used in this repository.
+If you are using an AI assistant to help develop this project, please point it to `docs/AI-HANDOFF.md`. That file contains specific instructions on the coding patterns and data architecture used in this repository.
 
 ## 📦 Getting Started
 1. **Install Dependencies**: `npm install`
