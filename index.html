@@ -16,69 +16,43 @@
   })();
 </script>
 <style>
-  .feature-accent {
+/* Services grid accent cell - five lines motif */
+.service-accent {
   background: var(--bg2);
   padding: 1.75rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.75rem;
+  border-radius: 0;
 }
- 
-.feature-accent-lines {
+
+.service-accent-lines {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
- 
-.feature-accent-lines span {
+
+.service-accent-lines span {
   display: block;
   height: 1px;
-  background: var(--teal);
-  opacity: 0.45;
+  background: var(--accent);
+  opacity: 0.4;
   border-radius: 1px;
 }
-.feature-accent-lines span:nth-child(1) { width: 100%; }
-.feature-accent-lines span:nth-child(2) { width: 82%; }
-.feature-accent-lines span:nth-child(3) { width: 95%; }
-.feature-accent-lines span:nth-child(4) { width: 73%; }
-.feature-accent-lines span:nth-child(5) { width: 88%; }
- 
-.feature-accent-text {
+.service-accent-lines span:nth-child(1) { width: 100%; }
+.service-accent-lines span:nth-child(2) { width: 82%; }
+.service-accent-lines span:nth-child(3) { width: 95%; }
+.service-accent-lines span:nth-child(4) { width: 73%; }
+.service-accent-lines span:nth-child(5) { width: 88%; }
+
+.service-accent-text {
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--teal);
-  opacity: 0.5;
+  color: var(--accent);
+  opacity: 0.45;
   font-weight: 500;
-}
- 
-.feature {
-  background: var(--bg);
-  padding: 1.75rem 1.5rem;
-}
- 
-.feature-number {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--dim);
-  margin-bottom: 0.75rem;
-}
- 
-.feature-title {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 400;
-  color: var(--text);
-  margin-bottom: 0.6rem;
-  line-height: 1.3;
-}
- 
-.feature-desc {
-  font-size: 13px;
-  color: var(--mid);
-  line-height: 1.65;
 }
 </style>
 </head>
@@ -130,7 +104,7 @@
   <div class="focus-inner">
     <span class="focus-label">Focus</span>
     <span class="focus-tag">BIM / VDC coordination</span>
-    <span class="focus-tag">Autodesk Construction Cloud (now Forma)</span>
+    <span class="focus-tag">Autodesk Construction Cloud</span>
     <span class="focus-tag">Data pipelines + Firebase</span>
     <span class="focus-tag">Workflow automation</span>
     <span class="focus-tag">AI enablement</span>
@@ -181,13 +155,12 @@
       <p class="service-delivers">Audit + plan &middot; standards + templates &middot; training &middot; optional automation + tooling</p>
       <p class="service-price">Starting at $3,500</p>
     </div>
+    <div class="service-accent" aria-hidden="true">
+      <div class="service-accent-lines">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="service-accent-text">always five</p>
     </div>
-    <div class="value-card-accent" aria-hidden="true">
-        <div class="value-accent-lines">
-            <span></span><span></span><span></span><span></span><span></span>
-        </div>
-        <p class="value-accent-text">5</p>
-     </div>
   </div>
 
   <div class="retainers">
