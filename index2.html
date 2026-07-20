@@ -1,0 +1,390 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REQS.TECH | Technically Creative. Practically Obsessed.</title>
+<meta name="description" content="REQS.TECH — Tech help for small business owners, parents returning to work, and career changers who need someone to ask and don't know who.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #111418;
+    --surface: #171b20;
+    --surface-2: #1c2127;
+    --text: #EDE8DC;
+    --text-dim: #9aa0a8;
+    --teal: #4AADAA;
+    --terra: #E07055;
+    --cream: #EDE8DC;
+    --line: rgba(237,232,220,0.12);
+    --radius: 2px;
+  }
+  html[data-theme="light"] {
+    --bg: #EDE8DC;
+    --surface: #f5f2ea;
+    --surface-2: #efeade;
+    --text: #191d21;
+    --text-dim: #5a5f66;
+    --line: rgba(17,20,24,0.12);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3 { font-family: 'Lora', serif; font-weight: 500; margin: 0; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+  /* five-line hairline motif */
+  .fivelines { display: flex; flex-direction: column; gap: 4px; width: 40px; }
+  .fivelines span { display: block; height: 1px; background: var(--teal); }
+  .fivelines span:nth-child(1) { width: 100%; }
+  .fivelines span:nth-child(2) { width: 80%; }
+  .fivelines span:nth-child(3) { width: 60%; }
+  .fivelines span:nth-child(4) { width: 80%; }
+  .fivelines span:nth-child(5) { width: 100%; }
+
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: 'Lora', serif; font-size: 1.1rem; letter-spacing: 0.02em; }
+  .brand .fivelines { width: 22px; }
+  .navlinks { display: flex; align-items: center; gap: 28px; font-size: 0.92rem; }
+  .navlinks a { text-decoration: none; opacity: 0.85; }
+  .navlinks a:hover { opacity: 1; color: var(--teal); }
+  #themeToggle {
+    background: none; border: 1px solid var(--line); color: var(--text);
+    border-radius: 999px; padding: 6px 14px; font-size: 0.85rem; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .hero { padding: 96px 0 72px; }
+  .eyebrow { color: var(--teal); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.16; max-width: 15ch; }
+  .hero h1 em { color: var(--terra); font-style: normal; }
+  .hero p.lede { max-width: 56ch; color: var(--text-dim); font-size: 1.08rem; margin-top: 24px; }
+  .hero p.sub { max-width: 60ch; margin-top: 18px; }
+  .cta {
+    display: inline-block; margin-top: 32px;
+    background: var(--teal); color: #0d1113; text-decoration: none;
+    padding: 13px 26px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { transform: translateY(-1px); background: #5cc0bc; }
+  .cta.ghost {
+    background: none; border: 1px solid var(--line); color: var(--text);
+    margin-left: 12px;
+  }
+  .cta.ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  .section-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px; }
+  .section-head .fivelines { margin-bottom: 4px; }
+  .section-head h2 { font-size: 1.6rem; }
+  .section-label { color: var(--text-dim); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* Who this is for */
+  .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .audience-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 22px;
+  }
+  .audience-card .mark { color: var(--terra); font-family: 'Lora', serif; font-size: 1.4rem; margin-bottom: 12px; display: block; }
+  .audience-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .audience-card p { color: var(--text-dim); font-size: 0.94rem; margin: 0; }
+
+  /* Approach */
+  .approach p { max-width: 62ch; font-size: 1.02rem; }
+  .approach strong { color: var(--terra); font-weight: 600; }
+  .focus-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .focus-tags span {
+    border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px;
+    font-size: 0.85rem; color: var(--text-dim);
+  }
+
+  /* Services */
+  .price-note { color: var(--text-dim); font-size: 0.9rem; margin-top: -20px; margin-bottom: 40px; }
+  .service {
+    display: grid; grid-template-columns: 64px 1fr auto;
+    gap: 24px; align-items: start;
+    padding: 26px 0; border-top: 1px solid var(--line);
+  }
+  .service:first-of-type { border-top: none; }
+  .service .num { font-family: 'Lora', serif; color: var(--teal); font-size: 1.3rem; opacity: 0.7; }
+  .service h3 { font-size: 1.12rem; margin-bottom: 6px; }
+  .service .quote { color: var(--terra); font-style: italic; font-family: 'Lora', serif; font-size: 0.98rem; margin-bottom: 10px; display: block; }
+  .service .desc { color: var(--text-dim); font-size: 0.92rem; }
+  .service .price { text-align: right; white-space: nowrap; font-weight: 600; font-size: 1.02rem; }
+  .service .price small { display: block; font-weight: 400; color: var(--text-dim); font-size: 0.78rem; margin-top: 3px; }
+
+  @media (max-width: 640px) {
+    .service { grid-template-columns: 1fr; }
+    .service .price { text-align: left; margin-top: 8px; }
+  }
+
+  /* {five} + {private} */
+  .sixgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .braced-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px 24px;
+  }
+  .braced-card .tag { font-family: 'Lora', serif; color: var(--teal); font-size: 1rem; margin-bottom: 14px; display: block; }
+  .braced-card.private { background: var(--surface-2); border-color: var(--teal); }
+  .braced-card.private .tag { color: var(--terra); }
+  .braced-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+  .braced-card p { color: var(--text-dim); font-size: 0.92rem; margin: 0 0 16px; }
+  .braced-card .amount { font-weight: 600; font-size: 1.15rem; margin-bottom: 4px; }
+  .braced-card .amount small { font-weight: 400; color: var(--text-dim); font-size: 0.78rem; }
+  .braced-card a.mini-cta {
+    display: inline-block; margin-top: 8px; font-size: 0.88rem; color: var(--teal);
+    text-decoration: none; border-bottom: 1px solid var(--teal); padding-bottom: 2px;
+  }
+  .braced-card.private a.mini-cta { color: var(--terra); border-color: var(--terra); }
+
+  /* How I work */
+  .traits { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
+  .trait h3 { font-size: 1rem; color: var(--teal); margin-bottom: 6px; }
+  .trait p { color: var(--text-dim); font-size: 0.9rem; margin: 0; }
+
+  footer { padding: 80px 0 56px; text-align: left; }
+  footer h2 { font-size: 1.9rem; max-width: 18ch; margin-bottom: 20px; }
+  footer .email { font-size: 1.1rem; color: var(--teal); text-decoration: none; }
+  .footer-bottom {
+    margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.82rem; color: var(--text-dim); flex-wrap: wrap; gap: 10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="fivelines"><span></span><span></span><span></span><span></span><span></span></div>
+      REQS.TECH
+    </div>
+    <div class="navlinks">
+      <a href="/about.html">About</a>
+      <a href="https://apps.reqs.tech">Apps</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" aria-label="Toggle light and dark mode">☀ Light</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap" style="border-top:none;">
+    <div class="eyebrow">Tech help for people who don't know who to ask</div>
+    <h1>Building solutions, <em>not workarounds.</em></h1>
+    <p class="lede">You don't need to know what to call the problem. You just need someone who can look at it, tell you what's actually going on, and fix it — or teach you how to fix it yourself.</p>
+    <p class="sub">Small business owner drowning in tools that don't talk to each other. Parent rebuilding a career and don't know where tech even starts. Someone who got handed "the computer stuff" and never agreed to be an IT department. That's who this is for.</p>
+    <a class="cta" href="mailto:singularity@reqs.tech?subject=i've been thinking...">Let's talk →</a>
+    <a class="cta ghost" href="#services">See pricing</a>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <div class="fivelines"><span></span><span></span><span></span><span></span><span></span></div>
+      <div>
+        <div class="section-label">Who this is for</div>
+        <h2>If any of this sounds familiar</h2>
+      </div>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <span class="mark">01</span>
+        <h3>Small business owners</h3>
+        <p>You didn't start your business to become the accidental IT department. You need things working, not a lecture on the tech stack behind them.</p>
+      </div>
+      <div class="audience-card">
+        <span class="mark">02</span>
+        <h3>Parents heading back to work</h3>
+        <p>The job market moved while you were raising kids or caretaking. You need both the skill and someone who won't make you feel behind for asking.</p>
+      </div>
+      <div class="audience-card">
+        <span class="mark">03</span>
+        <h3>Career changers</h3>
+        <p>You want a real path into tech — not a $2,000 bootcamp promise. Something grounded in what you can actually use and build on.</p>
+      </div>
+      <div class="audience-card">
+        <span class="mark">04</span>
+        <h3>Anyone who inherited "the tech stuff"</h3>
+        <p>Somewhere along the way you became the default fixer. You didn't apply for that job. Let's get you out from under it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap approach">
+    <div class="section-head">
+      <div class="fivelines"><span></span><span></span><span></span><span></span><span></span></div>
+      <div>
+        <div class="section-label">The approach</div>
+        <h2>I meet you where the problem actually is</h2>
+      </div>
+    </div>
+    <p>I've worked across enough domains to recognize the pattern early: <strong>the work grows, the tools multiply, and the system starts leaking.</strong> No jargon test at the door — you don't need to know the right words for what's broken. I'll listen for what's actually happening, map it until it stops shifting, and choose tools that fit your reality and your budget. If it's not clear and repeatable, it's not done.</p>
+    <div class="focus-tags">
+      <span>Plain-language, no jargon</span>
+      <span>Small business systems</span>
+      <span>Tech coaching + education</span>
+      <span>Workflow automation</span>
+      <span>Microsoft + Google ecosystems</span>
+      <span>Neurodivergent-informed design</span>
+    </div>
+  </section>
+
+  <section class="wrap" id="services">
+    <div class="section-head">
+      <div class="fivelines"><span></span><span></span><span></span><span></span><span></span></div>
+      <div>
+        <div class="section-label">Services</div>
+        <h2>Priced for the general soul just finding their footing</h2>
+      </div>
+    </div>
+    <p class="price-note">Starting-at pricing — every project starts with a conversation, not an invoice.</p>
+
+    <div class="service">
+      <div class="num">01</div>
+      <div>
+        <h3>First Conversation</h3>
+        <span class="quote">"I know something's wrong, I just don't know what to call it."</span>
+        <p class="desc">45 minutes · we look at what's actually going on · plain-language explanation · a written next-step plan you can act on with or without me</p>
+      </div>
+      <div class="price">$75 flat<small>fixed, no surprises</small></div>
+    </div>
+
+    <div class="service">
+      <div class="num">02</div>
+      <div>
+        <h3>Get Unstuck</h3>
+        <span class="quote">"One specific thing is broken and it's costing me hours."</span>
+        <p class="desc">A single fix — a spreadsheet, a form, a broken workflow, a website hiccup · diagnosis + repair · a short explainer so it doesn't happen again</p>
+      </div>
+      <div class="price">Starting at $200<small>most fixes land here</small></div>
+    </div>
+
+    <div class="service">
+      <div class="num">03</div>
+      <div>
+        <h3>Learn It, Own It</h3>
+        <span class="quote">"I want to actually understand this, not just have it done for me."</span>
+        <p class="desc">1:1 tech coaching for career changers and people returning to work · built around what you're actually trying to do · sessions or a 4-week series</p>
+      </div>
+      <div class="price">$150 / session<small>or $500 for 4</small></div>
+    </div>
+
+    <div class="service">
+      <div class="num">04</div>
+      <div>
+        <h3>Small Business Tech Setup</h3>
+        <span class="quote">"I need my basics to actually work together."</span>
+        <p class="desc">A simple website or landing page · booking or intake forms · email and scheduling set up right · one clean system instead of five duct-taped ones</p>
+      </div>
+      <div class="price">Starting at $600<small>scoped on your call</small></div>
+    </div>
+
+    <div class="service">
+      <div class="num">05</div>
+      <div>
+        <h3>Workflow Automation, Small-Scale</h3>
+        <span class="quote">"We keep doing the same thing by hand, over and over."</span>
+        <p class="desc">Up to 2 automated workflows · plain documentation so it's not a black box · built in the tools you already use</p>
+      </div>
+      <div class="price">Starting at $900<small>scoped on your call</small></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <div class="fivelines"><span></span><span></span><span></span><span></span><span></span></div>
+      <div>
+        <div class="section-label">Ongoing + higher-needs</div>
+        <h2>{five} and beyond</h2>
+      </div>
+    </div>
+    <div class="sixgrid">
+      <div class="braced-card">
+        <span class="tag">{five}</span>
+        <h3>Light Monthly Backup</h3>
+        <p>A predictable, low-lift retainer for small businesses who just want someone to call when something breaks or needs updating.</p>
+        <div class="amount">$150 / month<small> · small fixes + check-ins</small></div>
+      </div>
+      <div class="braced-card">
+        <span class="tag">{five}</span>
+        <h3>Standing Support</h3>
+        <p>A bit more room — ongoing maintenance, small builds, and a faster response window as things grow.</p>
+        <div class="amount">$400 / month<small> · maintenance + small builds</small></div>
+      </div>
+      <div class="braced-card private">
+        <span class="tag">{private}</span>
+        <h3>Bigger scope, larger org</h3>
+        <p>Multi-team automation, enterprise AI enablement, or BIM/VDC data standards at scale. Custom scope, custom quote — no template pricing here.</p>
+        <a class="mini-cta" href="mailto:singularity@reqs.tech?subject=Higher-needs inquiry">Contact for a quote →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <div class="fivelines"><span></span><span></span><span></span><span></span><span></span></div>
+      <div>
+        <div class="section-label">How I work</div>
+        <h2>What you can count on</h2>
+      </div>
+    </div>
+    <div class="traits">
+      <div class="trait"><h3>Strategic</h3><p>Keep the objective in focus, always.</p></div>
+      <div class="trait"><h3>Authentic</h3><p>Work with your defaults, not against them.</p></div>
+      <div class="trait"><h3>Empathic</h3><p>Build for humans, not hypotheticals.</p></div>
+      <div class="trait"><h3>Kinetic</h3><p>Potential becomes motion.</p></div>
+      <div class="trait"><h3>Dynamic</h3><p>Adapt as necessary, change on purpose.</p></div>
+    </div>
+  </section>
+
+  <footer class="wrap" id="contact">
+    <h2>Let's build something. We'll make it clear, then make it real.</h2>
+    <p style="max-width:52ch;color:var(--text-dim);">No question is too basic. No budget is too small to start with a conversation. I'd love to hear what you're working on.</p>
+    <a class="email" href="mailto:singularity@reqs.tech?subject=i've been thinking...">singularity@reqs.tech</a>
+    <div class="footer-bottom">
+      <span>© 2026 REQS.TECH · Technically Creative. Practically Obsessed.</span>
+      <div class="fivelines"><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    btn.textContent = theme === 'light' ? '☾ Dark' : '☀ Light';
+  }
+  const saved = localStorage.getItem('reqs-theme') || 'dark';
+  applyTheme(saved);
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    localStorage.setItem('reqs-theme', next);
+    applyTheme(next);
+  });
+</script>
+
+</body>
+</html>
