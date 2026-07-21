@@ -1,0 +1,79 @@
+[
+  {
+    "id": "p1",
+    "name": "Blush Peony Bouquet",
+    "price": "32.00",
+    "image": "img/p1.png",
+    "description": "A hand-tied bunch of soft pink peonies and baby's breath, wrapped in kraft paper.",
+    "category": "Bouquets",
+    "featured": true,
+    "soldOut": false,
+    "stripeLink": ""
+  },
+  {
+    "id": "p2",
+    "name": "Single Garden Rose",
+    "price": "9.00",
+    "image": "img/p2.png",
+    "description": "One perfect garden rose, wrapped simply - a small gift that says a lot.",
+    "category": "Single Stems",
+    "featured": false,
+    "soldOut": false,
+    "stripeLink": ""
+  },
+  {
+    "id": "p3",
+    "name": "Pressed Flower Bookmark",
+    "price": "8.00",
+    "image": "img/p3.png",
+    "description": "Real pressed blooms laminated into a one-of-a-kind bookmark.",
+    "category": "Small Gifts",
+    "featured": false,
+    "soldOut": false,
+    "stripeLink": ""
+  },
+  {
+    "id": "p4",
+    "name": "Sweetheart Rose Jar",
+    "price": "24.00",
+    "image": "img/p4.png",
+    "description": "Mini roses arranged in a small glass jar, perfect for a desk or nightstand.",
+    "category": "Arrangements",
+    "featured": true,
+    "soldOut": false,
+    "stripeLink": ""
+  },
+  {
+    "id": "p5",
+    "name": "Wildflower Crown",
+    "price": "36.00",
+    "image": "img/p5.png",
+    "description": "A delicate flower crown made to order, great for photos or a special day.",
+    "category": "Accessories",
+    "featured": false,
+    "soldOut": false,
+    "stripeLink": ""
+  },
+  {
+    "id": "p6",
+    "name": "Dried Lavender Bundle",
+    "price": "14.00",
+    "image": "img/p6.png",
+    "description": "A small bundle of dried lavender, tied with a satin ribbon.",
+    "category": "Dried Flowers",
+    "featured": true,
+    "soldOut": false,
+    "stripeLink": ""
+  },
+  {
+    "id": "p7",
+    "name": "Custom Arrangement",
+    "price": "starting at 25.00",
+    "image": "img/p7.png",
+    "description": "Message to arrange a custom bouquet, gift, or bulk order for an event.",
+    "category": "Custom",
+    "featured": false,
+    "soldOut": false,
+    "stripeLink": ""
+  }
+]
