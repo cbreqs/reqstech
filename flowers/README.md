@@ -8,7 +8,7 @@ A one-page shop site: hero, an auto-rotating carousel of featured products, and 
 - `styles.css` — all styling (colors, layout, carousel, cards)
 - `script.js` — loads `products.json` and builds the carousel + grid
 - `products.json` — **the only file you need to edit to add/remove/update products**
-- `images/` — placeholder flower graphics; swap these for real photos
+- `img/` — placeholder flower graphics; swap these for real photos
 
 ## Adding or editing products
 
@@ -19,7 +19,7 @@ Open `products.json` in any text editor. It's a list of products like this:
   "id": "p7",
   "name": "Sunflower Bunch",
   "price": "20.00",
-  "image": "images/sunflower.jpg",
+  "image": "img/sunflower.jpg",
   "description": "A cheerful bunch of small sunflowers.",
   "category": "Bouquets",
   "featured": true,
@@ -31,10 +31,10 @@ Open `products.json` in any text editor. It's a list of products like this:
 - `id` — must be unique for each product (e.g. `p7`, `p8`...)
 - `featured: true` puts it in the top carousel (keep it to ~3-5 items so it doesn't get crowded)
 - `soldOut: true` grays out the Buy button and shows a "Sold Out" badge
-- `image` — path to a photo in the `images/` folder (see below)
+- `image` — path to a photo in the `img/` folder (see below)
 - `stripeLink` — leave blank until Stripe is set up (see next section); until then the Buy button opens a pre-filled email instead
 
-To add a real photo: drop the image file into the `images/` folder, then set `"image"` to `"images/yourfile.jpg"`.
+To add a real photo: drop the image file into the `img/` folder, then set `"image"` to `"img/yourfile.jpg"`.
 
 ## Setting up real checkout (Stripe Payment Links)
 
@@ -52,7 +52,7 @@ Stripe takes a small standard processing fee per transaction (no monthly fee for
 
 - Shop name "Bloom & Ruby" appears in the header and footer of `index.html` — search and replace with her real shop name if she'd rather use something else (e.g. "Bloomin' Ruby").
 - Contact email/Instagram link are in the footer of `index.html`, and the email is also set at the top of `script.js` (`CONTACT_EMAIL`) — update both.
-- Placeholder flower graphics are in `images/` — replace with real product photos whenever ready (square photos work best for the grid).
+- Placeholder flower graphics are in `img/` — replace with real product photos whenever ready (square photos work best for the grid).
 
 ## Testing locally
 
